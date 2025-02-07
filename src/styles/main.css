@@ -1,0 +1,97 @@
+@import "../index.css";
+
+.main {
+  /* height: 100vh;
+  height: 100svh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* height: 100vh; */
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  height: 8vh;
+  padding: 1rem;
+  /* gap: 1rem; */
+  border: 1px solid black;
+  width: 70%;
+  max-width: 100%;
+  margin-top: 1rem;
+  border-radius: 3rem;
+  position: fixed;
+  z-index: 100;
+  background-color: var(--background);
+}
+.header-logo-container {
+  height: 100%;
+  /* width: 5%; */
+  position: relative;
+  display: flex;
+  padding-left: 12px;
+}
+
+.header-logo-backdrop {
+  height: 0;
+  width: 0;
+  background-color: black;
+}
+
+.header-logo-container img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+  /* width: 100%; */
+  gap: 1.7rem;
+  /* width: 50%; */
+}
+
+.header nav ul li div {
+  height: 100%;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.header-contact-button {
+  background-color: var(--accent);
+  color: white;
+  padding: 1rem;
+  border-radius: 3rem;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  margin: 0.45rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.footer-container {
+  width: 100%;
+  /* height: 65vh;
+  height: 65svh; */
+  height: 700px;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.footer {
+  width: 100%;
+  height: 700px;
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(87, 87, 87);
+}
