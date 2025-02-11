@@ -42,14 +42,14 @@ function Header({ scrollYProgress, normalizedY }) {
   // const { scrollYProgress } = useScroll();
 
   const width = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [1200, 3000]),
+    useTransform(scrollYProgress, [0, 0.02], [1300, 3000]),
     {
       stiffness: 200,
       damping: 20,
     }
   );
   const borderRadius = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
-  const margin = useTransform(scrollYProgress, [0, 0.1], [10, 0]);
+  const margin = useTransform(scrollYProgress, [0, 0.06], [20, 0]);
   const borderAll = useTransform(scrollYProgress, [0, 0.3], ["2px", "0px"]);
   const borderBottomWidth = useTransform(
     scrollYProgress,
