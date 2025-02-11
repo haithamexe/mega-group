@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../styles/home.css";
+import { MoveUp } from "lucide-react";
 
 function Home() {
   const [scrollToElement, setScrollToElement] = useState("");
+  const [scrollToTop, setScrollToTop] = useState(false);
+  const [showScrollToTop, setShowScrollToTop] = useState(true);
 
   useEffect(() => {
     if (scrollToElement === "") return;
@@ -13,9 +16,29 @@ function Home() {
     setScrollToElement("");
   }, [scrollToElement]);
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 1200) {
+        setShowScrollToTop(true);
+      } else {
+        setShowScrollToTop(false);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (scrollToTop) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      setScrollToTop(false);
+    }
+  }, [scrollToTop]);
+
   return (
     <div className="home">
-      <div className="home-hero">
+      <div className="home-hero" id="home-hero">
         <video
           autoPlay
           muted
@@ -62,6 +85,20 @@ function Home() {
             <a href="#contact_us">CONTACT US</a>
           </li> */}
         </ul>
+      </div>
+      <div
+        onClick={() => setScrollToTop(true)}
+        className="home-scroll-to-top"
+        style={{ display: showScrollToTop ? "block" : "none" }}
+      >
+        <MoveUp
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+          size="30"
+        />
+        {/* <button onClick={() => setScrollToTop(true)}>Scroll to Top</button> */}
       </div>
       <div className="home-mission" id="mission">
         <div className="home-mission-inner">

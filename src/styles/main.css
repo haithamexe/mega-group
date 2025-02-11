@@ -115,6 +115,25 @@
   border: none;
 }
 
+.home-scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  font-size: 1rem;
+  padding: 9px;
+  border-radius: 20%;
+  /* font-weight: 300; */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
 .footer-container {
   width: 100%;
   /* height: 65vh;
