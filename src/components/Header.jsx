@@ -57,6 +57,16 @@ function Header({ scrollYProgress, normalizedY }) {
     ["2px", "1px"]
   );
 
+  const itemPadding = useSpring(
+    useTransform(scrollYProgress, [0, 0.1], [0, 7]),
+    {
+      stiffness: 200,
+      damping: 10,
+    }
+  );
+
+  const topValue = useTransform(normalizedY, [0, 200], ["45px", "0px"]);
+
   const handleContactClick = () => {
     console.log("Contact Us");
   };
@@ -72,13 +82,25 @@ function Header({ scrollYProgress, normalizedY }) {
       }}
       className="header"
     >
-      <LogoEffect normalizedY={normalizedY} scrollYProgress={scrollYProgress} />
+      <LogoEffect
+        normalizedY={normalizedY}
+        scrollYProgress={scrollYProgress}
+        topValue={topValue}
+      />
       <nav>
         <ul className="header-links">
           {links.map((link) => (
             <li key={link.url}>
               <Link to={link.url}>
-                <div>{link.text}</div>
+                <motion.div
+                  style={{
+                    padding: itemPadding,
+                    paddingBottom: "0px",
+                    paddingTop: "0px",
+                  }}
+                >
+                  {link.text}
+                </motion.div>
               </Link>
             </li>
           ))}

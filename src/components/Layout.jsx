@@ -16,7 +16,7 @@ function Layout() {
     console.log("scroll value:", latest);
   });
 
-  const normalizedY = useTransform(scrollYProgress, [0, 1], [0, 30]);
+  const normalizedY = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
   return (
     <div className="main">

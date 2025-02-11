@@ -2,8 +2,133 @@
 
 .home {
   width: 100%;
+  /* height: 100vh;
+  height: 100svh; */
+
+  background-color: var(--background);
+  /* background-image: url("/public/videos/stock-footage-abstract-blue-light-explosion-that-expands-in-space-forming-a-human-eye-concept-of-technological.webm"); */
+  /* background-color: rgb(105, 114, 153); */
+}
+
+.home-hero {
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+  padding: 0 25%; */
+  /* width: 100%;
+  height: 100%; */
   height: 100vh;
   height: 100svh;
-  padding-top: 10vh;
-  background-color: rgb(105, 114, 153);
+}
+.home-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-hero-content-inner {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  gap: 3rem 0;
+  width: 55%;
+  /* height: 100%; */
+  /* padding: 0 20%; */
+}
+
+.home-hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+}
+.home-hero-content p {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 200;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.home-nav ul {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 3rem;
+  /* border: 1px solid var(--text-secondary); */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.home-nav ul li a {
+  color: var(--text-tertiary);
+  font-size: 1.6rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.home-nav ul li a:hover {
+  color: var(--accent);
+  transition: color 0.7s;
+}
+
+.home-nav ul li div {
+  color: white;
+  cursor: pointer;
+}
+
+.home-mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  height: 100vh;
+  padding: 0 25%;
+}
+.home-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  height: 100vh;
+  padding: 0 25%;
+}
+.home-why-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  height: 100vh;
+  padding: 0 25%;
+}
+.home-clients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  height: 100vh;
+  padding: 0 25%;
 }
