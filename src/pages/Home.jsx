@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/home.css";
 
 function Home() {
+  const [scrollToElement, setScrollToElement] = useState("");
+
+  useEffect(() => {
+    if (scrollToElement === "") return;
+    window.scrollTo({
+      top: document.getElementById(scrollToElement).offsetTop,
+      behavior: "smooth",
+    });
+    setScrollToElement("");
+  }, [scrollToElement]);
+
   return (
     <div className="home">
       <div className="home-hero">
@@ -28,22 +39,22 @@ function Home() {
         <ul>
           <li>
             <div>
-              <a href="#mission">MISSION</a>
+              <a onClick={() => setScrollToElement("mission")}>MISSION</a>
             </div>
           </li>
           <li>
             <div>
-              <a href="#services">SERVICES</a>
+              <a onClick={() => setScrollToElement("services")}>SERVICES</a>
             </div>
           </li>
           <li>
             <div>
-              <a href="#why_us">WHY US</a>
+              <a onClick={() => setScrollToElement("why_us")}>WHY US</a>
             </div>
           </li>
           <li>
             <div>
-              <a href="#clients">CLIENTS</a>
+              <a onClick={() => setScrollToElement("clients")}>CLIENTS</a>
             </div>
           </li>
           {/* need to add the contact us section as Link*/}
