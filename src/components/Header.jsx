@@ -50,11 +50,11 @@ function Header({ scrollYProgress, normalizedY }) {
   );
   const borderRadius = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
   const margin = useTransform(scrollYProgress, [0, 0.06], [20, 0]);
-  const borderAll = useTransform(scrollYProgress, [0, 0.3], ["2px", "0px"]);
+  const borderAll = useTransform(scrollYProgress, [0, 0.3], ["0px", "0px"]);
   const borderBottomWidth = useTransform(
     scrollYProgress,
     [0, 0.1],
-    ["2px", "1px"]
+    ["0px", "1px"]
   );
 
   const itemPadding = useSpring(
