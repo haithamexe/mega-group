@@ -10,7 +10,7 @@ function Home() {
           muted
           loop
           playsInline
-          src="/public/videos/stock-footage-spinning-rings-with-blue-sky-slow-abstract-animation-with-a-blue-and-green-sky-as-background.webm "
+          src="/videos/stock-footage-spinning-rings-with-blue-sky-slow-abstract-animation-with-a-blue-and-green-sky-as-background.webm "
         />
         <div className="home-hero-content">
           <div className="home-hero-content-inner">
