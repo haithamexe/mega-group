@@ -75,7 +75,7 @@ function Header({ scrollYProgress, normalizedY }) {
 
   const background = useTransform(
     scrollYProgress,
-    [0, 0.06],
+    [0, 0.03],
     ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 1)"]
   );
 
@@ -96,7 +96,7 @@ function Header({ scrollYProgress, normalizedY }) {
     <motion.div
       style={{
         width: width,
-        borderRadius: borderRadius,
+        // borderRadius: borderRadius,
         margin: margin,
         paddingLeft: paddingleft,
         paddingRight: paddingright,
