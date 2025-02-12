@@ -44,7 +44,7 @@ function Home() {
           muted
           loop
           playsInline
-          src="../../public/videos/stock-footage-blurred-blue-background-with-diagonal-light-streaks-suitable-for-technology-or-abstract-designs.webm"
+          src="/videos/stock-footage-blurred-blue-background-with-diagonal-light-streaks-suitable-for-technology-or-abstract-designs.webm"
         />
         <div className="home-hero-content">
           <div className="home-hero-content-inner">
