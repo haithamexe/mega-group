@@ -26,8 +26,9 @@
   background: rgb(2, 0, 36);
   background: linear-gradient(
     -180deg,
-    rgb(0, 33, 143) 20%,
-    rgb(181, 225, 255) 100%
+    rgb(0, 33, 82) 20%,
+    rgb(177, 224, 255) 80%,
+    rgb(255, 255, 255) 100%
   );
 }
 .home-hero video {
@@ -82,7 +83,7 @@
   list-style: none;
   gap: 3rem;
   /* border: 1px solid var(--text-secondary); */
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 15px 0 rgba(56, 56, 56, 0.2);
 }
 
 .home-nav ul li a {

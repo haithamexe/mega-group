@@ -40,10 +40,13 @@
   object-fit: contain;
   position: relative;
   z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* width: 100%; */
 }
 .header-logo-img-container img {
-  height: 100%;
+  height: 90%;
   width: 100%;
   object-fit: contain;
 }
