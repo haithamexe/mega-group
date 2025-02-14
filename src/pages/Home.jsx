@@ -1,11 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles/home.css";
-import { MoveUp } from "lucide-react";
+import { MoveUp, MoveRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 function Home() {
+  const servicesRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: servicesRef,
+    offset: ["end center", "start start"],
+  });
+  const { scrollYProgress: scrollMission } = useScroll({});
+
+  const { scrollY } = useScroll();
+  const paddingTop = useTransform(scrollYProgress, [0, 0.1], [0, 11], {
+    clamp: false,
+  });
+  const missionTop = useTransform(scrollMission, [0, 0.1], [-350, -240], {
+    clamp: false,
+  });
+
   const [scrollToElement, setScrollToElement] = useState("");
   const [scrollToTop, setScrollToTop] = useState(false);
-  const [showScrollToTop, setShowScrollToTop] = useState(true);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   useEffect(() => {
     if (scrollToElement === "") return;
@@ -36,6 +52,41 @@ function Home() {
     }
   }, [scrollToTop]);
 
+  const handleScrollToBottom = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  };
+
+  function smoothScrollToTop(duration = 1000) {
+    const startY = window.scrollY; // Get current scroll position
+    let startTime = null;
+
+    function easeInOutQuad(t) {
+      return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    }
+
+    function scrollStep(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1); // Normalize progress (0 to 1)
+
+      // Apply easing
+      const easedProgress = easeInOutQuad(progress);
+
+      // Scroll to top based on eased progress
+      window.scrollTo(0, startY * (1 - easedProgress));
+
+      // Continue animation if not complete
+      if (progress < 1) {
+        requestAnimationFrame(scrollStep);
+      }
+    }
+
+    requestAnimationFrame(scrollStep);
+  }
+
   return (
     <div className="home">
       <div className="home-hero" id="home-hero">
@@ -44,10 +95,12 @@ function Home() {
           muted
           loop
           playsInline
-          src="/videos/stock-footage-blurred-blue-background-with-diagonal-light-streaks-suitable-for-technology-or-abstract-designs.webm"
+          src="../../public/videos/stock-footage-abstract-grey-and-white-clouds-gradient-background.webm"
+          // src="../../public/videos/stock-footage-blurred-blue-background-with-diagonal-light-streaks-suitable-for-technology-or-abstract-designs.webm"
         />
         <div className="home-hero-content">
           <div className="home-hero-content-inner">
+            <h2>Mega Group</h2>
             <h1>Turn Your Ideas into a Thriving Business</h1>
             <p>
               At MEGA, we help entrepreneurs and businesses build, grow, and
@@ -58,36 +111,37 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="home-nav">
+      {/* <div className="home-nav">
         <ul>
           <li>
             <div>
-              <a onClick={() => setScrollToElement("mission")}>MISSION</a>
+              <a onClick={() => setScrollToElement("mission")}>Mission</a>
             </div>
           </li>
           <li>
             <div>
-              <a onClick={() => setScrollToElement("services")}>SERVICES</a>
+              <a onClick={() => setScrollToElement("services")}>Services</a>
             </div>
           </li>
           <li>
             <div>
-              <a onClick={() => setScrollToElement("why_us")}>WHY US</a>
+              <a onClick={() => setScrollToElement("why_us")}>Why Us</a>
             </div>
           </li>
           <li>
             <div>
-              <a onClick={() => setScrollToElement("clients")}>CLIENTS</a>
+              <a onClick={() => setScrollToElement("clients")}>Clients</a>
             </div>
           </li>
-          {/* need to add the contact us section as Link*/}
-          {/* <li>
-            <a href="#contact_us">CONTACT US</a>
-          </li> */}
+          <li>
+            <div>
+              <a onClick={handleScrollToBottom}>Language</a>
+            </div>
+          </li>
         </ul>
-      </div>
+      </div> */}
       <div
-        onClick={() => setScrollToTop(true)}
+        onClick={() => smoothScrollToTop(1600)}
         className="home-scroll-to-top"
         style={{ display: showScrollToTop ? "block" : "none" }}
       >
@@ -100,26 +154,137 @@ function Home() {
         />
         {/* <button onClick={() => setScrollToTop(true)}>Scroll to Top</button> */}
       </div>
-      <div className="home-mission" id="mission">
+      <motion.div
+        animate={{
+          top: -350,
+        }}
+        initial={{
+          top: 0,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        style={{
+          top: missionTop,
+        }}
+        className="home-mission"
+        id="mission"
+      >
         <div className="home-mission-inner">
-          <h2>Our Mission</h2>
           <p>
-            Our mission is to help businesses and entrepreneurs build, grow, and
-            scale with expert branding, marketing, web design, and digital
-            transformation strategies. We believe in the power of creativity,
-            innovation, and collaboration to help you turn your ideas into a
-            thriving business.
+            Our mission is to empower entrepreneurs and businesses by providing
+            cutting-edge branding, marketing, web design, and digital
+            transformation solutions. We believe in turning ideas into impactful
+            brands and ensuring every business has the tools, strategy, and
+            digital presence needed to thrive in today’s competitive landscape.
           </p>
+          <img src="/images/stock-vector-business-growth-abstract-concept-vector-illustration-set-goals-motivation-and-collaboration-1823345309.png" />
         </div>
-      </div>
+      </motion.div>
       <div className="home-services" id="services">
-        <h2>Our Services</h2>
-        <p>
-          We offer a range of services to help you build, grow, and scale your
-          business. From branding and marketing to web design and digital
-          transformation, we have the expertise and experience to take you to
-          the next level.
-        </p>
+        <motion.div
+          whileInView={{ paddingTop: 0 }}
+          initial={{ paddingTop: 140 }}
+          viewport={{
+            amount: "some",
+          }}
+          className="home-services-hero"
+        >
+          <motion.h1>Services</motion.h1>
+          <motion.div
+            style={{
+              paddingTop: paddingTop,
+            }}
+            className="home-services-content"
+            ref={servicesRef}
+          >
+            <h2>We help businesses build, grow, and scale.</h2>
+            <p>Explore Services</p>
+            <p>Inquire now</p>
+          </motion.div>
+        </motion.div>
+        <div className="home-services-inner">
+          <div className="home-service">
+            <img src="/images/mega-logo-blue.png" />
+            <div className="home-service-content">
+              <h3>Branding</h3>
+              <p>
+                Our branding experts can help you create a brand that resonates
+                with your target audience, communicates your values, and sets
+                you apart from the competition.
+              </p>
+            </div>
+            <div className="home-service-explore">
+              {/* <a>Explore</a> */}
+              <MoveRight size="30" />
+            </div>
+          </div>
+          <div className="home-service odd-service">
+            <img src="/images/mega-logo-blue.png" />
+            <div className="home-service-content">
+              <h3>Marketing</h3>
+              <p>
+                From social media marketing to SEO, our marketing team can help
+                you reach your target audience, drive traffic, and generate
+                leads.
+              </p>
+            </div>
+          </div>
+          <div className="home-service ">
+            <img src="/images/mega-logo-blue.png" />
+            <div className="home-service-content">
+              <h3>Graphic Design</h3>
+              <p>
+                Our graphic designers can help you create stunning visuals from
+                UI to UX or any other design you are looking for that helps
+                capture attention, communicate your message, and elevate your
+                brand.
+              </p>
+            </div>
+          </div>
+          <div className="home-service odd-service ">
+            <img src="/images/mega-logo-blue.png" />
+            <div className="home-service-content">
+              <h3>Digital Transformation</h3>
+              <p>
+                Our digital transformation experts can help you leverage the
+                power of technology to streamline your operations, improve
+                efficiency, and drive growth.
+              </p>
+            </div>
+          </div>
+          <div className="home-service ">
+            <img src="/images/mega-logo-blue.png" />
+            <div className="home-service-content">
+              <h3>Social Media Management</h3>
+              <p>
+                Our social media experts can help you create engaging content,
+                build a loyal following, and drive traffic to your website.
+              </p>
+            </div>
+          </div>
+          <div className="home-service  odd-service">
+            <img src="/images/mega-logo-blue.png" />
+            <div className="home-service-content">
+              <h3>Software Development</h3>
+              <p>
+                Our software developers can help you build custom software
+                solutions like web, mobile or desktop apps that streamline your
+                operations, improve efficiency, and drive growth.
+              </p>
+            </div>
+          </div>
+          {/* <div className="home-service odd-service last-service">
+            <img src="/images/mega-logo-blue.png" />
+            <div className="home-service-content">
+              <h3>Consultation</h3>
+              <p>
+                Our business consultants can help you identify opportunities,
+                overcome challenges, and achieve your business goals.
+              </p>
+            </div>
+          </div> */}
+        </div>
       </div>
       <div className="home-why-us" id="why_us">
         <h2>Why Us</h2>

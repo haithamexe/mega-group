@@ -5,77 +5,46 @@ function Footer() {
   return (
     <div className="footer-container">
       <div className="footer">
-        <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About</li>
-            <li>Jobs</li>
-            <li>Press</li>
-          </ul>
+        <div className="">hello sir</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+        <div className="">hello</div>
+
+        <div className="footer-head">
+          <div className="footer-links"></div>
         </div>
-        <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About</li>
-            <li>Jobs</li>
-            <li>Press</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About</li>
-            <li>Jobs</li>
-            <li>Press</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About</li>
-            <li>Jobs</li>
-            <li>Press</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About</li>
-            <li>Jobs</li>
-            <li>Press</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About</li>
-            <li>Jobs</li>
-            <li>Press</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About</li>
-            <li>Jobs</li>
-            <li>Press</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About</li>
-            <li>Jobs</li>
-            <li>Press</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Company</h3>
-          <ul>
-            <li>About</li>
-            <li>Jobs</li>
-            <li>Press</li>
-          </ul>
+        <div className="footer-foot">
+          <div className="footer-address">
+            <div className="adresses"></div>
+            <div className="footer-logo"></div>
+          </div>
+          <div className="footer-contact"></div>
         </div>
       </div>
     </div>

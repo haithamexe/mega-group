@@ -7,12 +7,12 @@ function LogoEffect({ normalizedY, scrollYProgress, topValue }) {
     <div className="header-logo-container">
       <Link to="/">
         <div className="header-logo-backdrop-container">
-          <motion.div
+          {/* <motion.div
             className="header-logo-backdrop"
             style={{
               top: topValue,
             }}
-          ></motion.div>
+          ></motion.div> */}
           {/* <div className="header-logo-backdrop-white" style={{}}></div>
           <div className="header-logo-backdrop-white-2" style={{}}></div> */}
         </div>

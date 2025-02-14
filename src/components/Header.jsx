@@ -13,28 +13,28 @@ import {
 const links = [
   {
     url: "/",
-    text: "Home",
+    text: "HOME",
   },
   {
     url: "/services",
-    text: "Services",
+    text: "SERVICES",
   },
   {
     url: "/prices",
-    text: "Prices",
+    text: "PRICES",
   },
   {
-    url: "/ourworks",
-    text: "Our Works",
+    url: "/ourwork",
+    text: "OUR WORK",
   },
   {
     url: "/contact",
-    text: "Contact",
+    text: "CONTACT",
   },
 
   {
     url: "/about",
-    text: "About",
+    text: "ABOUT",
   },
 ];
 
@@ -122,10 +122,15 @@ function Header({ scrollYProgress, normalizedY }) {
                     padding: itemPadding,
                     paddingBottom: "0px",
                     paddingTop: "0px",
-                    color: color,
                   }}
                 >
-                  {link.text}
+                  <motion.h1
+                    style={{
+                      color: color,
+                    }}
+                  >
+                    {link.text}
+                  </motion.h1>
                 </motion.div>
               </Link>
             </li>
