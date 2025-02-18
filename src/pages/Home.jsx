@@ -23,6 +23,8 @@ function Home() {
   const [scrollToTop, setScrollToTop] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
+  const topVar = -350;
+
   useEffect(() => {
     if (scrollToElement === "") return;
     window.scrollTo({
@@ -100,7 +102,6 @@ function Home() {
         />
         <div className="home-hero-content">
           <div className="home-hero-content-inner">
-            <h2>Mega Group</h2>
             <h1>Turn Your Ideas into a Thriving Business</h1>
             <p>
               At MEGA, we help entrepreneurs and businesses build, grow, and
@@ -154,7 +155,7 @@ function Home() {
         />
         {/* <button onClick={() => setScrollToTop(true)}>Scroll to Top</button> */}
       </div>
-      <motion.div
+      {/* <motion.div
         animate={{
           top: -350,
         }}
@@ -180,7 +181,76 @@ function Home() {
           </p>
           <img src="/images/stock-vector-business-growth-abstract-concept-vector-illustration-set-goals-motivation-and-collaboration-1823345309.png" />
         </div>
-      </motion.div>
+      </motion.div> */}
+      <div className="home-mission-container">
+        <motion.div
+          animate={{
+            left: 0,
+            opacity: 1,
+          }}
+          initial={{
+            top: topVar,
+            left: -400,
+            opacity: 0,
+          }}
+          transition={{
+            duration: 1.3,
+          }}
+          style={{
+            top: missionTop,
+          }}
+          className="home-mission"
+          id="mission"
+        >
+          <div className="home-mission-inner">
+            <img src="/images/stock-vector-business-growth-abstract-concept-vector-illustration-set-goals-motivation-and-collaboration-1823345309.png" />
+          </div>
+        </motion.div>
+        <motion.div
+          animate={{
+            top: -350,
+          }}
+          initial={{
+            top: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          // style={{
+          //   top: missionTop,
+          // }}
+          className="home-mission"
+          id="mission"
+        >
+          <div className="home-mission-inner">
+            <img src="/images/stock-vector-business-growth-abstract-concept-vector-illustration-set-goals-motivation-and-collaboration-1823345309.png" />
+          </div>
+        </motion.div>
+        <motion.div
+          animate={{
+            right: 0,
+            opacity: 1,
+          }}
+          initial={{
+            top: topVar,
+            right: -400,
+            opacity: 0,
+          }}
+          transition={{
+            duration: 1.2,
+          }}
+          style={{
+            top: missionTop,
+          }}
+          className="home-mission"
+          id="mission"
+        >
+          <div className="home-mission-inner">
+            <img src="/images/stock-vector-business-growth-abstract-concept-vector-illustration-set-goals-motivation-and-collaboration-1823345309.png" />
+          </div>
+        </motion.div>
+      </div>
+
       <div className="home-services" id="services">
         <motion.div
           whileInView={{ paddingTop: 0 }}

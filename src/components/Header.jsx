@@ -139,7 +139,8 @@ function Header({ scrollYProgress, normalizedY }) {
       </nav>
       <button className="header-contact-button" onClick={handleContactClick}>
         {/* <svg></svg> */}
-        Contact Us
+        <h4>Contact Us</h4>
+        <i class="fa-brands fa-whatsapp"></i>
       </button>
     </motion.div>
   );
