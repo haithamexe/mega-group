@@ -2,8 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/home.css";
 import { MoveUp, MoveRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
+import { useOutletContext } from "react-router-dom";
 
 function Home() {
+  const { forceSmoothScroll } = useOutletContext();
+
   const servicesRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: servicesRef,
@@ -61,32 +64,11 @@ function Home() {
     });
   };
 
-  function smoothScrollToTop(duration = 1000) {
-    const startY = window.scrollY; // Get current scroll position
-    let startTime = null;
-
-    function easeInOutQuad(t) {
-      return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-    }
-
-    function scrollStep(timestamp) {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(elapsed / duration, 1); // Normalize progress (0 to 1)
-
-      // Apply easing
-      const easedProgress = easeInOutQuad(progress);
-
-      // Scroll to top based on eased progress
-      window.scrollTo(0, startY * (1 - easedProgress));
-
-      // Continue animation if not complete
-      if (progress < 1) {
-        requestAnimationFrame(scrollStep);
-      }
-    }
-
-    requestAnimationFrame(scrollStep);
+  function smoothScrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
 
   return (
@@ -142,7 +124,7 @@ function Home() {
         </ul>
       </div> */}
       <div
-        onClick={() => smoothScrollToTop(1600)}
+        onClick={forceSmoothScroll}
         className="home-scroll-to-top"
         style={{ display: showScrollToTop ? "block" : "none" }}
       >

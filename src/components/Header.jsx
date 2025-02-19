@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/main.css";
 import LogoEffect from "./LogoEffect";
@@ -28,24 +28,24 @@ const links = [
     text: "OUR WORK",
   },
   {
-    url: "/contact",
-    text: "CONTACT",
-  },
-
-  {
     url: "/about",
     text: "ABOUT",
+  },
+  {
+    url: "/contact",
+    text: "CONTACT",
   },
 ];
 
 function Header({ scrollYProgress, normalizedY }) {
   // const { scrollYProgress } = useScroll();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const width = useSpring(
     useTransform(scrollYProgress, [0, 0.01], [1300, 3000]),
     {
-      stiffness: 200,
-      damping: 20,
+      stiffness: 400,
+      damping: 40,
     }
   );
   const borderRadius = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
@@ -53,19 +53,19 @@ function Header({ scrollYProgress, normalizedY }) {
   const borderAll = useTransform(scrollYProgress, [0, 0.3], ["0px", "0px"]);
   const borderBottomWidth = useTransform(
     scrollYProgress,
-    [0, 0.1],
+    [0, 0.2],
     ["0px", "1px"]
   );
 
   const itemPadding = useSpring(
     useTransform(scrollYProgress, [0, 0.1], [0, 7]),
     {
-      stiffness: 200,
-      damping: 10,
+      stiffness: 500,
+      damping: 30,
     }
   );
 
-  const topValue = useTransform(normalizedY, [0, 200], ["45px", "0px"]);
+  const topValue = useTransform(normalizedY, [0, 200], ["-10px", "10px"]);
 
   const handleContactClick = () => {
     console.log("Contact Us");
@@ -95,15 +95,14 @@ function Header({ scrollYProgress, normalizedY }) {
   return (
     <motion.div
       style={{
-        width: width,
-        // borderRadius: borderRadius,
+        // width: width,
         margin: margin,
-        paddingLeft: paddingleft,
-        paddingRight: paddingright,
-
+        // paddingLeft: paddingleft,
+        // paddingRight: paddingright,
         borderWidth: borderAll,
         borderBottomWidth: borderBottomWidth,
         backgroundColor: background,
+        // borderRadius: borderRadius,
       }}
       className="header"
     >
@@ -118,18 +117,29 @@ function Header({ scrollYProgress, normalizedY }) {
             <li key={link.url}>
               <Link to={link.url}>
                 <motion.div
-                  style={{
-                    padding: itemPadding,
-                    paddingBottom: "0px",
-                    paddingTop: "0px",
-                  }}
+                  style={
+                    {
+                      // padding: itemPadding,
+                      // paddingBottom: "0px",
+                      // paddingTop: "0px",
+                    }
+                  }
                 >
                   <motion.h1
                     style={{
                       color: color,
                     }}
                   >
-                    {link.text}
+                    {link.text !== "CONTACT" ? (
+                      <h1>{link.text}</h1>
+                    ) : (
+                      <div
+                        className="header-contact-button"
+                        onClick={handleContactClick}
+                      >
+                        <h1>{link.text}</h1>
+                      </div>
+                    )}
                   </motion.h1>
                 </motion.div>
               </Link>
@@ -137,11 +147,11 @@ function Header({ scrollYProgress, normalizedY }) {
           ))}
         </ul>
       </nav>
-      <button className="header-contact-button" onClick={handleContactClick}>
-        {/* <svg></svg> */}
-        <h4>Contact Us</h4>
-        <i class="fa-brands fa-whatsapp"></i>
-      </button>
+      {/* <button className="header-contact-button" onClick={handleContactClick}> */}
+      {/* <svg></svg> */}
+      {/* <h4>Contact Us</h4> */}
+      {/* <i className="fa-brands fa-whatsapp"></i> */}
+      {/* </button> */}
     </motion.div>
   );
 }

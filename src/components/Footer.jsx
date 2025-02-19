@@ -90,9 +90,9 @@ function Footer() {
               <p>Istanbul, bubuduzu, 12345</p>
             </div>
             <div className="footer-socials">
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-whatsapp"></i>
+              <i className="fa-brands fa-instagram"></i>
+              <i className="fa-brands fa-facebook"></i>
+              <i className="fa-brands fa-whatsapp"></i>
             </div>
             <div className="footer-logo">
               {/* <img
