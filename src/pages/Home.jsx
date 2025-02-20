@@ -8,6 +8,7 @@ import {
   useTransform,
 } from "motion/react";
 import { useOutletContext } from "react-router-dom";
+import ContactContainer from "../components/ContactContainer";
 
 function Home() {
   const { forceSmoothScroll, stopLenis, startLenis } = useOutletContext();
@@ -202,6 +203,7 @@ function Home() {
           id="mission"
         >
           <div className="home-mission-inner">
+            <h1>Build Better</h1>
             <img src="/images/stock-vector-business-growth-abstract-concept-vector-illustration-set-goals-motivation-and-collaboration-1823345309.png" />
           </div>
         </motion.div>
@@ -222,6 +224,8 @@ function Home() {
           id="mission"
         >
           <div className="home-mission-inner">
+            <h1>Build Bigger</h1>
+
             <img src="/images/stock-vector-business-growth-abstract-concept-vector-illustration-set-goals-motivation-and-collaboration-1823345309.png" />
           </div>
         </motion.div>
@@ -245,6 +249,7 @@ function Home() {
           id="mission"
         >
           <div className="home-mission-inner">
+            <h1>Build Smarter</h1>
             <img src="/images/stock-vector-business-growth-abstract-concept-vector-illustration-set-goals-motivation-and-collaboration-1823345309.png" />
           </div>
         </motion.div>
@@ -543,13 +548,16 @@ function Home() {
         </motion.div>
       </div>
       <div className="home-clients" id="clients">
-        <h2>Our Clients</h2>
-        <p>
-          We’ve had the privilege of working with some amazing clients over the
-          years. From startups to Fortune 500 companies, we’ve helped businesses
-          of all sizes build, grow, and scale with expert branding, marketing,
-          web design, and digital transformation strategies.
-        </p>
+        <div className="home-clients-inner">
+          <h2>Our Clients</h2>
+          <p>
+            We’ve had the privilege of working with some amazing clients over
+            the years. From startups to Fortune 500 companies, we’ve helped
+            businesses of all sizes build, grow, and scale with expert branding,
+            marketing, web design, and digital transformation strategies.
+          </p>
+        </div>
+        <ContactContainer />
       </div>
     </div>
   );

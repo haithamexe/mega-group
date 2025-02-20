@@ -83,13 +83,16 @@ function Footer() {
               <h1>Libya</h1>
               <p>1234 Street Name</p>
               <p>trablus, al3asma, 12345</p>
+              <p>276 33 10 535 90+</p>
             </div>
             <div className="footer-address">
               <h1>Turkey</h1>
               <p>1234 Street Name</p>
               <p>Istanbul, bubuduzu, 12345</p>
+              <p>276 33 10 535 90+</p>
             </div>
             <div className="footer-socials">
+              <p></p>
               <i className="fa-brands fa-instagram"></i>
               <i className="fa-brands fa-facebook"></i>
               <i className="fa-brands fa-whatsapp"></i>

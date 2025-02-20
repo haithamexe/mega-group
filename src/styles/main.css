@@ -147,6 +147,7 @@
   /* height: 100%; */
   padding: 0.5rem 1rem;
   border-radius: 2px;
+  color: white;
 }
 
 /* .home-scroll-to-top {
@@ -225,12 +226,12 @@
   display: flex;
   margin-top: auto;
   height: 100%;
-  gap: 1rem;
+  gap: 1.2rem;
   padding-bottom: 3px;
   padding-left: 0.5rem;
 }
 .footer-socials {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .footer-contact {
