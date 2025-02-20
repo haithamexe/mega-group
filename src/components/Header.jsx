@@ -131,13 +131,13 @@ function Header({ scrollYProgress, normalizedY }) {
                     }}
                   >
                     {link.text !== "CONTACT" ? (
-                      <h1>{link.text}</h1>
+                      link.text
                     ) : (
                       <div
                         className="header-contact-button"
                         onClick={handleContactClick}
                       >
-                        <h1>{link.text}</h1>
+                        {link.text}
                       </div>
                     )}
                   </motion.h1>

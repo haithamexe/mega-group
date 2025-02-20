@@ -36,6 +36,14 @@ function Layout() {
     }
   };
 
+  const stopLenis = () => {
+    lenis.stop();
+  };
+
+  const startLenis = () => {
+    lenis.start();
+  };
+
   return (
     <ReactLenis
       root
@@ -45,7 +53,13 @@ function Layout() {
     >
       <div className="main">
         <Header scrollYProgress={scrollYProgress} normalizedY={normalizedY} />
-        <Outlet context={{ forceSmoothScroll }} />
+        <Outlet
+          context={{
+            forceSmoothScroll,
+            stopLenis,
+            startLenis,
+          }}
+        />
         <Footer />
       </div>
     </ReactLenis>

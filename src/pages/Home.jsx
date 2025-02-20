@@ -1,11 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/home.css";
 import { MoveUp, MoveRight } from "lucide-react";
-import { motion, useScroll, useTransform } from "motion/react";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { useOutletContext } from "react-router-dom";
 
 function Home() {
-  const { forceSmoothScroll } = useOutletContext();
+  const { forceSmoothScroll, stopLenis, startLenis } = useOutletContext();
 
   const servicesRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -13,12 +18,13 @@ function Home() {
     offset: ["end center", "start start"],
   });
   const { scrollYProgress: scrollMission } = useScroll({});
+  const { scrollYProgress: scrollWhyUs } = useScroll({});
 
   const { scrollY } = useScroll();
   const paddingTop = useTransform(scrollYProgress, [0, 0.1], [0, 11], {
     clamp: false,
   });
-  const missionTop = useTransform(scrollMission, [0, 0.1], [-350, -240], {
+  const missionTop = useTransform(scrollMission, [0, 0.1], [-370, -170], {
     clamp: false,
   });
 
@@ -26,7 +32,13 @@ function Home() {
   const [scrollToTop, setScrollToTop] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
-  const topVar = -350;
+  const topVar = -320;
+
+  const [whyUsscrollValue, setWhyUsScrollValue] = useState(0);
+
+  const paddingRightWhyUs = useTransform(scrollWhyUs, [0, 0.1], [0, 100], {
+    clamp: false,
+  });
 
   useEffect(() => {
     if (scrollToElement === "") return;
@@ -47,6 +59,11 @@ function Home() {
     });
   }, []);
 
+  useMotionValueEvent(scrollWhyUs, "change", (latest) => {
+    console.log("scroll value for why:", latest);
+    setWhyUsScrollValue(latest);
+  });
+
   useEffect(() => {
     if (scrollToTop) {
       window.scrollTo({
@@ -64,12 +81,12 @@ function Home() {
     });
   };
 
-  function smoothScrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
+  // function smoothScrollToTop() {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // }
 
   return (
     <div className="home">
@@ -84,7 +101,7 @@ function Home() {
         />
         <div className="home-hero-content">
           <div className="home-hero-content-inner">
-            <h1>Turn Your Ideas into a Thriving Business</h1>
+            <h1>Build Tomorrow, Today</h1>
             <p>
               At MEGA, we help entrepreneurs and businesses build, grow, and
               scale with expert branding, marketing, web design, and digital
@@ -190,7 +207,7 @@ function Home() {
         </motion.div>
         <motion.div
           animate={{
-            top: -350,
+            top: -370,
           }}
           initial={{
             top: 0,
@@ -338,14 +355,192 @@ function Home() {
           </div> */}
         </div>
       </div>
-      <div className="home-why-us" id="why_us">
-        <h2>Why Us</h2>
-        <p>
-          At MEGA, we’re more than just a branding and marketing agency. We’re a
-          team of experts who are passionate about helping businesses and
-          entrepreneurs succeed. With our creative solutions and innovative
-          strategies, we can help you turn your ideas into a thriving business.
-        </p>
+      <div className="home-why-us-wrapper">
+        <motion.div
+          className="home-why-us"
+          id="why_us"
+          whileInView={() => {
+            console.log("in view");
+          }}
+        >
+          <motion.div
+            initial={{
+              left: -150,
+            }}
+            transition={{
+              duration: 0.2,
+              ease: "easeIn",
+            }}
+            whileInView={{
+              left: 0,
+            }}
+            className="home-why-us-block one"
+          >
+            <h2>Why Us</h2>
+            <p>What sets us apart</p>
+          </motion.div>
+          <motion.div
+            initial={{
+              right: -150,
+            }}
+            transition={{
+              duration: 0.2,
+              ease: "easeIn",
+            }}
+            whileInView={{
+              right: 0,
+            }}
+            className={
+              whyUsscrollValue >= 0.44 && whyUsscrollValue < 0.48
+                ? "home-why-us-block two scrolled-block"
+                : "home-why-us-block two"
+            }
+          >
+            <h2>All-in-One Digital Help</h2>
+            <p>
+              We’ve helped retail, finance, and manufacturing businesses adapt
+              to the digital age. Every industry gets a tailored plan.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{
+              left: -150,
+            }}
+            transition={{
+              duration: 0.1,
+            }}
+            whileInView={{
+              left: 0,
+            }}
+            className={
+              whyUsscrollValue >= 0.48 && whyUsscrollValue < 0.522
+                ? "home-why-us-block three scrolled-block"
+                : "home-why-us-block three"
+            }
+          >
+            <h2>Proven Results</h2>
+            <p>
+              Clients save time, cut costs, and work smarter. We deliver what we
+              promise.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{
+              right: -150,
+            }}
+            transition={{
+              duration: 0.1,
+            }}
+            whileInView={{
+              right: 0,
+            }}
+            className={
+              whyUsscrollValue >= 0.522 && whyUsscrollValue < 0.562
+                ? "home-why-us-block four scrolled-block"
+                : "home-why-us-block four"
+            }
+          >
+            <h2>Flexible & Future-Proof</h2>
+            <p>
+              We build systems that grow with you. If your needs change, your
+              tools can adapt – no starting over.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{
+              left: -150,
+            }}
+            transition={{
+              duration: 0.1,
+            }}
+            whileInView={{
+              left: 0,
+            }}
+            className={
+              whyUsscrollValue >= 0.562 && whyUsscrollValue < 0.62
+                ? "home-why-us-block five scrolled-block"
+                : "home-why-us-block five"
+            }
+          >
+            <h2>Tools for Tomorrow</h2>
+            <p>
+              Stay ahead with technology that’s built to last, Easy-to-Use Tech:
+              Tools your team will actually enjoy, Always Protected: Guard
+              against online threats. We pick tech that works today and
+              tomorrow.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{
+              right: -150,
+            }}
+            transition={{
+              duration: 0.1,
+            }}
+            whileInView={{
+              right: 0,
+            }}
+            className={
+              whyUsscrollValue >= 0.62 && whyUsscrollValue < 0.642
+                ? "home-why-us-block six scrolled-block"
+                : "home-why-us-block six"
+            }
+          >
+            <h2>Teamwork First</h2>
+            <p>
+              You’re part of the process. We listen, collaborate, and build
+              solutions that fit your goals – not ours.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{
+              left: -150,
+            }}
+            transition={{
+              duration: 0.08,
+            }}
+            whileInView={{
+              left: 0,
+            }}
+            className={
+              whyUsscrollValue >= 0.642 && whyUsscrollValue < 0.682
+                ? "home-why-us-block seven scrolled-block"
+                : "home-why-us-block seven"
+            }
+          >
+            <h2>Fast & Reliable</h2>
+            <p>
+              In today’s fast-paced world, delays can cost you opportunities,
+              customers, and momentum. That’s why we’ve built our entire process
+              around speed without compromise. From day one, we work backward
+              from your deadlines, breaking projects into clear milestones with
+              built-in buffers for unexpected challenges. Our team uses proven
+              project management frameworks, like Agile and Scrum, to keep
+              workflows smooth and transparent.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{
+              right: -150,
+            }}
+            transition={{
+              duration: 0.08,
+            }}
+            whileInView={{
+              right: 0,
+            }}
+            className={
+              whyUsscrollValue >= 0.682 && whyUsscrollValue < 0.722
+                ? "home-why-us-block eight scrolled-block"
+                : "home-why-us-block eight"
+            }
+          >
+            <h2>Active Support</h2>
+            <p>
+              We’re here round the clock. Questions? Issues? We’ve got your back
+            </p>
+          </motion.div>
+        </motion.div>
       </div>
       <div className="home-clients" id="clients">
         <h2>Our Clients</h2>
