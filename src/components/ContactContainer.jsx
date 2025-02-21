@@ -26,7 +26,7 @@ function ContactContainer() {
               }}
               //make it so that it doesnt resize
             ></textarea>
-            <button onClick={handleSubmit}>Send</button>
+            <button onClick={handleSubmit}>Submit</button>
           </form>
         </div>
       </div>

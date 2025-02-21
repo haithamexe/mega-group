@@ -378,7 +378,8 @@
 }
 .one p {
   font-size: 1rem;
-  color: var(--text-primary);
+  color: var(--text-secondary);
+  text-align: left;
 }
 .two {
   grid-column: 2/6;
