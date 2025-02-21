@@ -25,6 +25,7 @@
 .contact-container p {
   color: var(--text-secondary);
   font-size: 1rem;
+  font-weight: 500;
   /* margin-bottom: 10px; */
 }
 
@@ -77,6 +78,10 @@
   cursor: pointer;
   font-family: "Montserrat";
   margin-top: 10px;
+  font-weight: 500;
+}
+.contact-container form button:hover {
+  background-color: var(--dark-blue);
 }
 
 .whatsapp-button {
@@ -93,6 +98,9 @@
   cursor: pointer;
   width: 100%;
   font-family: "Montserrat";
+}
+.whatsapp-button:hover {
+  background-color: rgb(26, 165, 56);
 }
 
 form input:focus {

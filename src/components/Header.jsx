@@ -9,6 +9,7 @@ import {
   useMotionValueEvent,
   useSpring,
 } from "motion/react";
+import { useHeaderContext } from "../context/HeaderProvider";
 
 const links = [
   {
@@ -40,6 +41,8 @@ const links = [
 function Header({ scrollYProgress, normalizedY }) {
   // const { scrollYProgress } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
+  const { currentPage, setCurrentPage } = useHeaderContext();
+  const [isHome, setIsHome] = useState(currentPage === "home");
 
   const width = useSpring(
     useTransform(scrollYProgress, [0, 0.01], [1300, 3000]),
@@ -49,7 +52,7 @@ function Header({ scrollYProgress, normalizedY }) {
     }
   );
   const borderRadius = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
-  const margin = useTransform(scrollYProgress, [0, 0.009], [20, 0]);
+  const margin = useTransform(scrollYProgress, [0, 0.03], [20, 0]);
   const borderAll = useTransform(scrollYProgress, [0, 0.3], ["0px", "0px"]);
   const borderBottomWidth = useTransform(
     scrollYProgress,
@@ -96,12 +99,30 @@ function Header({ scrollYProgress, normalizedY }) {
     <motion.div
       style={{
         // width: width,
-        margin: margin,
+        // ...(isHome ? { margin: margin } : { margin: 0 }),
         // paddingLeft: paddingleft,
         // paddingRight: paddingright,
         borderWidth: borderAll,
         borderBottomWidth: borderBottomWidth,
-        backgroundColor: background,
+
+        // backgroundColor: background,
+
+        ...(currentPage === "home"
+          ? {
+              backgroundColor: background,
+              margin: margin,
+              borderBottomWidth: borderBottomWidth,
+              borderWidth: borderAll,
+
+              // borderBottom: "1px solid black",
+            }
+          : {
+              backgroundColor: "rgb(255, 255, 255)",
+              margin: 0,
+              borderWidth: 0,
+              borderBottomWidth: 1,
+            }),
+
         // borderRadius: borderRadius,
       }}
       className="header"
@@ -110,12 +131,18 @@ function Header({ scrollYProgress, normalizedY }) {
         normalizedY={normalizedY}
         scrollYProgress={scrollYProgress}
         topValue={topValue}
+        currentPage={currentPage}
       />
       <nav>
         <ul className="header-links">
           {links.map((link) => (
             <li key={link.url}>
-              <Link to={link.url}>
+              <Link
+                to={link.url}
+                onClick={() => {
+                  setCurrentPage(link.text.toLowerCase());
+                }}
+              >
                 <motion.div
                   style={
                     {
@@ -127,7 +154,9 @@ function Header({ scrollYProgress, normalizedY }) {
                 >
                   <motion.h1
                     style={{
-                      color: color,
+                      ...(currentPage === "home"
+                        ? { color: color }
+                        : { color: "black" }),
                     }}
                   >
                     {link.text !== "CONTACT" ? (

@@ -258,6 +258,9 @@
   /* width: 50%; */
   /* word-break: break-all; */
 }
+.home-services-content p:hover {
+  background-color: var(--dark-blue);
+}
 
 .home-services-inner {
   display: flex;

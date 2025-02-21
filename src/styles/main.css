@@ -24,7 +24,7 @@
   /* border-radius: 3rem; */
   position: fixed;
   z-index: 100;
-  background-color: "none";
+  background-color: "white";
   gap: 1rem;
 }
 
@@ -141,6 +141,10 @@
   font-weight: 500;
   color: "white";
 }
+.header nav ul h1:hover {
+  color: var(--accent) !important;
+  transition: color 0.2s !important;
+}
 
 .header-contact-button {
   background-color: var(--accent);
@@ -148,6 +152,10 @@
   padding: 0.5rem 1rem;
   border-radius: 2px;
   color: white;
+}
+.header-contact-button:hover {
+  background-color: var(--dark-blue);
+  transition: background-color 0.2s;
 }
 
 /* .home-scroll-to-top {

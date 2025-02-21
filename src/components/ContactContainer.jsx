@@ -8,7 +8,7 @@ function ContactContainer({ scrollYProgress }) {
     alert("Your message has been sent!");
   };
 
-  const top = useTransform(scrollYProgress, [0.92, 0.97], [80, -80]);
+  const top = useTransform(scrollYProgress, [0.925, 0.97], [80, -80]);
 
   return (
     <motion.div

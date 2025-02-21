@@ -7,11 +7,14 @@ import App from "./App.jsx";
 import MediaProvider from "./context/MediaProvider.jsx";
 import ScrollProvider from "./context/ScrollProvider.jsx";
 import SlowScrollContainer from "./components/SlowScrollContainer.jsx";
+import HeaderProvider from "./context/HeaderProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <HeaderProvider>
+        <App />
+      </HeaderProvider>
     </BrowserRouter>
   </StrictMode>
 );
