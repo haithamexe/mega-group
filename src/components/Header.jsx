@@ -49,11 +49,11 @@ function Header({ scrollYProgress, normalizedY }) {
     }
   );
   const borderRadius = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
-  const margin = useTransform(scrollYProgress, [0, 0.03], [20, 0]);
+  const margin = useTransform(scrollYProgress, [0, 0.009], [20, 0]);
   const borderAll = useTransform(scrollYProgress, [0, 0.3], ["0px", "0px"]);
   const borderBottomWidth = useTransform(
     scrollYProgress,
-    [0, 0.2],
+    [0.04, 0.2],
     ["0px", "1px"]
   );
 

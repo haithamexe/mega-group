@@ -25,7 +25,7 @@ function Home() {
   const paddingTop = useTransform(scrollYProgress, [0, 0.1], [0, 11], {
     clamp: false,
   });
-  const missionTop = useTransform(scrollMission, [0, 0.1], [-370, -170], {
+  const missionTop = useTransform(scrollMission, [0, 0.16], [-335, -190], {
     clamp: false,
   });
 
@@ -33,7 +33,7 @@ function Home() {
   const [scrollToTop, setScrollToTop] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
-  const topVar = -320;
+  const topVar = -335;
 
   const [whyUsscrollValue, setWhyUsScrollValue] = useState(0);
 
@@ -209,7 +209,7 @@ function Home() {
         </motion.div>
         <motion.div
           animate={{
-            top: -370,
+            top: topVar,
           }}
           initial={{
             top: 0,
@@ -274,7 +274,6 @@ function Home() {
           >
             <h2>We help businesses build, grow, and scale.</h2>
             <p>Explore Services</p>
-            <p>Inquire now</p>
           </motion.div>
         </motion.div>
         <div className="home-services-inner">
@@ -364,8 +363,15 @@ function Home() {
         <motion.div
           className="home-why-us"
           id="why_us"
-          whileInView={() => {
-            console.log("in view");
+          initial={{
+            paddingTop: 50,
+          }}
+          viewport={{
+            amount: 0.99,
+            // margin: "-6px",
+          }}
+          whileInView={{
+            paddingTop: 100,
           }}
         >
           <motion.div
@@ -396,7 +402,7 @@ function Home() {
               right: 0,
             }}
             className={
-              whyUsscrollValue >= 0.44 && whyUsscrollValue < 0.48
+              whyUsscrollValue >= 0.59 && whyUsscrollValue < 0.61
                 ? "home-why-us-block two scrolled-block"
                 : "home-why-us-block two"
             }
@@ -418,7 +424,7 @@ function Home() {
               left: 0,
             }}
             className={
-              whyUsscrollValue >= 0.48 && whyUsscrollValue < 0.522
+              whyUsscrollValue >= 0.61 && whyUsscrollValue < 0.63
                 ? "home-why-us-block three scrolled-block"
                 : "home-why-us-block three"
             }
@@ -440,7 +446,7 @@ function Home() {
               right: 0,
             }}
             className={
-              whyUsscrollValue >= 0.522 && whyUsscrollValue < 0.562
+              whyUsscrollValue >= 0.63 && whyUsscrollValue < 0.65
                 ? "home-why-us-block four scrolled-block"
                 : "home-why-us-block four"
             }
@@ -462,7 +468,7 @@ function Home() {
               left: 0,
             }}
             className={
-              whyUsscrollValue >= 0.562 && whyUsscrollValue < 0.62
+              whyUsscrollValue >= 0.65 && whyUsscrollValue < 0.67
                 ? "home-why-us-block five scrolled-block"
                 : "home-why-us-block five"
             }
@@ -486,7 +492,7 @@ function Home() {
               right: 0,
             }}
             className={
-              whyUsscrollValue >= 0.62 && whyUsscrollValue < 0.642
+              whyUsscrollValue >= 0.69 && whyUsscrollValue < 0.71
                 ? "home-why-us-block six scrolled-block"
                 : "home-why-us-block six"
             }
@@ -508,7 +514,7 @@ function Home() {
               left: 0,
             }}
             className={
-              whyUsscrollValue >= 0.642 && whyUsscrollValue < 0.682
+              whyUsscrollValue >= 0.71 && whyUsscrollValue < 0.73
                 ? "home-why-us-block seven scrolled-block"
                 : "home-why-us-block seven"
             }
@@ -535,7 +541,7 @@ function Home() {
               right: 0,
             }}
             className={
-              whyUsscrollValue >= 0.682 && whyUsscrollValue < 0.722
+              whyUsscrollValue >= 0.73 && whyUsscrollValue < 0.75
                 ? "home-why-us-block eight scrolled-block"
                 : "home-why-us-block eight"
             }
@@ -549,15 +555,28 @@ function Home() {
       </div>
       <div className="home-clients" id="clients">
         <div className="home-clients-inner">
-          <h2>Our Clients</h2>
-          <p>
-            We’ve had the privilege of working with some amazing clients over
-            the years. From startups to Fortune 500 companies, we’ve helped
-            businesses of all sizes build, grow, and scale with expert branding,
-            marketing, web design, and digital transformation strategies.
-          </p>
+          <h1>Featured Clients</h1>
+          <div className="home-clients-logos">
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="/images/mega-logo-blue.png" alt="client image" />
+          </div>
         </div>
-        <ContactContainer />
+        <ContactContainer scrollYProgress={scrollMission} />
       </div>
     </div>
   );

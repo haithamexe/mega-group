@@ -14,9 +14,9 @@
   display: flex;
   justify-content: flex-end;
   height: 8vh;
-  padding: 1rem 22rem;
-  padding-right: 22.5rem;
+  /* padding-right: 22.5rem; */
   /* gap: 1rem; */
+  padding: 1rem 21rem;
   border: 1px solid var(--accent);
   width: 100%;
   max-width: 100%;
