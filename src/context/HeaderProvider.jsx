@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 
 export const HeaderContext = createContext();
 
@@ -7,7 +7,16 @@ export const useHeaderContext = () => {
 };
 
 function HeaderProvider({ children }) {
-  const [currentPage, setCurrentPage] = useState("/");
+  const [currentPage, setCurrentPage] = useState("");
+
+  useEffect(() => {
+    if (window.location.pathname.split("/")[1] === "") {
+      setCurrentPage("home");
+    } else {
+      setCurrentPage(window.location.pathname.split("/")[1]);
+    }
+    // alert(window.location.pathname.split("/")[1]);
+  }, []);
 
   return (
     <HeaderContext.Provider

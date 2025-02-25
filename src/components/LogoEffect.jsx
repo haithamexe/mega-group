@@ -9,6 +9,7 @@ function LogoEffect({
   topValue,
   currentPage,
   setCurrentPage,
+  isHome,
 }) {
   const color = useTransform(
     scrollYProgress,
@@ -45,14 +46,14 @@ function LogoEffect({
           <div className="header-logo-backdrop-white-2" style={{}}></div> */}
         </div>
         <div className="header-logo-img-container">
-          {currentPage === "home" ? (
-            !isScrolled ? (
+          {currentPage === "" || currentPage === "home" ? (
+            isScrolled ? (
+              <img src="/images/mega-logo-blue.png" alt="Mega Group Logo" />
+            ) : (
               <img
                 src="/images/mega-logo-blue-white.png"
                 alt="Mega Group Logo"
               />
-            ) : (
-              <img src="/images/mega-logo-blue.png" alt="Mega Group Logo" />
             )
           ) : (
             <img src="/images/mega-logo-blue.png" alt="Mega Group Logo" />

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/home.css";
-import { MoveUp, MoveRight } from "lucide-react";
+import { MoveUp, MoveRight, Languages } from "lucide-react";
 import {
   motion,
   useMotionValueEvent,
   useScroll,
   useTransform,
+  AnimatePresence,
 } from "motion/react";
 import { useOutletContext } from "react-router-dom";
 import ContactContainer from "../components/ContactContainer";
@@ -20,12 +21,13 @@ function Home() {
   });
   const { scrollYProgress: scrollMission } = useScroll({});
   const { scrollYProgress: scrollWhyUs } = useScroll({});
+  const [showSideBar, setShowSideBar] = useState(false);
 
   const { scrollY } = useScroll();
   const paddingTop = useTransform(scrollYProgress, [0, 0.1], [0, 11], {
     clamp: false,
   });
-  const missionTop = useTransform(scrollMission, [0, 0.16], [-335, -190], {
+  const missionTop = useTransform(scrollMission, [0, 0.16], [-355, -190], {
     clamp: false,
   });
 
@@ -33,7 +35,7 @@ function Home() {
   const [scrollToTop, setScrollToTop] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
-  const topVar = -335;
+  const topVar = -355;
 
   const [whyUsscrollValue, setWhyUsScrollValue] = useState(0);
 
@@ -81,6 +83,14 @@ function Home() {
       behavior: "smooth",
     });
   };
+
+  useMotionValueEvent(scrollWhyUs, "change", (latest) => {
+    if (latest >= 0.2) {
+      setShowSideBar(true);
+    } else {
+      setShowSideBar(false);
+    }
+  });
 
   // function smoothScrollToTop() {
   //   window.scrollTo({
@@ -141,20 +151,167 @@ function Home() {
           </li>
         </ul>
       </div> */}
-      <div
-        onClick={forceSmoothScroll}
-        className="home-scroll-to-top"
-        style={{ display: showScrollToTop ? "block" : "none" }}
-      >
-        <MoveUp
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
-          size="30"
-        />
-        {/* <button onClick={() => setScrollToTop(true)}>Scroll to Top</button> */}
-      </div>
+      <AnimatePresence>
+        {showSideBar && (
+          <div className="home-sidebar">
+            <motion.div
+              onClick={forceSmoothScroll}
+              className="home-scroll-to-top"
+              initial={{
+                right: 0,
+                bottom: 35 * 9,
+              }}
+              animate={{
+                right: 40,
+              }}
+              exit={{
+                right: 0,
+              }}
+              transition={{
+                duration: 0.15,
+              }}
+              style={{
+                borderColor: "#00D757",
+                borderWidth: 3,
+              }}
+            >
+              {/* <MoveUp
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+                size="30"
+              /> */}
+              <i
+                className="fa-brands fa-whatsapp"
+                style={{
+                  // width: "100%",
+                  // height: "100%",
+                  fontSize: "2rem",
+                  color: "#00D757",
+                }}
+              ></i>
+            </motion.div>
+
+            <motion.div
+              onClick={forceSmoothScroll}
+              className="home-scroll-to-top"
+              initial={{
+                right: 0,
+                bottom: 35 * 7,
+              }}
+              animate={{
+                right: 40,
+              }}
+              exit={{
+                right: 0,
+              }}
+              transition={{
+                duration: 0.15,
+              }}
+            >
+              {/* <MoveUp
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+                size="30"
+              /> */}
+              <p
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                Services
+              </p>
+            </motion.div>
+            <motion.div
+              onClick={forceSmoothScroll}
+              className="home-scroll-to-top"
+              initial={{
+                right: 0,
+                bottom: 35 * 5,
+              }}
+              animate={{
+                right: 40,
+              }}
+              exit={{
+                right: 0,
+              }}
+              transition={{
+                duration: 0.15,
+              }}
+            >
+              {/* <MoveUp
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+                size="30"
+              /> */}
+              <p
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                Why Us
+              </p>
+            </motion.div>
+            <motion.div
+              onClick={forceSmoothScroll}
+              className="home-scroll-to-top"
+              initial={{
+                right: 0,
+                bottom: 35 * 3,
+              }}
+              animate={{
+                right: 40,
+              }}
+              exit={{
+                right: 0,
+              }}
+              transition={{
+                duration: 0.15,
+              }}
+            >
+              <Languages
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+                size="30"
+              />
+            </motion.div>
+            <motion.div
+              onClick={forceSmoothScroll}
+              className="home-scroll-to-top"
+              initial={{
+                right: 0,
+              }}
+              animate={{
+                right: 40,
+              }}
+              exit={{
+                right: 0,
+              }}
+              transition={{
+                duration: 0.15,
+              }}
+            >
+              <MoveUp
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+                size="30"
+              />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+      {/* <button onClick={() => setScrollToTop(true)}>Scroll to Top</button> */}
       {/* <motion.div
         animate={{
           top: -350,
@@ -190,7 +347,7 @@ function Home() {
           }}
           initial={{
             top: topVar,
-            left: -400,
+            left: -320,
             opacity: 0,
           }}
           transition={{
@@ -236,7 +393,7 @@ function Home() {
           }}
           initial={{
             top: topVar,
-            right: -400,
+            right: -320,
             opacity: 0,
           }}
           transition={{
@@ -363,16 +520,15 @@ function Home() {
         <motion.div
           className="home-why-us"
           id="why_us"
-          initial={{
-            paddingTop: 50,
-          }}
-          viewport={{
-            amount: 0.99,
-            // margin: "-6px",
-          }}
-          whileInView={{
-            paddingTop: 100,
-          }}
+          // initial={{
+          //   paddingTop: 50,
+          // }}
+          // viewport={{
+          //   amount: 0.99,
+          // }}
+          // whileInView={{
+          //   paddingTop: 100,
+          // }}
         >
           <motion.div
             initial={{
@@ -492,7 +648,7 @@ function Home() {
               right: 0,
             }}
             className={
-              whyUsscrollValue >= 0.69 && whyUsscrollValue < 0.71
+              whyUsscrollValue >= 0.67 && whyUsscrollValue < 0.7
                 ? "home-why-us-block six scrolled-block"
                 : "home-why-us-block six"
             }
@@ -514,7 +670,7 @@ function Home() {
               left: 0,
             }}
             className={
-              whyUsscrollValue >= 0.71 && whyUsscrollValue < 0.73
+              whyUsscrollValue >= 0.7 && whyUsscrollValue < 0.72
                 ? "home-why-us-block seven scrolled-block"
                 : "home-why-us-block seven"
             }
@@ -541,7 +697,7 @@ function Home() {
               right: 0,
             }}
             className={
-              whyUsscrollValue >= 0.73 && whyUsscrollValue < 0.75
+              whyUsscrollValue >= 0.72 && whyUsscrollValue < 0.75
                 ? "home-why-us-block eight scrolled-block"
                 : "home-why-us-block eight"
             }

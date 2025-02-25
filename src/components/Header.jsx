@@ -42,7 +42,9 @@ function Header({ scrollYProgress, normalizedY }) {
   // const { scrollYProgress } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   const { currentPage, setCurrentPage } = useHeaderContext();
-  const [isHome, setIsHome] = useState(currentPage === "home");
+  const [isHome, setIsHome] = useState(
+    currentPage === "home" || currentPage === ""
+  );
 
   const width = useSpring(
     useTransform(scrollYProgress, [0, 0.01], [1300, 3000]),
@@ -52,7 +54,7 @@ function Header({ scrollYProgress, normalizedY }) {
     }
   );
   const borderRadius = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
-  const margin = useTransform(scrollYProgress, [0, 0.03], [20, 0]);
+  const margin = useTransform(scrollYProgress, [0, 0.005], [20, 0]);
   const borderAll = useTransform(scrollYProgress, [0, 0.3], ["0px", "0px"]);
   const borderBottomWidth = useTransform(
     scrollYProgress,
@@ -107,10 +109,10 @@ function Header({ scrollYProgress, normalizedY }) {
 
         // backgroundColor: background,
 
-        ...(currentPage === "home"
+        ...(currentPage === "home" || currentPage === ""
           ? {
               backgroundColor: background,
-              margin: margin,
+              // margin: margin,
               borderBottomWidth: borderBottomWidth,
               borderWidth: borderAll,
 
@@ -118,7 +120,7 @@ function Header({ scrollYProgress, normalizedY }) {
             }
           : {
               backgroundColor: "rgb(255, 255, 255)",
-              margin: 0,
+              // margin: 0,
               borderWidth: 0,
               borderBottomWidth: 1,
             }),
@@ -154,13 +156,22 @@ function Header({ scrollYProgress, normalizedY }) {
                 >
                   <motion.h1
                     style={{
-                      ...(currentPage === "home"
+                      ...(currentPage === "home" || currentPage === ""
                         ? { color: color }
                         : { color: "black" }),
                     }}
                   >
                     {link.text !== "CONTACT" ? (
-                      link.text
+                      <h1
+                        style={{
+                          color:
+                            currentPage === link.text.toLowerCase()
+                              ? "#1B8ECD"
+                              : null,
+                        }}
+                      >
+                        {link.text}
+                      </h1>
                     ) : (
                       <div
                         className="header-contact-button"
