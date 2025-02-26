@@ -53,6 +53,21 @@ function Layout() {
     if (lenis) lenis.start();
   };
 
+  const handleScrollToBottom = () => {
+    if (lenis) lenis.stop();
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+    if (lenis) lenis.start();
+  };
+
+  const handleScrollToElement = (element) => {
+    if (lenis) lenis.stop();
+    element.scrollIntoView({ behavior: "smooth" });
+    if (lenis) lenis.start();
+  };
+
   useEffect(() => {
     handleScrollToTop();
   }, [pathname]);
@@ -72,6 +87,8 @@ function Layout() {
             forceSmoothScroll,
             stopLenis,
             startLenis,
+            handleScrollToBottom,
+            handleScrollToElement,
           }}
         />
         <Footer />

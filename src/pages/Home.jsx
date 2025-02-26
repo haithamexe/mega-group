@@ -12,7 +12,13 @@ import { useOutletContext } from "react-router-dom";
 import ContactContainer from "../components/ContactContainer";
 
 function Home() {
-  const { forceSmoothScroll, stopLenis, startLenis } = useOutletContext();
+  const {
+    forceSmoothScroll,
+    stopLenis,
+    startLenis,
+    handleScrollToBottom,
+    handleScrollToElement,
+  } = useOutletContext();
 
   const servicesRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -76,13 +82,6 @@ function Home() {
       setScrollToTop(false);
     }
   }, [scrollToTop]);
-
-  const handleScrollToBottom = () => {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: "smooth",
-    });
-  };
 
   useMotionValueEvent(scrollWhyUs, "change", (latest) => {
     if (latest >= 0.2) {
@@ -160,15 +159,18 @@ function Home() {
               initial={{
                 right: 0,
                 bottom: 35 * 9,
+                opacity: 0,
               }}
               animate={{
                 right: 40,
+                opacity: 1,
               }}
               exit={{
                 right: 0,
+                opacity: 0,
               }}
               transition={{
-                duration: 0.15,
+                duration: 0.1,
               }}
               style={{
                 borderColor: "#00D757",
@@ -194,17 +196,22 @@ function Home() {
             </motion.div>
 
             <motion.div
-              onClick={forceSmoothScroll}
+              onClick={() =>
+                handleScrollToElement(document.getElementById("services"))
+              }
               className="home-scroll-to-top"
               initial={{
                 right: 0,
                 bottom: 35 * 7,
+                opacity: 0,
               }}
               animate={{
                 right: 40,
+                opacity: 1,
               }}
               exit={{
                 right: 0,
+                opacity: 0,
               }}
               transition={{
                 duration: 0.15,
@@ -227,20 +234,25 @@ function Home() {
               </p>
             </motion.div>
             <motion.div
-              onClick={forceSmoothScroll}
+              onClick={() =>
+                handleScrollToElement(document.getElementById("why_us"))
+              }
               className="home-scroll-to-top"
               initial={{
                 right: 0,
                 bottom: 35 * 5,
+                opacity: 0,
               }}
               animate={{
                 right: 40,
+                opacity: 1,
               }}
               exit={{
                 right: 0,
+                opacity: 0,
               }}
               transition={{
-                duration: 0.15,
+                duration: 0.2,
               }}
             >
               {/* <MoveUp
@@ -260,20 +272,23 @@ function Home() {
               </p>
             </motion.div>
             <motion.div
-              onClick={forceSmoothScroll}
+              onClick={handleScrollToBottom}
               className="home-scroll-to-top"
               initial={{
                 right: 0,
                 bottom: 35 * 3,
+                opacity: 0,
               }}
               animate={{
                 right: 40,
+                opacity: 1,
               }}
               exit={{
                 right: 0,
+                opacity: 0,
               }}
               transition={{
-                duration: 0.15,
+                duration: 0.25,
               }}
             >
               <Languages
@@ -289,15 +304,18 @@ function Home() {
               className="home-scroll-to-top"
               initial={{
                 right: 0,
+                bottom: 35,
               }}
               animate={{
                 right: 40,
+                opacity: 1,
               }}
               exit={{
                 right: 0,
+                opacity: 0,
               }}
               transition={{
-                duration: 0.15,
+                duration: 0.3,
               }}
             >
               <MoveUp
