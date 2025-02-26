@@ -84,7 +84,7 @@ function Home() {
   }, [scrollToTop]);
 
   useMotionValueEvent(scrollWhyUs, "change", (latest) => {
-    if (latest >= 0.2) {
+    if (latest >= 0.1) {
       setShowSideBar(true);
     } else {
       setShowSideBar(false);

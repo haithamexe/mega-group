@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import { Outlet, useLocation, ScrollRestoration } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import {
@@ -13,6 +13,7 @@ import ScrollToTopProvider from "../context/ScrollToTopProvider";
 
 function Layout() {
   const { pathname } = useLocation();
+  const lenisRef = useRef();
 
   const { scrollYProgress } = useScroll();
 
@@ -64,13 +65,30 @@ function Layout() {
 
   const handleScrollToElement = (element) => {
     if (lenis) lenis.stop();
-    element.scrollIntoView({ behavior: "smooth" });
+    element.scrollIntoView({ behavior: "immidiate" });
     if (lenis) lenis.start();
   };
 
   useEffect(() => {
-    handleScrollToTop();
+    if (lenis) {
+      lenis.scrollTo(0, {
+        immdiate: true,
+      });
+    }
   }, [pathname]);
+
+  // useEffect(() => {
+  //   const lenisContainer = document.querySelector(".lenis");
+  //   if (lenisContainer && lenisContainer.__lenis) {
+  //     lenisContainer.__lenis.scrollTo(0, {
+  //       immdiate: true,
+  //     });
+  //   }
+  // }, [pathname]);
+
+  // useEffect(() => {
+  //   handleScrollToTop();
+  // }, [pathname]);
 
   return (
     <ReactLenis
@@ -81,7 +99,6 @@ function Layout() {
     >
       <div className="main">
         <Header scrollYProgress={scrollYProgress} normalizedY={normalizedY} />
-        {/* <ScrollToTopProvider /> */}
         <Outlet
           context={{
             forceSmoothScroll,
