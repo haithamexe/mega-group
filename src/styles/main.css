@@ -272,8 +272,7 @@
 
 .footer-container {
   width: 100%;
-  height: 100vh;
-  height: 100svh;
+  height: 750px;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
@@ -290,8 +289,131 @@
   justify-content: flex-end;
   background-color: #06111c;
   background-color: #001d3d;
+  padding: 3rem 0;
+  gap: 1rem;
 
   @media screen and (max-height: 800px) {
     padding: 2rem 2rem;
   }
+}
+
+.footer-head {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 22rem;
+  gap: 1rem;
+}
+.footer-head h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  width: 100%;
+}
+
+.footer-body {
+  display: flex;
+  padding: 1rem 19rem;
+  gap: 1rem;
+}
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-logo {
+  width: 300px;
+}
+.footer-body img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.4rem 2.5rem;
+}
+.footer-social-links a {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  gap: 3rem;
+}
+.footer-links h1,
+p {
+  cursor: pointer;
+}
+
+.footer-links h1 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: white !important;
+  cursor: pointer;
+}
+
+.footer-link h1:hover {
+  color: var(--accent) !important;
+}
+.footer-link h1 {
+  margin-bottom: 5px;
+}
+
+.footer-link p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #dddddd;
+}
+.footer-link p:hover {
+  color: var(--accent);
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-services-link {
+  width: 15%;
+}
+.footer-addressess {
+  display: flex;
+  padding: 1rem 21rem;
+}
+
+.footer-address {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 2rem;
+  padding-left: 3rem;
+  border-left: 1px solid white;
+}
+.footer-address p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #dddddd;
+}
+.address-no-border {
+  padding-left: 0;
+  border: none;
+}
+
+.footer-rights {
+  margin-left: auto;
+  margin-top: auto;
+  align-items: flex-end;
+}
+.footer-rights h1 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #dddddd;
 }

@@ -9,7 +9,6 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import { ReactLenis, useLenis } from "lenis/react";
-import ScrollToTopProvider from "../context/ScrollToTopProvider";
 
 function Layout() {
   const { pathname } = useLocation();
@@ -70,25 +69,10 @@ function Layout() {
   };
 
   useEffect(() => {
-    if (lenis) {
-      lenis.scrollTo(0, {
-        immdiate: true,
-      });
-    }
+    if (lenis) lenis.stop();
+    document.documentElement.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    if (lenis) lenis.start();
   }, [pathname]);
-
-  // useEffect(() => {
-  //   const lenisContainer = document.querySelector(".lenis");
-  //   if (lenisContainer && lenisContainer.__lenis) {
-  //     lenisContainer.__lenis.scrollTo(0, {
-  //       immdiate: true,
-  //     });
-  //   }
-  // }, [pathname]);
-
-  // useEffect(() => {
-  //   handleScrollToTop();
-  // }, [pathname]);
 
   return (
     <ReactLenis

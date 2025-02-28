@@ -158,7 +158,7 @@ function Home() {
               className="home-scroll-to-top"
               initial={{
                 right: 0,
-                bottom: 35 * 9,
+                bottom: 35 * 5,
                 opacity: 0,
               }}
               animate={{
@@ -195,7 +195,7 @@ function Home() {
               ></i>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               onClick={() =>
                 handleScrollToElement(document.getElementById("services"))
               }
@@ -217,13 +217,6 @@ function Home() {
                 duration: 0.15,
               }}
             >
-              {/* <MoveUp
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-                size="30"
-              /> */}
               <p
                 style={{
                   width: "100%",
@@ -232,8 +225,8 @@ function Home() {
               >
                 Services
               </p>
-            </motion.div>
-            <motion.div
+            </motion.div> */}
+            {/* <motion.div
               onClick={() =>
                 handleScrollToElement(document.getElementById("why_us"))
               }
@@ -255,13 +248,6 @@ function Home() {
                 duration: 0.2,
               }}
             >
-              {/* <MoveUp
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-                size="30"
-              /> */}
               <p
                 style={{
                   width: "100%",
@@ -270,7 +256,7 @@ function Home() {
               >
                 Why Us
               </p>
-            </motion.div>
+            </motion.div> */}
             <motion.div
               onClick={handleScrollToBottom}
               className="home-scroll-to-top"
@@ -288,7 +274,7 @@ function Home() {
                 opacity: 0,
               }}
               transition={{
-                duration: 0.25,
+                duration: 0.2,
               }}
             >
               <Languages
