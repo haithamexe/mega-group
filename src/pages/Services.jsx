@@ -41,57 +41,53 @@ function Services() {
             transition={{ duration: 0.4 }}
           >
             <div className="services-service-head">
-              <h1>Graphic Design</h1>
+              <h1>Branding</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non tortor bibendum, id luctus erat fermentum.
-                Sed sollicitudin, libero sit amet tincidunt ultricies, libero
-                nunc scelerisque libero, sit amet tincidunt arcu nisl nec purus.
-                Nullam pulvinar risus non tortor bibendum, id luctus erat
-                fermentum. Sed sollicitudin, libero sit amet tincidunt
-                ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                arcu nisl nec purus.
+                Our branding experts can help you create a brand that resonates
+                with your target audience, communicates your values, and sets
+                you apart from the competition.
               </p>
             </div>
             <div className="services-service-list">
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Brand Strategy & Positioning</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Develop a unique identity by defining your mission, vision,
+                  audience personas, and competitive differentiation. Align your
+                  brand’s voice and values to resonate emotionally with your
+                  target market.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Visual Identity Design</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Create logos, color palettes, typography, and imagery that
+                  reflect your brand’s personality. Ensure consistency across
+                  all touchpoints, from packaging to digital platforms.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Competitor Analysis</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  dentify gaps in the market by analyzing competitors’ strengths
+                  and weaknesses. Use insights to position your brand as a
+                  standout solution.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Rebranding & Evolution</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Refresh outdated brands with modern aesthetics and messaging
+                  while preserving core equity. Ensure alignment with current
+                  trends and customer expectations.
+                </p>
+              </div>
+              <div className="services-service-list-item">
+                <h3>Messaging Framework</h3>
+                <p>
+                  Craft compelling taglines, tone-of-voice guidelines, and
+                  storytelling narratives to communicate your brand’s purpose
+                  and connect with audiences on a deeper level.
                 </p>
               </div>
             </div>
@@ -172,57 +168,44 @@ function Services() {
             transition={{ duration: 0.4 }}
           >
             <div className="services-service-head">
-              <h1>Graphic Design</h1>
+              <h1>Marketing</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non tortor bibendum, id luctus erat fermentum.
-                Sed sollicitudin, libero sit amet tincidunt ultricies, libero
-                nunc scelerisque libero, sit amet tincidunt arcu nisl nec purus.
-                Nullam pulvinar risus non tortor bibendum, id luctus erat
-                fermentum. Sed sollicitudin, libero sit amet tincidunt
-                ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                arcu nisl nec purus.
+                From social media marketing to SEO, our marketing team can help
+                you reach your target audience, drive traffic, and generate
+                leads.
               </p>
             </div>
             <div className="services-service-list">
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Digital Campaign Strategy</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Plan end-to-end campaigns across SEO, social media, and email,
+                  Focus on audience segmentation and channel-specific tactics to
+                  maximize Reach.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Social Media Advertising</h3>
+                <p>Run targeted ads on Meta, Google, and TikTok.</p>
+              </div>
+              <div className="services-service-list-item">
+                <h3>Analytics & Optimization</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Adjust strategies in real time based on data-driven insights.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Content Creation</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Produce blogs, videos, and infographics tailored to audience
+                  needs and SEO goals.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Influencer Collaborations</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Partner with niche influencers to expand reach and
+                  credibility.
                 </p>
               </div>
             </div>
@@ -245,55 +228,40 @@ function Services() {
             <div className="services-service-head">
               <h1>Graphic Design</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non tortor bibendum, id luctus erat fermentum.
-                Sed sollicitudin, libero sit amet tincidunt ultricies, libero
-                nunc scelerisque libero, sit amet tincidunt arcu nisl nec purus.
-                Nullam pulvinar risus non tortor bibendum, id luctus erat
-                fermentum. Sed sollicitudin, libero sit amet tincidunt
-                ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                arcu nisl nec purus.
+                Our graphic designers can help you create stunning visuals from
+                UI to UX or any other design you are looking for that helps
+                capture attention, communicate your message, and elevate your
+                brand.
               </p>
             </div>
             <div className="services-service-list">
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>UI/UX Design</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Build user-friendly interfaces for websites and apps,
+                  prioritizing intuitive navigation, accessibility, and visual
+                  appeal.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Brand Collateral</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Design print/digital assets like business cards, brochures,
+                  and social media templates that align with brand guidelines.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Motion Graphics & Animation</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Create engaging animated content (e.g., explainer videos,
+                  GIFs) to simplify complex ideas and boost retention.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Design Audits</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Evaluate existing visuals for consistency, responsiveness, and
+                  relevance. Recommend updates to stay modern.
                 </p>
               </div>
             </div>
@@ -374,57 +342,43 @@ function Services() {
             transition={{ duration: 0.4 }}
           >
             <div className="services-service-head">
-              <h1>Graphic Design</h1>
+              <h1>Digital Transformation</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non tortor bibendum, id luctus erat fermentum.
-                Sed sollicitudin, libero sit amet tincidunt ultricies, libero
-                nunc scelerisque libero, sit amet tincidunt arcu nisl nec purus.
-                Nullam pulvinar risus non tortor bibendum, id luctus erat
-                fermentum. Sed sollicitudin, libero sit amet tincidunt
-                ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                arcu nisl nec purus.
+                Our digital transformation experts can help you leverage the
+                power of technology to streamline your operations, improve
+                efficiency, and drive growth.
               </p>
             </div>
             <div className="services-service-list">
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>E-commerce Solutions</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Build or upgrade online stores with features like inventory
+                  management, secure payment gateways, and multi-channel sales.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Web Presence</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Develop responsive websites optimized for search engines and
+                  user experience. Ensure fast load times and mobile
+                  compatibility.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Legacy System Modernization</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Replace outdated software/hardware with agile, scalable
+                  solutions to improve performance and future-proof your
+                  business.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Social Media Presence</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Create and manage profiles on platforms like Facebook,
+                  Instagram, and LinkedIn. Engage with followers and monitor
+                  feedback.
                 </p>
               </div>
             </div>
@@ -445,57 +399,40 @@ function Services() {
             transition={{ duration: 0.4 }}
           >
             <div className="services-service-head">
-              <h1>Graphic Design</h1>
+              <h1>Social Media Management</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non tortor bibendum, id luctus erat fermentum.
-                Sed sollicitudin, libero sit amet tincidunt ultricies, libero
-                nunc scelerisque libero, sit amet tincidunt arcu nisl nec purus.
-                Nullam pulvinar risus non tortor bibendum, id luctus erat
-                fermentum. Sed sollicitudin, libero sit amet tincidunt
-                ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                arcu nisl nec purus.
+                Our social media experts can help you create engaging content,
+                build a loyal following, and drive traffic to your website.
               </p>
             </div>
             <div className="services-service-list">
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Content Strategy & Scheduling</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Plan platform-specific calendars (Instagram, LinkedIn, TikTok)
+                  with a mix of promotional, educational, and entertaining
+                  posts.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Community Building</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Engage followers by responding to comments/DMs, hosting live
+                  sessions, and fostering user-generated content campaigns.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Paid Social Campaigns</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Design ads with precise audience targeting, retargeting, and
+                  dynamic creatives to drive sales or sign-ups.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Crisis Management</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Monitor sentiment and address negative feedback or PR issues
+                  swiftly to protect brand reputation.
                 </p>
               </div>
             </div>
@@ -576,57 +513,47 @@ function Services() {
             transition={{ duration: 0.4 }}
           >
             <div className="services-service-head">
-              <h1>Graphic Design</h1>
+              <h1>Software And Web Development</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non tortor bibendum, id luctus erat fermentum.
-                Sed sollicitudin, libero sit amet tincidunt ultricies, libero
-                nunc scelerisque libero, sit amet tincidunt arcu nisl nec purus.
-                Nullam pulvinar risus non tortor bibendum, id luctus erat
-                fermentum. Sed sollicitudin, libero sit amet tincidunt
-                ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                arcu nisl nec purus.
+                Our software and web development team can help you build custom
+                solutions that meet your unique needs, from websites to mobile
+                apps.
               </p>
             </div>
             <div className="services-service-list">
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>E-commerce Development</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Create online stores with features like inventory management,
+                  secure payment gateways, and multi-channel sales.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Landing Page</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Design high-converting landing pages for lead generation or
+                  product launches.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Mobile Application</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Develop iOS and Android apps with intuitive interfaces and
+                  seamless performance.
                 </p>
               </div>
               <div className="services-service-list-item">
-                <h3>Logo Design</h3>
+                <h3>Wordpress Websites</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non tortor bibendum, id luctus erat
-                  fermentum. Sed sollicitudin, libero sit amet tincidunt
-                  ultricies, libero nunc scelerisque libero, sit amet tincidunt
-                  arcu nisl nec purus.
+                  Customize WordPress websites, themes and plugins to create
+                  responsive, SEO-friendly websites.
+                </p>
+              </div>
+              <div className="services-service-list-item">
+                <h3>Fullstack Websites</h3>
+                <p>
+                  Build dynamic websites with React, Node.js, and MongoDB for
+                  fast loading times and scalability.
                 </p>
               </div>
             </div>
