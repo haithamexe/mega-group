@@ -532,3 +532,16 @@
   border-radius: 4px;
   z-index: 1000;
 }
+
+.home-service-explore {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  gap: 1rem;
+  /* padding: 1rem 0; */
+}
+.home-service-explore a {
+  font-size: 1.5rem;
+  /* color: var(--accent); */
+  font-weight: 500;
+}

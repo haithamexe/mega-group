@@ -49,6 +49,8 @@ function Home() {
     clamp: false,
   });
 
+  const [serviceShowMore, setServiceShowMore] = useState("");
+
   useEffect(() => {
     if (scrollToElement === "") return;
     window.scrollTo({
@@ -438,7 +440,14 @@ function Home() {
           </motion.div>
         </motion.div>
         <div className="home-services-inner">
-          <div className="home-service">
+          <div
+            className="home-service"
+            onMouseEnter={() => setServiceShowMore("branding")}
+            onMouseLeave={() => setServiceShowMore("")}
+            style={{
+              cursor: "pointer",
+            }}
+          >
             <img src="/images/mega-logo-blue.png" />
             <div className="home-service-content">
               <h3>Branding</h3>
@@ -449,11 +458,18 @@ function Home() {
               </p>
             </div>
             <div className="home-service-explore">
-              {/* <a>Explore</a> */}
+              {serviceShowMore === "branding" && <a>Explore More</a>}
               <MoveRight size="30" />
             </div>
           </div>
-          <div className="home-service odd-service">
+          <div
+            className="home-service odd-service"
+            onMouseEnter={() => setServiceShowMore("marketing")}
+            onMouseLeave={() => setServiceShowMore("")}
+            style={{
+              cursor: "pointer",
+            }}
+          >
             <img src="/images/mega-logo-blue.png" />
             <div className="home-service-content">
               <h3>Marketing</h3>
@@ -462,9 +478,20 @@ function Home() {
                 you reach your target audience, drive traffic, and generate
                 leads.
               </p>
+              <div className="home-service-explore">
+                {serviceShowMore === "marketing" && <a>Explore More</a>}
+                <MoveRight size="30" />
+              </div>
             </div>
           </div>
-          <div className="home-service ">
+          <div
+            className="home-service "
+            onMouseEnter={() => setServiceShowMore("graphic_design")}
+            onMouseLeave={() => setServiceShowMore("")}
+            style={{
+              cursor: "pointer",
+            }}
+          >
             <img src="/images/mega-logo-blue.png" />
             <div className="home-service-content">
               <h3>Graphic Design</h3>
@@ -474,9 +501,17 @@ function Home() {
                 capture attention, communicate your message, and elevate your
                 brand.
               </p>
+              <div className="home-service-explore">
+                {serviceShowMore === "graphic_design" && <a>Explore More</a>}
+                <MoveRight size="30" />
+              </div>
             </div>
           </div>
-          <div className="home-service odd-service ">
+          <div
+            className="home-service odd-service "
+            onMouseEnter={() => setServiceShowMore("digital_transformation")}
+            onMouseLeave={() => setServiceShowMore("")}
+          >
             <img src="/images/mega-logo-blue.png" />
             <div className="home-service-content">
               <h3>Digital Transformation</h3>
@@ -485,9 +520,22 @@ function Home() {
                 power of technology to streamline your operations, improve
                 efficiency, and drive growth.
               </p>
+              <div className="home-service-explore">
+                {serviceShowMore === "digital_transformation" && (
+                  <a>Explore More</a>
+                )}
+                <MoveRight size="30" />
+              </div>
             </div>
           </div>
-          <div className="home-service ">
+          <div
+            className="home-service "
+            onMouseEnter={() => setServiceShowMore("social_media_management")}
+            onMouseLeave={() => setServiceShowMore("")}
+            style={{
+              cursor: "pointer",
+            }}
+          >
             <img src="/images/mega-logo-blue.png" />
             <div className="home-service-content">
               <h3>Social Media Management</h3>
@@ -495,17 +543,38 @@ function Home() {
                 Our social media experts can help you create engaging content,
                 build a loyal following, and drive traffic to your website.
               </p>
+              <div className="home-service-explore">
+                {serviceShowMore === "social_media_management" && (
+                  <a>Explore More</a>
+                )}
+                <MoveRight size="30" />
+              </div>
             </div>
           </div>
-          <div className="home-service  odd-service">
+          <div
+            className="home-service  odd-service"
+            onMouseEnter={() =>
+              setServiceShowMore("software_and_web_development")
+            }
+            onMouseLeave={() => setServiceShowMore("")}
+            style={{
+              cursor: "pointer",
+            }}
+          >
             <img src="/images/mega-logo-blue.png" />
             <div className="home-service-content">
-              <h3>Software Development</h3>
+              <h3>Software And Web Development</h3>
               <p>
                 Our software developers can help you build custom software
                 solutions like web, mobile or desktop apps that streamline your
                 operations, improve efficiency, and drive growth.
               </p>
+              <div className="home-service-explore">
+                {serviceShowMore === "software_and_web_development" && (
+                  <a>Explore More</a>
+                )}
+                <MoveRight size="30" />
+              </div>
             </div>
           </div>
           {/* <div className="home-service odd-service last-service">
