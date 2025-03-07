@@ -15,7 +15,7 @@ function Services() {
 
   return (
     <div className="services">
-      <header className="services-header-wrapper">
+      {/* <header className="services-header-wrapper">
         <img
           src="../../public/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
           alt="placeholder"
@@ -33,7 +33,15 @@ function Services() {
           </p>
           <p></p>
         </div>
-      </header>
+      </header> */}
+      <section
+        className="services-contetnt"
+        style={{
+          height: "5vh",
+        }}
+      >
+        {" "}
+      </section>
       <div className="services-links-container">
         <a onClick={() => scrollToElement("branding")} href="#branding">
           Branding
