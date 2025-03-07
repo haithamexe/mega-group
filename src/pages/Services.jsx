@@ -2,8 +2,17 @@ import React from "react";
 import "../styles/services.css";
 import { motion, useTransform, useSpring } from "motion/react";
 import { MoveRight } from "lucide-react";
+import { useOutletContext } from "react-router-dom";
 
 function Services() {
+  const { stopLenis, startLenis } = useOutletContext();
+
+  const scrollToElement = (id) => {
+    stopLenis();
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    startLenis();
+  };
+
   return (
     <div className="services">
       <header className="services-header-wrapper">
@@ -25,6 +34,44 @@ function Services() {
           <p></p>
         </div>
       </header>
+      <div className="services-links-container">
+        <a onClick={() => scrollToElement("branding")} href="#branding">
+          Branding
+        </a>
+        <a onClick={() => scrollToElement("marketing")} href="#marketing">
+          Marketing
+        </a>
+        <a
+          onClick={() => scrollToElement("graphic-design")}
+          href="#graphic-design"
+        >
+          Graphic Design
+        </a>
+        <a
+          onClick={() => scrollToElement("digital-transformation")}
+          href="#digital-transformation"
+        >
+          Digital Transformation
+        </a>
+        <a
+          onClick={() => scrollToElement("social-media-management")}
+          href="#social-media-management"
+        >
+          Social Media Management
+        </a>
+        <a
+          onClick={() => scrollToElement("software-and-web-development")}
+          href="#software-and-web-development"
+        >
+          Software And Web Development
+        </a>
+        <a
+          onClick={() => scrollToElement("custom-service")}
+          href="#custom-service"
+        >
+          ...
+        </a>
+      </div>
       <section className="services-content">
         <motion.div
           initial={{ scale: 1 }}
@@ -32,6 +79,7 @@ function Services() {
           viewport={{ amount: 0.99 }}
           transition={{ duration: 0.4 }}
           className="services-service"
+          id="branding"
         >
           <motion.div
             className="services-service-wrapper"
@@ -129,6 +177,7 @@ function Services() {
           viewport={{ amount: 0.99 }}
           transition={{ duration: 0.4 }}
           className="services-service"
+          id="marketing"
         >
           <div className="services-service-options">
             <motion.div
@@ -217,6 +266,7 @@ function Services() {
           viewport={{ amount: 0.99 }}
           transition={{ duration: 0.4 }}
           className="services-service"
+          id="graphic-design"
         >
           <motion.div
             className="services-service-wrapper"
@@ -303,6 +353,7 @@ function Services() {
           viewport={{ amount: 0.99 }}
           transition={{ duration: 0.4 }}
           className="services-service"
+          id="digital-transformation"
         >
           <div className="services-service-options">
             <motion.div
@@ -390,6 +441,7 @@ function Services() {
           viewport={{ amount: 0.99 }}
           transition={{ duration: 0.4 }}
           className="services-service"
+          id="social-media-management"
         >
           <motion.div
             className="services-service-wrapper"
@@ -474,6 +526,7 @@ function Services() {
           viewport={{ amount: 0.99 }}
           transition={{ duration: 0.4 }}
           className="services-service"
+          id="software-and-web-development"
         >
           <div className="services-service-options">
             <motion.div
@@ -560,6 +613,16 @@ function Services() {
           </motion.div>
         </motion.div>
       </section>
+      <div className="custom-service" id="custom-service">
+        <h1>You Name It, We Do It</h1>
+        <p>
+          If you have a specific project in mind that doesn't fit into any of
+          the categories above, don't worry! We're here to help. Contact us to
+          discuss your needs and get a case study and a custom quote and make
+          your ideas come to life.
+        </p>
+        <button>Contact Us</button>
+      </div>
     </div>
   );
 }

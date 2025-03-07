@@ -49,6 +49,7 @@
   text-align: justify;
   font-weight: 700;
 }
+
 .services-content {
   padding: 4rem 21rem;
   display: flex;
@@ -56,8 +57,38 @@
   flex-direction: column;
 }
 
+.services-links-container {
+  display: flex;
+  gap: 0.5rem;
+  /* justify-content: flex-start; */
+  /* align-items: center; */
+  padding: 4.5rem 21rem;
+  padding-bottom: 0;
+  /* width: 100%; */
+  flex-wrap: wrap;
+}
+.services-links-container a {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #cde9ff;
+  /* color: black; */
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+  /* border: 1px solid var(--accent); */
+  border: 1px solid #56a8ff;
+  /* border: 1px solid #4aa2ff; */
+  /* border: 1px solid var(--accent); */
+  /* border-left: 6px solid var(--accent); */
+  /* border-left: 6px solid #56a8ff; */
+  /* border-left: 6px solid #4aa2ff; */
+  /* border-left: 6px solid var(--accent); */
+  /* color: white; */
+}
+
 .services-service {
   display: flex;
+  scroll-margin-top: 150px;
   /* flex-direction: column; */
   gap: 0.2rem;
   /* align-items: flex-start; */
@@ -142,7 +173,44 @@
   border-radius: 10px;
   /* border: 1px solid var(--accent); */
   background-color: #cde9ff;
-  border-left: 6px solid #72b6ff;
+  /* border-left: 6px solid #5dabff; */
+  border-left: 6px solid #56a8ff;
+  /* border-left: 6px solid #4aa2ff; */
+  /* border-left: 6px solid var(--accent); */
 
   /* color: white; */
+}
+
+.custom-service {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 5rem 21rem;
+  scroll-margin-top: 150px;
+  border-top: 5px solid #cde9ff;
+}
+
+.custom-service h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.custom-service p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.custom-service button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #cde9ff;
+  color: #56a8ff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 1px solid #56a8ff;
+  cursor: pointer;
+  margin-right: auto;
 }
