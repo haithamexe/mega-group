@@ -134,6 +134,7 @@ function Header({ scrollYProgress, normalizedY }) {
         scrollYProgress={scrollYProgress}
         topValue={topValue}
         currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
       />
       <nav>
         <ul className="header-links">

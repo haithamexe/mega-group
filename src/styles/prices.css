@@ -5,28 +5,26 @@
   /* background-color: var(--accent); */
   /* height: 100vh; */
 }
-.prices-header-wrapper {
+/* .prices-header-wrapper {
   padding: 0 20rem;
   padding-top: 13vh;
-  /* background-color: rgb(0, 33, 221); */
   background-color: rgb(59, 154, 255);
   position: relative;
   overflow: hidden;
-}
+} */
 
-.prices-header-wrapper img {
+/* .prices-header-wrapper img {
   position: absolute;
   top: -300px;
   left: 0;
-  /* height: 100%; */
   width: 100%;
   object-fit: contain;
   opacity: 0.4;
   filter: blur(2px);
   mix-blend-mode: multiply;
-}
+} */
 
-.prices-header {
+/* .prices-header {
   height: 32vh;
   position: relative;
   padding: 3rem 1rem;
@@ -34,9 +32,9 @@
   flex-direction: column;
   justify-content: flex-end;
   color: white;
-}
+} */
 
-.prices-header h1 {
+/* .prices-header h1 {
   font-size: 4rem;
   color: var(--primary);
   margin-bottom: 0.5rem;
@@ -48,13 +46,42 @@
   width: 60%;
   text-align: justify;
   font-weight: 700;
+} */
+
+.prices-links-container {
+  display: flex;
+  gap: 0.5rem;
+  /* justify-content: flex-start; */
+  /* align-items: center; */
+  padding: 1rem 21rem;
+  padding-bottom: 5rem;
+  /* width: 100%; */
+  flex-wrap: wrap;
+}
+.prices-links-container a {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #cde9ff;
+  /* color: black; */
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+  /* border: 1px solid var(--accent); */
+  border: 1px solid #56a8ff;
+  /* border: 1px solid #4aa2ff; */
+  /* border: 1px solid var(--accent); */
+  /* border-left: 6px solid var(--accent); */
+  /* border-left: 6px solid #56a8ff; */
+  /* border-left: 6px solid #4aa2ff; */
+  /* border-left: 6px solid var(--accent); */
+  /* color: white; */
 }
 
 .prices-cards-wrapper {
   display: flex;
-  gap: 3rem;
-  padding: 3rem 21rem;
-  /* padding-bottom: 0; */
+  gap: 4rem 3rem;
+  padding: 10rem 21rem;
+  padding-top: 0;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -64,8 +91,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.3rem 0;
+  padding: 0.5rem 0;
   color: var(--accent);
+  text-align: center;
+  gap: 1rem;
+}
+.prices-type-header h1 {
+  width: 80%;
+}
+.prices-type-header hr {
+  width: 100%;
+  border: 1px solid var(--text-primary);
+  margin: 0;
 }
 
 .price-card {

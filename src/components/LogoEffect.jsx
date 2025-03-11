@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useTransform, useMotionValueEvent } from "motion/react";
 import "../index.css";
+import { useHeaderContext } from "../context/HeaderProvider";
 
 function LogoEffect({
   normalizedY,
@@ -34,7 +35,12 @@ function LogoEffect({
 
   return (
     <motion.div className="header-logo-container">
-      <Link to="/">
+      <Link
+        to="/"
+        onClick={() => {
+          setCurrentPage("home");
+        }}
+      >
         <div className="header-logo-backdrop-container">
           {/* <motion.div
             className="header-logo-backdrop"

@@ -347,8 +347,10 @@
   display: flex;
   gap: 3rem;
 }
-.footer-links h1,
-p {
+.footer-links h1 {
+  cursor: pointer;
+}
+.footer-links p {
   cursor: pointer;
 }
 

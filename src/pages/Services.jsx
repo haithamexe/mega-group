@@ -3,6 +3,7 @@ import "../styles/services.css";
 import { motion, useTransform, useSpring } from "motion/react";
 import { MoveRight } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
+import ImageShapesContainer from "../components/ImageShapesContainer";
 
 function Services() {
   const { stopLenis, startLenis } = useOutletContext();
@@ -15,33 +16,32 @@ function Services() {
 
   return (
     <div className="services">
-      {/* <header className="services-header-wrapper">
-        <img
+      <header className="services-header-wrapper">
+        {/* <img
           src="../../public/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
           alt="placeholder"
-        />
+        /> */}
         <div className="services-header">
-          <h1>Services</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            pulvinar risus non tortor bibendum, id luctus erat fermentum. Sed
-            sollicitudin, libero sit amet tincidunt ultricies, libero nunc
-            scelerisque libero, sit amet tincidunt arcu nisl nec purus. Nullam
-            pulvinar risus non tortor bibendum, id luctus erat fermentum. Sed
-            sollicitudin, libero sit amet tincidunt ultricies, libero nunc
-            scelerisque libero, sit amet tincidunt arcu nisl nec purus.
-          </p>
-          <p></p>
+          <div className="header-hero-text">
+            <h1>Services</h1>
+            <p>
+              Our team of experts can help you with everything from branding and
+              marketing to software development and social media management.
+              Explore our services below to see how we can help you grow your
+              business.
+            </p>
+          </div>
+          <div className="header-hero-img">
+            <ImageShapesContainer />
+          </div>
         </div>
-      </header> */}
-      <section
+      </header>
+      {/* <section
         className="services-contetnt"
         style={{
           height: "5vh",
         }}
-      >
-        {" "}
-      </section>
+      ></section> */}
       <div className="services-links-container">
         <a onClick={() => scrollToElement("branding")} href="#branding">
           Branding

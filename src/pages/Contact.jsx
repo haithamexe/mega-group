@@ -1,21 +1,21 @@
 import React from "react";
+import ImageShapesContainer from "../components/ImageShapesContainer";
 
 function Contact() {
   return (
     <div className="contact-us">
       <header className="services-header-wrapper">
-        <img
-          src="../../public/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
-          alt="placeholder"
-        />
         <div className="services-header">
-          <h1>Contact Us</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            pulvinar risus non tortor bibendum, id luctus erat fermentum. Sed
-            sollicitudin, libero sit amet
-          </p>
-          <p></p>
+          <div className="header-hero-text">
+            <h1>Contact</h1>
+            <p>
+              We would love to hear from you! Please fill out the form below and
+              we will get back to you as soon as possible.
+            </p>
+          </div>
+          <div className="header-hero-img">
+            <ImageShapesContainer />
+          </div>
         </div>
       </header>
       <section className="services-content"></section>
