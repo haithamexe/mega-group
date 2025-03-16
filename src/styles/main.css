@@ -297,7 +297,7 @@
   }
 }
 
-.footer-head {
+/* .footer-head {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -308,11 +308,13 @@
   font-size: 3rem;
   font-weight: 500;
   width: 100%;
-}
+} */
 
 .footer-body {
   display: flex;
-  padding: 2rem 19rem;
+  padding: 2rem 21rem;
+  padding-left: 19rem;
+
   gap: 1rem;
 }
 .footer-socials {
@@ -418,6 +420,7 @@
   font-size: 1rem;
   font-weight: 500;
   color: #dddddd;
+  text-align: right;
 }
 
 .footer-foot {

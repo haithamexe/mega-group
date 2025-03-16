@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/about.css";
 import ImageShapesContainer from "../components/ImageShapesContainer";
+import { motion } from "motion/react";
 
 function About() {
   return (
@@ -46,14 +47,43 @@ function About() {
               pushing the boundaries of what is possible.
             </p>
           </div>
-          <div className="about-content-item">
-            <h2>Our Team</h2>
-            <p>
-              Our team is made up of talented professionals who are passionate
-              about helping businesses succeed. We have a diverse range of
-              skills and expertise to help you achieve your goals.
-            </p>
-          </div>
+        </div>
+        {/* <div className="about-image-container">
+          <img
+            src="../../public/images/1737149568768.jfif"
+            alt="about"
+            className="about-content-img"
+          />
+        </div> */}
+        <div
+          className="about-image-container"
+          style={{
+            width: "100%",
+
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img
+            style={{
+              objectFit: "contain",
+              width: "70%",
+              height: "70%",
+            }}
+            src="../../public/images/mega-logo-blue.png"
+            alt="about"
+            className="about-content-img"
+          />
+          <motion.img
+            style={{
+              objectFit: "cover",
+              backgroundColor: "white",
+            }}
+            src="../../public/images/mega-logo-stairs.png"
+            alt="about"
+            className="about-content-img"
+          />
         </div>
       </section>
       <section className="about-adresses">
