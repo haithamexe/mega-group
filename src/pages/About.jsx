@@ -5,7 +5,13 @@ import { motion } from "motion/react";
 
 function About() {
   return (
-    <div className="about">
+    <motion.div
+      className="about"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}
+    >
       <header className="services-header-wrapper">
         <div className="services-header">
           <div className="header-hero-text">
@@ -50,7 +56,7 @@ function About() {
         </div>
         {/* <div className="about-image-container">
           <img
-            src="../../public/images/1737149568768.jfif"
+            src="/images/1737149568768.jfif"
             alt="about"
             className="about-content-img"
           />
@@ -71,7 +77,7 @@ function About() {
               width: "70%",
               height: "70%",
             }}
-            src="../../public/images/mega-logo-blue.png"
+            src="/images/mega-logo-blue.png"
             alt="about"
             className="about-content-img"
           />
@@ -80,7 +86,7 @@ function About() {
               objectFit: "cover",
               backgroundColor: "white",
             }}
-            src="../../public/images/mega-logo-stairs.png"
+            src="/images/mega-logo-stairs.png"
             alt="about"
             className="about-content-img"
           />
@@ -102,7 +108,7 @@ function About() {
       </section>
       <section className="about-socials">{/* Add a socials here */}</section>
       <section className="about-map">{/* Add a map here */}</section>
-    </div>
+    </motion.div>
   );
 }
 

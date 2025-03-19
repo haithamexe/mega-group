@@ -109,7 +109,7 @@ function Home() {
           loop
           playsInline
           src="/videos/stock-footage-abstract-grey-and-white-clouds-gradient-background.webm"
-          // src="../../public/videos/stock-footage-blurred-blue-background-with-diagonal-light-streaks-suitable-for-technology-or-abstract-designs.webm"
+          // src="/videos/stock-footage-blurred-blue-background-with-diagonal-light-streaks-suitable-for-technology-or-abstract-designs.webm"
         />
         <div className="home-hero-content">
           <div className="home-hero-content-inner">

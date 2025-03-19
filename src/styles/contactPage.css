@@ -1,0 +1,44 @@
+.contact-content-wrapper {
+  padding: 0rem 21rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-content-options {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.contact-content-options button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.contact-content-option {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 1rem; */
+}
+.contact-logo-wrapper {
+  width: 30%;
+
+  gap: 1rem;
+}
+.contact-content-option img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

@@ -18,7 +18,7 @@ function Services() {
     <div className="services">
       <header className="services-header-wrapper">
         {/* <img
-          src="../../public/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+          src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
           alt="placeholder"
         /> */}
         <div className="services-header">
@@ -157,7 +157,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="../../public/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
                 alt="placeholder"
               />
             </motion.div>
@@ -196,7 +196,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="../../public/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
                 alt="placeholder"
               />
             </motion.div>
@@ -333,7 +333,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="../../public/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
                 alt="placeholder"
               />
             </motion.div>
@@ -372,7 +372,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="../../public/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
                 alt="placeholder"
               />
             </motion.div>
@@ -506,7 +506,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="../../public/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
                 alt="placeholder"
               />
             </motion.div>
@@ -545,7 +545,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="../../public/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
                 alt="placeholder"
               />
             </motion.div>

@@ -1,0 +1,82 @@
+.ourwork-projects-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem 1rem;
+  /* justify-content: flex-start; */
+  padding: 3rem 21rem;
+}
+
+.ourwork-project {
+  width: 400px;
+  height: 300px;
+  /* padding: 3rem; */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--accent);
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+
+  position: relative;
+  color: var(--accent);
+}
+.ourwork-project h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.ourwork-project p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #000000;
+  text-align: justify;
+}
+
+.ourwork-project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.ourwork-project::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(75, 75, 75, 0) 30%,
+    rgba(164, 225, 255, 0.5) 100%
+  );
+}
+
+.ourwork-project-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  bottom: -1rem;
+  left: 1rem;
+  background-color: rgb(255, 255, 255);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 2px solid var(--accent);
+  font-size: 1rem;
+  z-index: 5;
+}
+.ourwork-project-text a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.8rem;
+  height: 100%;
+}

@@ -2,10 +2,17 @@ import React from "react";
 import "../styles/prices.css";
 import { CircleCheck, CircleMinus } from "lucide-react";
 import ImageShapesContainer from "../components/ImageShapesContainer";
+import { motion } from "motion/react";
 
 function Prices() {
   return (
-    <div className="prices">
+    <motion.div
+      className="prices"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}
+    >
       <header className="services-header-wrapper">
         <div className="services-header">
           <div className="header-hero-text">
@@ -332,7 +339,7 @@ function Prices() {
         </p>
         <button className="packages-button">Contact Us</button>
       </section>
-    </div>
+    </motion.div>
   );
 }
 
