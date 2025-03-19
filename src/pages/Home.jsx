@@ -101,7 +101,13 @@ function Home() {
   // }
 
   return (
-    <div className="home">
+    <motion.div
+      className="home"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}
+    >
       <div className="home-hero" id="home-hero">
         <video
           autoPlay
@@ -807,7 +813,7 @@ function Home() {
         </div>
         <ContactContainer scrollYProgress={scrollMission} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

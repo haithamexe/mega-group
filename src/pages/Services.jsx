@@ -15,7 +15,13 @@ function Services() {
   };
 
   return (
-    <div className="services">
+    <motion.div
+      className="services"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}
+    >
       <header className="services-header-wrapper">
         {/* <img
           src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
@@ -631,7 +637,7 @@ function Services() {
         </p>
         <button>Contact Us</button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
