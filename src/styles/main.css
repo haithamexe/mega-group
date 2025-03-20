@@ -13,9 +13,10 @@
 .header {
   display: flex;
   justify-content: flex-end;
-  height: 8vh;
   /* padding-right: 22.5rem; */
   /* gap: 1rem; */
+  height: 70px;
+  /* height: 8vh; */
   padding: 1rem 21rem;
   border: 1px solid var(--accent);
   width: 100%;

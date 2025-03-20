@@ -203,68 +203,6 @@ function Home() {
               ></i>
             </motion.div>
 
-            {/* <motion.div
-              onClick={() =>
-                handleScrollToElement(document.getElementById("services"))
-              }
-              className="home-scroll-to-top"
-              initial={{
-                right: 0,
-                bottom: 35 * 7,
-                opacity: 0,
-              }}
-              animate={{
-                right: 40,
-                opacity: 1,
-              }}
-              exit={{
-                right: 0,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.15,
-              }}
-            >
-              <p
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-              >
-                Services
-              </p>
-            </motion.div> */}
-            {/* <motion.div
-              onClick={() =>
-                handleScrollToElement(document.getElementById("why_us"))
-              }
-              className="home-scroll-to-top"
-              initial={{
-                right: 0,
-                bottom: 35 * 5,
-                opacity: 0,
-              }}
-              animate={{
-                right: 40,
-                opacity: 1,
-              }}
-              exit={{
-                right: 0,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.2,
-              }}
-            >
-              <p
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-              >
-                Why Us
-              </p>
-            </motion.div> */}
             <motion.div
               onClick={handleScrollToBottom}
               className="home-scroll-to-top"
