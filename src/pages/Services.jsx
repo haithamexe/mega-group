@@ -163,7 +163,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="../../public/images/2d-vects/2953998.jpg"
                 alt="placeholder"
               />
             </motion.div>
@@ -202,7 +202,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="../../public/images/2d-vects/10075627.jpg"
                 alt="placeholder"
               />
             </motion.div>
@@ -339,7 +339,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="../../public/images/2d-vects/10191042.jpg"
                 alt="placeholder"
               />
             </motion.div>
@@ -378,7 +378,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="../../public/images/2d-vects/9848264.jpg"
                 alt="placeholder"
               />
             </motion.div>
@@ -512,7 +512,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="../../public/images/2d-vects/5994306.jpg"
                 alt="placeholder"
               />
             </motion.div>
@@ -551,7 +551,7 @@ function Services() {
               className="services-service-img"
             >
               <img
-                src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
+                src="../../public/images/2d-vects/4944103.jpg"
                 alt="placeholder"
               />
             </motion.div>

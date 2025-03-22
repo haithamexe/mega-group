@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 
-function ImageShapesContainer() {
+function ImageShapesContainer({ image = "gettyimages-616902766-612x612.jpg" }) {
   return (
     <div className="shapes-container">
       {/* First shape */}
@@ -41,7 +41,7 @@ function ImageShapesContainer() {
 
         {/* The image that will be clipped */}
         <image
-          href="../../public/images/tech-companies.jpg"
+          href={"/images/" + image}
           clipPath="url(#clipPath1)"
           x={"-100%"}
           style={{
@@ -107,7 +107,7 @@ function ImageShapesContainer() {
 
         {/* The image that will be clipped */}
         <image
-          href="../../public/images/tech-companies.jpg"
+          href={"/images/" + image}
           clipPath="url(#clipPath2)"
           x={"-200%"}
           style={{
@@ -169,9 +169,9 @@ function ImageShapesContainer() {
 
         {/* The image that will be clipped */}
         <image
-          href="../../public/images/tech-companies.jpg"
+          href={"/images/" + image}
           clipPath="url(#clipPath3)"
-          x={"-350%"}
+          x={"-300%"}
           style={{
             objectFit: "cover",
             height: "100%",
