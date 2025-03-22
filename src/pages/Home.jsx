@@ -114,7 +114,7 @@ function Home() {
           muted
           loop
           playsInline
-          // src="../../public/videos/abstract black wave_preview.mp4"
+          // src="/videos/abstract black wave_preview.mp4"
           src="/videos/abstract 3d geometric pattern_preview.mp4"
           // src="/videos/stock-footage-blurred-blue-background-with-diagonal-light-streaks-suitable-for-technology-or-abstract-designs.webm"
         />
@@ -312,7 +312,7 @@ function Home() {
         >
           <div className="home-mission-inner">
             <h1>Build Better</h1>
-            <img src="../../public/images/2d-vects/0.jpg" />
+            <img src="/images/2d-vects/0.jpg" />
           </div>
         </motion.div>
         <motion.div
@@ -334,7 +334,7 @@ function Home() {
           <div className="home-mission-inner">
             <h1>Build Bigger</h1>
 
-            <img src="../../public/images/2d-vects/10191042.jpg" />
+            <img src="/images/2d-vects/10191042.jpg" />
           </div>
         </motion.div>
         <motion.div
@@ -358,7 +358,7 @@ function Home() {
         >
           <div className="home-mission-inner">
             <h1>Build Smarter</h1>
-            <img src="../../public/images/2d-vects/4966425.jpg" />
+            <img src="/images/2d-vects/4966425.jpg" />
           </div>
         </motion.div>
       </div>
@@ -393,7 +393,7 @@ function Home() {
               cursor: "pointer",
             }}
           >
-            <img src="../../public/images/2d-vects/6666301.jpg" />
+            <img src="/images/2d-vects/6666301.jpg" />
             <div className="home-service-content">
               <h3>Branding</h3>
               <p>
@@ -415,7 +415,7 @@ function Home() {
               cursor: "pointer",
             }}
           >
-            <img src="../../public/images/2d-vects/3129505.jpg" />
+            <img src="/images/2d-vects/3129505.jpg" />
             <div className="home-service-content">
               <h3>Marketing</h3>
               <p>
@@ -437,7 +437,7 @@ function Home() {
               cursor: "pointer",
             }}
           >
-            <img src="../../public/images/2d-vects/Video-Files.jpg" />
+            <img src="/images/2d-vects/Video-Files.jpg" />
             <div className="home-service-content">
               <h3>Graphic Design</h3>
               <p>
@@ -457,7 +457,7 @@ function Home() {
             onMouseEnter={() => setServiceShowMore("digital_transformation")}
             onMouseLeave={() => setServiceShowMore("")}
           >
-            <img src="../../public/images/2d-vects/6155818.jpg" />
+            <img src="/images/2d-vects/6155818.jpg" />
             <div className="home-service-content">
               <h3>Digital Transformation</h3>
               <p>
@@ -481,7 +481,7 @@ function Home() {
               cursor: "pointer",
             }}
           >
-            <img src="../../public/images/2d-vects/5057942.jpg" />
+            <img src="/images/2d-vects/5057942.jpg" />
             <div className="home-service-content">
               <h3>Social Media Management</h3>
               <p>
@@ -506,7 +506,7 @@ function Home() {
               cursor: "pointer",
             }}
           >
-            <img src="../../public/images/2d-vects/6579900.jpg" />
+            <img src="/images/2d-vects/6579900.jpg" />
             <div className="home-service-content">
               <h3>Software And Web Development</h3>
               <p>

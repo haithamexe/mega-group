@@ -211,7 +211,7 @@ function ImageShapesContainer({ image = "gettyimages-616902766-612x612.jpg" }) {
           bounce: 0.1,
           damping: 10,
         }}
-        src="../../public/images/stars-top.png"
+        src="/images/stars-top.png"
         alt="tech companies"
       />
       <motion.img
@@ -230,7 +230,7 @@ function ImageShapesContainer({ image = "gettyimages-616902766-612x612.jpg" }) {
           type: "spring",
           damping: 18,
         }}
-        src="../../public/images/stars-bottom.png"
+        src="/images/stars-bottom.png"
         alt="tech companies"
       />
     </div>
