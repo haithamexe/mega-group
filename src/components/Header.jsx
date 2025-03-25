@@ -116,7 +116,7 @@ function Header({ scrollYProgress, normalizedY }) {
 
         // backgroundColor: background,
 
-        ...(currentPage !== "home"
+        ...(currentPage !== "home" && currentPage !== "undefined"
           ? {
               // borderBottom: "1px solid black",
 
@@ -156,7 +156,7 @@ function Header({ scrollYProgress, normalizedY }) {
                 <motion.div style={{}}>
                   <motion.h1
                     style={{
-                      ...(currentPage !== "home"
+                      ...(currentPage !== "home" && currentPage !== "undefined"
                         ? { color: "black" }
                         : { color: color }),
                     }}
