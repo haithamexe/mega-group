@@ -41,10 +41,8 @@ const links = [
 function Header({ scrollYProgress, normalizedY }) {
   // const { scrollYProgress } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
-  const { currentPage, setCurrentPage } = useHeaderContext();
-  const [isHome, setIsHome] = useState(
-    currentPage === "home" || currentPage === ""
-  );
+  // const { currentPage, setCurrentPage } = useHeaderContext();
+  const [currentPage, setCurrentPage] = useState("undefined");
 
   const width = useSpring(
     useTransform(scrollYProgress, [0, 0.01], [1300, 3000]),
@@ -97,6 +95,15 @@ function Header({ scrollYProgress, normalizedY }) {
     ["0px", "60px"]
   );
 
+  useEffect(() => {
+    if (window.location.pathname.split("/")[1] === "") {
+      setCurrentPage("home");
+    } else {
+      console.log(window.location.pathname.split("/")[1]);
+      setCurrentPage(window.location.pathname.split("/")[1]);
+    }
+  }, []);
+
   return (
     <motion.div
       style={{
@@ -109,20 +116,20 @@ function Header({ scrollYProgress, normalizedY }) {
 
         // backgroundColor: background,
 
-        ...(currentPage === "home" || currentPage === ""
+        ...(currentPage !== "home"
           ? {
-              backgroundColor: background,
-              // margin: margin,
-              borderBottomWidth: borderBottomWidth,
-              borderWidth: borderAll,
-
               // borderBottom: "1px solid black",
-            }
-          : {
+
               backgroundColor: "rgb(255, 255, 255)",
               // margin: 0,
               borderWidth: 0,
               borderBottomWidth: 1,
+            }
+          : {
+              backgroundColor: background,
+              // margin: margin,
+              borderBottomWidth: borderBottomWidth,
+              borderWidth: borderAll,
             }),
 
         // borderRadius: borderRadius,
@@ -146,20 +153,12 @@ function Header({ scrollYProgress, normalizedY }) {
                   setCurrentPage(link.text.toLowerCase());
                 }}
               >
-                <motion.div
-                  style={
-                    {
-                      // padding: itemPadding,
-                      // paddingBottom: "0px",
-                      // paddingTop: "0px",
-                    }
-                  }
-                >
+                <motion.div style={{}}>
                   <motion.h1
                     style={{
-                      ...(currentPage === "home" || currentPage === ""
-                        ? { color: color }
-                        : { color: "black" }),
+                      ...(currentPage !== "home"
+                        ? { color: "black" }
+                        : { color: color }),
                     }}
                   >
                     {link.text !== "CONTACT" ? (

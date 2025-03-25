@@ -1,9 +1,36 @@
 import React from "react";
 import "../styles/about.css";
 import ImageShapesContainer from "../components/ImageShapesContainer";
-import { motion } from "motion/react";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  useTransform,
+} from "motion/react";
 
 function About() {
+  const { scrollYProgress } = useScroll();
+  const [wordIndex, setWordIndex] = React.useState(0);
+  const scrollNormalized = useTransform(scrollYProgress, [0, 1], [0, 11]);
+
+  const words = [
+    "",
+    "",
+    "Innovate",
+    "Empower",
+    "Transform",
+    "Excel",
+    "Connect",
+    "Sustain",
+    "Inspire",
+    "",
+    "",
+  ];
+
+  useMotionValueEvent(scrollNormalized, "change", (latest) => {
+    setWordIndex(Math.floor(latest));
+  });
+
   return (
     <motion.div
       className="about"
@@ -23,7 +50,7 @@ function About() {
             </p>
           </div>
           <div className="header-hero-img">
-            <ImageShapesContainer />
+            {/* <ImageShapesContainer /> */}
           </div>
         </div>
       </header>
@@ -81,15 +108,36 @@ function About() {
             alt="about"
             className="about-content-img"
           />
-          <motion.img
+          <div
             style={{
-              objectFit: "cover",
-              backgroundColor: "white",
+              position: "relative",
+              width: "100%",
+              height: "100%",
             }}
-            src="/images/mega-logo-stairs.png"
-            alt="about"
-            className="about-content-img"
-          />
+          >
+            <motion.img
+              style={{
+                objectFit: "cover",
+                backgroundColor: "white",
+              }}
+              src="/images/mega-logo-stairs.png"
+              alt="about"
+              className="about-content-img"
+            />
+            <motion.h1
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                color: "#1b8ecd",
+                zIndex: 10,
+                fontSize: "8rem",
+              }}
+            >
+              {words[wordIndex]}
+            </motion.h1>
+          </div>
         </div>
       </section>
       <section className="about-adresses">

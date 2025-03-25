@@ -731,23 +731,23 @@ function Home() {
         <div className="home-clients-inner">
           <h1>Featured Clients</h1>
           <div className="home-clients-logos">
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
-            <img src="/images/mega-logo-blue.png" alt="client image" />
+            <img src="../../public/images/logos/agar.png" alt="client image" />
+            <img src="../../public/images/logos/az.png" alt="client image" />
+            <img src="../../public/images/logos/bunian.png" alt="client image" />
+            <img src="../../public/images/logos/cloud.png" alt="client image" />
+            <img src="../../public/images/logos/lujain.png" alt="client image" />
+            <img src="../../public/images/logos/majal.png" alt="client image" />
+            <img src="../../public/images/logos/maps.png" alt="client image" />
+            <img src="../../public/images/logos/mesc.png" alt="client image" />
+            <img src="../../public/images/logos/mobtakarat.png" alt="client image" />
+            <img src="../../public/images/logos/qafla.png" alt="client image" />
+            <img src="../../public/images/logos/rahma.png" alt="client image" />
+            <img src="../../public/images/logos/refqa.png" alt="client image" />
+            <img src="../../public/images/logos/royal.png" alt="client image" />
+            <img src="../../public/images/logos/sonbla.png" alt="client image" />
+            <img src="../../public/images/logos/vpet.png" alt="client image" />
+            <img src="../../public/images/logos/zain.png" alt="client image" />
+            
           </div>
         </div>
         <ContactContainer scrollYProgress={scrollMission} />

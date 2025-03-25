@@ -10,13 +10,16 @@ function HeaderProvider({ children }) {
   const [currentPage, setCurrentPage] = useState("");
 
   useEffect(() => {
+    handlePageLoad();
+  }, []);
+
+  const handlePageLoad = async () => {
     if (window.location.pathname.split("/")[1] === "") {
       setCurrentPage("home");
     } else {
       setCurrentPage(window.location.pathname.split("/")[1]);
     }
-    // alert(window.location.pathname.split("/")[1]);
-  }, []);
+  };
 
   return (
     <HeaderContext.Provider
