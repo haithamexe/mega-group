@@ -50,7 +50,7 @@ function About() {
             </p>
           </div>
           <div className="header-hero-img">
-            {/* <ImageShapesContainer /> */}
+            <ImageShapesContainer image="2021_Janasduari_61-1.jpg" />
           </div>
         </div>
       </header>

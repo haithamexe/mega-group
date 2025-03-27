@@ -26,7 +26,7 @@ function OurWork() {
             </p>
           </div>
           <div className="header-hero-img">
-            <ImageShapesContainer />
+            <ImageShapesContainer image="tech-companies.jpg" />
           </div>
         </div>
       </header>
@@ -43,7 +43,13 @@ function OurWork() {
             onClick={() => scrollToElement("social-media-management")}
             href="#social-media-management"
           >
-            Social Media Management And Graphic Design
+            Social Media Management And Posts
+          </a>
+          <a
+            onClick={() => scrollToElement("social-media-management")}
+            href="#social-media-management"
+          >
+            Graphic Design And Branding
           </a>
         </div>
         <div className="ourwork-content-wrapper">
@@ -340,6 +346,240 @@ function OurWork() {
                   <SquareArrowOutUpRight className="ourwork-link-arrow" />
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="ourwork-content-wrapper">
+          <div className="ourwork-projects-wrapper" id="graphic-design">
+            <div
+              className="ourwork-project project-post"
+              style={{
+                padding: "1rem",
+              }}
+            >
+              <h1>Social Media Management and Posts</h1>
+              <p>posts, stories, and ads for social media platforms.</p>
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/posts/photo_2022-10-05-01.11.34-2-1024x1024.webp"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/posts/photo_2022-10-05-01.11.38-2-1024x1024.webp"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/posts/photo_2022-10-06-21.08.49-2-1024x1024.webp"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/posts/photo_2022-10-06-21.09.09-2-1024x1024.webp"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/posts/photo_2022-10-06-21.09.15-2-1024x1024.webp"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/posts/photo_2022-10-06-21.09.18-2-1024x1024.webp"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/posts/photo_2023-05-03-6.29.58-AM-1024x1024.webp"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/posts/photo_2023-05-03-6.30.03-AM-1024x1024.webp"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/posts/photo_2023-05-03-6.30.27-AM-1024x1024.webp"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="ourwork-content-wrapper">
+          <div className="ourwork-projects-wrapper" id="graphic-design">
+            <div
+              className="ourwork-project project-post"
+              style={{
+                padding: "1rem",
+              }}
+            >
+              <h1>Graphic Design Logos</h1>
+              <p>Branding and Identity Design Logos</p>
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/agar.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/az.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/az.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/bunian.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/cloud.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/lujain.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/majal.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/maps.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/mesc.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/mobtakarat.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/qafla.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/rahma.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/refqa.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/royal.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/sonbla.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/vpet.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="ourwork-project project-post">
+              <img
+                src="../../public/images/logos/zain.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

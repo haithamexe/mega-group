@@ -21,6 +21,7 @@ function ImageShapesContainer({ image = "gettyimages-616902766-612x612.jpg" }) {
           bounce: 0.1,
           damping: 10,
         }}
+
         // initial={{ marginRight: "5px", marginTop: "0" }}
       >
         <defs>

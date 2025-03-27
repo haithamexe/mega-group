@@ -15,26 +15,32 @@ const links = [
   {
     url: "/",
     text: "HOME",
+    link: "home",
   },
   {
     url: "/services",
     text: "SERVICES",
+    link: "services",
   },
   {
     url: "/prices",
     text: "PRICES",
+    link: "prices",
   },
   {
     url: "/ourwork",
     text: "OUR WORK",
+    link: "ourwork",
   },
   {
     url: "/about",
     text: "ABOUT",
+    link: "about",
   },
   {
     url: "/contact",
     text: "CONTACT",
+    link: "contact",
   },
 ];
 
@@ -42,7 +48,8 @@ function Header({ scrollYProgress, normalizedY }) {
   // const { scrollYProgress } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   // const { currentPage, setCurrentPage } = useHeaderContext();
-  const [currentPage, setCurrentPage] = useState("undefined");
+  const [currentPage, setCurrentPage] = useState("");
+  const [textColorScroled, setTextColorScrolled] = useState(true);
 
   const width = useSpring(
     useTransform(scrollYProgress, [0, 0.01], [1300, 3000]),
@@ -85,7 +92,7 @@ function Header({ scrollYProgress, normalizedY }) {
   const color = useTransform(
     scrollYProgress,
     [0, 0.02],
-    ["rgba(255, 255, 255)", "rgba(0, 0, 0)"]
+    ["rgba(255, 123, 255)", "rgba(0, 0, 0)"]
   );
 
   const paddingleft = useTransform(scrollYProgress, [0, 0.01], ["0px", "60px"]);
@@ -104,35 +111,22 @@ function Header({ scrollYProgress, normalizedY }) {
     }
   }, []);
 
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest >= 0.02) {
+      setTextColorScrolled(false);
+    } else {
+      setTextColorScrolled(true);
+    }
+  });
+
   return (
     <motion.div
       style={{
-        // width: width,
-        // ...(isHome ? { margin: margin } : { margin: 0 }),
-        // paddingLeft: paddingleft,
-        // paddingRight: paddingright,
         borderWidth: borderAll,
         borderBottomWidth: borderBottomWidth,
-
-        // backgroundColor: background,
-
-        ...(currentPage !== "home" && currentPage !== "undefined"
-          ? {
-              // borderBottom: "1px solid black",
-
-              backgroundColor: "rgb(255, 255, 255)",
-              // margin: 0,
-              borderWidth: 0,
-              borderBottomWidth: 1,
-            }
-          : {
-              backgroundColor: background,
-              // margin: margin,
-              borderBottomWidth: borderBottomWidth,
-              borderWidth: borderAll,
-            }),
-
-        // borderRadius: borderRadius,
+        backgroundColor: background,
+        borderBottomWidth: borderBottomWidth,
+        borderWidth: borderAll,
       }}
       className="header"
     >
@@ -150,38 +144,30 @@ function Header({ scrollYProgress, normalizedY }) {
               <Link
                 to={link.url}
                 onClick={() => {
-                  setCurrentPage(link.text.toLowerCase());
+                  setCurrentPage(link.link);
                 }}
+                className={
+                  currentPage === "home" && textColorScroled
+                    ? "header-link-text-home"
+                    : "header-link-text"
+                }
               >
-                <motion.div style={{}}>
-                  <motion.h1
-                    style={{
-                      ...(currentPage !== "home" && currentPage !== "undefined"
-                        ? { color: "black" }
-                        : { color: color }),
-                    }}
+                {link.text !== "CONTACT" ? (
+                  <h1
+                    className={
+                      currentPage === link.link ? "header-link-active" : ""
+                    }
                   >
-                    {link.text !== "CONTACT" ? (
-                      <h1
-                        style={{
-                          color:
-                            currentPage === link.text.toLowerCase()
-                              ? "#1B8ECD"
-                              : null,
-                        }}
-                      >
-                        {link.text}
-                      </h1>
-                    ) : (
-                      <div
-                        className="header-contact-button"
-                        onClick={handleContactClick}
-                      >
-                        {link.text}
-                      </div>
-                    )}
-                  </motion.h1>
-                </motion.div>
+                    {link.text}
+                  </h1>
+                ) : (
+                  <div
+                    className="header-contact-button"
+                    onClick={handleContactClick}
+                  >
+                    {link.text}
+                  </div>
+                )}
               </Link>
             </li>
           ))}

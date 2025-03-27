@@ -38,7 +38,7 @@ function Services() {
             </p>
           </div>
           <div className="header-hero-img">
-            <ImageShapesContainer />
+            <ImageShapesContainer image="architect-working-with-virtual-3d-projection.jpg" />
           </div>
         </div>
       </header>

@@ -433,3 +433,15 @@
   background-color: #001225;
   height: 150px;
 }
+
+.header-link-text {
+  color: rgb(0, 0, 0);
+}
+
+.header-link-text-home {
+  color: rgb(255, 255, 255) !important;
+}
+
+.header-link-active {
+  color: var(--accent) !important;
+}
