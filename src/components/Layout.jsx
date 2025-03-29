@@ -64,7 +64,13 @@ function Layout() {
 
   const handleScrollToElement = (element) => {
     if (lenis) lenis.stop();
-    element.scrollIntoView({ behavior: "immidiate" });
+    const targetElement = document.getElementById(element);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
     if (lenis) lenis.start();
   };
 

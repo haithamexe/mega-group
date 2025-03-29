@@ -24,7 +24,7 @@ function Prices() {
             </p>
           </div>
           <div className="header-hero-img">
-            <ImageShapesContainer image="Capgemini_The-Key-to-Designing-Inclusive-Tech.webp" />
+            <ImageShapesContainer image="businesspeople-working-finance-accounting-analyze-financi.jpg" />
           </div>
         </div>
       </header>

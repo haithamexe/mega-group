@@ -1,12 +1,31 @@
 import "../styles/ourWork.css";
 import ImageShapesContainer from "../components/ImageShapesContainer";
 import { SquareArrowOutUpRight } from "lucide-react";
-import { motion } from "motion/react";
+import {
+  motion,
+  useMotionValueEvent,
+  AnimatePresence,
+  useScroll,
+} from "motion/react";
 import { useState } from "react";
+import { Languages, MoveUp, Globe, Images, Factory } from "lucide-react";
+import { useOutletContext } from "react-router-dom";
 
 function OurWork() {
   const [viewMoreWebsites, setViewMoreWebsites] = useState(false);
   const [viewMoreGraphicDesigns, setViewMoreGraphicDesigns] = useState(false);
+  const [showBar, setShowBar] = useState(false);
+  const { scrollYProgress } = useScroll();
+
+  const { handleScrollToElement } = useOutletContext();
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest >= 0.1) {
+      setShowBar(true);
+    } else {
+      setShowBar(false);
+    }
+  });
 
   return (
     <motion.div
@@ -33,27 +52,32 @@ function OurWork() {
       <section className="ourwork-content">
         <div className="services-links-container">
           <a
-            onClick={() => scrollToElement("digital-transformation")}
-            href="#digital-transformation"
+            href="#web-development-our-work"
+            onClick={() => handleScrollToElement("web-development-our-work")}
           >
             Web Development And Digital Transformation
           </a>
-
           <a
-            onClick={() => scrollToElement("social-media-management")}
-            href="#social-media-management"
+            href="#social-media-management-our-work"
+            onClick={() =>
+              handleScrollToElement("social-media-management-our-work")
+            }
           >
             Social Media Management And Posts
           </a>
+
           <a
-            onClick={() => scrollToElement("social-media-management")}
-            href="#social-media-management"
+            href="#graphic-design-our-work"
+            onClick={() => handleScrollToElement("graphic-design-our-work")}
           >
             Graphic Design And Branding
           </a>
         </div>
         <div className="ourwork-content-wrapper">
-          <div className="ourwork-projects-wrapper" id="graphic-design">
+          <div
+            className="ourwork-projects-wrapper"
+            id="web-development-our-work"
+          >
             <div
               className="ourwork-project"
               style={{
@@ -69,7 +93,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/1.webp"
+                src="/images/projects/websites/1.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -83,7 +107,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/2.webp"
+                src="/images/projects/websites/2.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -97,7 +121,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/3.webp"
+                src="/images/projects/websites/3.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -111,7 +135,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/4.webp"
+                src="/images/projects/websites/4.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -125,7 +149,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/5.webp"
+                src="/images/projects/websites/5.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -139,7 +163,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/6.webp"
+                src="/images/projects/websites/6.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -153,7 +177,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/7.webp"
+                src="/images/projects/websites/7.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -167,7 +191,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/8.webp"
+                src="/images/projects/websites/8.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -181,7 +205,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/9.webp"
+                src="/images/projects/websites/9.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -195,7 +219,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/10.webp"
+                src="/images/projects/websites/10.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -209,7 +233,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/11.webp"
+                src="/images/projects/websites/11.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -223,7 +247,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/12.webp"
+                src="/images/projects/websites/12.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -237,7 +261,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/13.webp"
+                src="/images/projects/websites/13.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -251,7 +275,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/14.webp"
+                src="/images/projects/websites/14.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -265,7 +289,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/15.webp"
+                src="/images/projects/websites/15.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -279,7 +303,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/16.webp"
+                src="/images/projects/websites/16.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -293,7 +317,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/17.webp"
+                src="/images/projects/websites/17.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -307,7 +331,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/18.webp"
+                src="/images/projects/websites/18.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -321,7 +345,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/41.webp"
+                src="/images/projects/websites/41.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -335,7 +359,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project">
               <img
-                src="../../public/images/projects/websites/42.webp"
+                src="/images/projects/websites/42.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -350,7 +374,10 @@ function OurWork() {
           </div>
         </div>
         <div className="ourwork-content-wrapper">
-          <div className="ourwork-projects-wrapper" id="graphic-design">
+          <div
+            className="ourwork-projects-wrapper"
+            id="social-media-management-our-work"
+          >
             <div
               className="ourwork-project project-post"
               style={{
@@ -362,7 +389,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/posts/photo_2022-10-05-01.11.34-2-1024x1024.webp"
+                src="/images/posts/photo_2022-10-05-01.11.34-2-1024x1024.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -370,7 +397,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/posts/photo_2022-10-05-01.11.38-2-1024x1024.webp"
+                src="/images/posts/photo_2022-10-05-01.11.38-2-1024x1024.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -378,7 +405,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/posts/photo_2022-10-06-21.08.49-2-1024x1024.webp"
+                src="/images/posts/photo_2022-10-06-21.08.49-2-1024x1024.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -386,7 +413,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/posts/photo_2022-10-06-21.09.09-2-1024x1024.webp"
+                src="/images/posts/photo_2022-10-06-21.09.09-2-1024x1024.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -394,7 +421,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/posts/photo_2022-10-06-21.09.15-2-1024x1024.webp"
+                src="/images/posts/photo_2022-10-06-21.09.15-2-1024x1024.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -402,7 +429,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/posts/photo_2022-10-06-21.09.18-2-1024x1024.webp"
+                src="/images/posts/photo_2022-10-06-21.09.18-2-1024x1024.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -410,7 +437,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/posts/photo_2023-05-03-6.29.58-AM-1024x1024.webp"
+                src="/images/posts/photo_2023-05-03-6.29.58-AM-1024x1024.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -418,7 +445,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/posts/photo_2023-05-03-6.30.03-AM-1024x1024.webp"
+                src="/images/posts/photo_2023-05-03-6.30.03-AM-1024x1024.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -426,7 +453,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/posts/photo_2023-05-03-6.30.27-AM-1024x1024.webp"
+                src="/images/posts/photo_2023-05-03-6.30.27-AM-1024x1024.webp"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -435,7 +462,10 @@ function OurWork() {
           </div>
         </div>
         <div className="ourwork-content-wrapper">
-          <div className="ourwork-projects-wrapper" id="graphic-design">
+          <div
+            className="ourwork-projects-wrapper"
+            id="graphic-design-our-work"
+          >
             <div
               className="ourwork-project project-post"
               style={{
@@ -447,7 +477,16 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/agar.png"
+                src="/images/logos/agar.png"
+                alt="Graphic Design 1"
+                className="ourwork-project-img"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="ourwork-project project-post">
+              <img
+                src="/images/logos/az.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -455,7 +494,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/az.png"
+                src="/images/logos/bunian.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -463,7 +502,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/az.png"
+                src="/images/logos/cloud.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -471,7 +510,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/bunian.png"
+                src="/images/logos/lujain.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -479,7 +518,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/cloud.png"
+                src="/images/logos/majal.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -487,7 +526,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/lujain.png"
+                src="/images/logos/maps.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -495,7 +534,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/majal.png"
+                src="/images/logos/mesc.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -503,7 +542,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/maps.png"
+                src="/images/logos/mobtakarat.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -511,7 +550,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/mesc.png"
+                src="/images/logos/qafla.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -519,7 +558,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/mobtakarat.png"
+                src="/images/logos/rahma.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -527,7 +566,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/qafla.png"
+                src="/images/logos/refqa.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -535,7 +574,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/rahma.png"
+                src="/images/logos/royal.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -543,7 +582,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/refqa.png"
+                src="/images/logos/sonbla.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -551,7 +590,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/royal.png"
+                src="/images/logos/vpet.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -559,23 +598,7 @@ function OurWork() {
             </div>
             <div className="ourwork-project project-post">
               <img
-                src="../../public/images/logos/sonbla.png"
-                alt="Graphic Design 1"
-                className="ourwork-project-img"
-                loading="lazy"
-              />
-            </div>
-            <div className="ourwork-project project-post">
-              <img
-                src="../../public/images/logos/vpet.png"
-                alt="Graphic Design 1"
-                className="ourwork-project-img"
-                loading="lazy"
-              />
-            </div>
-            <div className="ourwork-project project-post">
-              <img
-                src="../../public/images/logos/zain.png"
+                src="/images/logos/zain.png"
                 alt="Graphic Design 1"
                 className="ourwork-project-img"
                 loading="lazy"
@@ -584,6 +607,102 @@ function OurWork() {
           </div>
         </div>
       </section>
+      <AnimatePresence>
+        {showBar && (
+          <div className="home-sidebar">
+            <motion.div
+              onClick={() => {
+                handleScrollToElement("web-development-our-work");
+              }}
+              className="home-scroll-to-top"
+              initial={{
+                right: 0,
+                bottom: 35 * 5,
+                opacity: 0,
+              }}
+              animate={{
+                right: 40,
+                opacity: 1,
+              }}
+              exit={{
+                right: 0,
+                opacity: 0,
+              }}
+              transition={{
+                duration: 0.1,
+              }}
+            >
+              <Globe
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+                size="30"
+              />
+            </motion.div>
+
+            <motion.div
+              onClick={() => {
+                handleScrollToElement("social-media-management-our-work");
+              }}
+              className="home-scroll-to-top"
+              initial={{
+                right: 0,
+                bottom: 35 * 3,
+                opacity: 0,
+              }}
+              animate={{
+                right: 40,
+                opacity: 1,
+              }}
+              exit={{
+                right: 0,
+                opacity: 0,
+              }}
+              transition={{
+                duration: 0.2,
+              }}
+            >
+              <Images
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+                size="30"
+              />
+            </motion.div>
+            <motion.div
+              onClick={() => {
+                handleScrollToElement("graphic-design-our-work");
+              }}
+              className="home-scroll-to-top"
+              initial={{
+                right: 0,
+                bottom: 35,
+              }}
+              animate={{
+                right: 40,
+                opacity: 1,
+              }}
+              exit={{
+                right: 0,
+                opacity: 0,
+              }}
+              transition={{
+                duration: 0.3,
+              }}
+            >
+              <Factory
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+                size="30"
+              />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }

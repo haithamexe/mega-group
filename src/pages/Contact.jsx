@@ -26,7 +26,7 @@ function Contact() {
             </p>
           </div>
           <div className="header-hero-img">
-            <ImageShapesContainer image="contact-bg.jpg" />
+            <ImageShapesContainer image="contact-us-bg.jpg" />
           </div>
         </div>
       </header>
