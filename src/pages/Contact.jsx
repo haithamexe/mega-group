@@ -13,7 +13,7 @@ function Contact() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.7 }}
+      transition={{ duration: 0.7, delay: 0.1, ease: "easeInOut" }}
     >
       <header className="services-header-wrapper">
         <div className="services-header">
