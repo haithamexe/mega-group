@@ -51,14 +51,10 @@ function OurWork() {
       </header>
       <section className="ourwork-content">
         <div className="services-links-container">
-          <a
-            href="#web-development-our-work"
-            onClick={() => handleScrollToElement("web-development-our-work")}
-          >
+          <a onClick={() => handleScrollToElement("web-development-our-work")}>
             Web Development And Digital Transformation
           </a>
           <a
-            href="#social-media-management-our-work"
             onClick={() =>
               handleScrollToElement("social-media-management-our-work")
             }
@@ -66,10 +62,7 @@ function OurWork() {
             Social Media Management And Posts
           </a>
 
-          <a
-            href="#graphic-design-our-work"
-            onClick={() => handleScrollToElement("graphic-design-our-work")}
-          >
+          <a onClick={() => handleScrollToElement("graphic-design-our-work")}>
             Graphic Design And Branding
           </a>
         </div>

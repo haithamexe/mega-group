@@ -1,7 +1,25 @@
-import React from "react";
+import { useState, useRef, useEffect } from "react";
 import "../styles/main.css";
+import { Languages } from "lucide-react";
 
 function Footer() {
+  const [dropDownOpen, setDropDownOpen] = useState(false);
+  const [language, setLanguage] = useState("en");
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropDownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef]);
+
   return (
     <div className="footer-container">
       <div className="footer">
@@ -105,7 +123,55 @@ function Footer() {
             </a>
           </div>
           <div className="footer-rights">
-            <h1>Mega Group &copy; 2021-{new Date().getFullYear()}</h1>
+            <div className="footer-rights-container">
+              <h1>Mega Group &copy; 2021-{new Date().getFullYear()}</h1>
+              {/* <Languages
+                className="languages-icon-footer"
+                onClick={() => alert("Language change is not available yet")}
+                size={25}
+              /> */}
+              <h1
+                className="languages-icon-footer"
+                onClick={() => setDropDownOpen(!dropDownOpen)}
+              >
+                {language === "en"
+                  ? "Language"
+                  : language === "tr"
+                  ? "Dil"
+                  : "اللغة"}
+              </h1>
+              {dropDownOpen && (
+                <div className="languages-dropdown-footer" ref={dropdownRef}>
+                  <div
+                    className="languages-dropdown-item"
+                    onClick={() => {
+                      setLanguage("en");
+                      setDropDownOpen(false);
+                    }}
+                  >
+                    <p>English</p>
+                  </div>
+                  <div
+                    className="languages-dropdown-item"
+                    onClick={() => {
+                      setLanguage("ar");
+                      setDropDownOpen(false);
+                    }}
+                  >
+                    <p>عربي</p>
+                  </div>
+                  <div
+                    className="languages-dropdown-item"
+                    onClick={() => {
+                      setLanguage("tr");
+                      setDropDownOpen(false);
+                    }}
+                  >
+                    <p>Türkçe</p>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </section>
       </div>

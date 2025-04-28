@@ -47,8 +47,8 @@ const links = [
 function Header({ scrollYProgress, normalizedY }) {
   // const { scrollYProgress } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
-  // const { currentPage, setCurrentPage } = useHeaderContext();
-  const [currentPage, setCurrentPage] = useState("");
+  const { currentPage, setCurrentPage } = useHeaderContext();
+  // const [currentPage, setCurrentPage] = useState("");
   const [textColorScroled, setTextColorScrolled] = useState(true);
 
   const width = useSpring(
@@ -102,14 +102,14 @@ function Header({ scrollYProgress, normalizedY }) {
     ["0px", "60px"]
   );
 
-  useEffect(() => {
-    if (window.location.pathname.split("/")[1] === "") {
-      setCurrentPage("home");
-    } else {
-      console.log(window.location.pathname.split("/")[1]);
-      setCurrentPage(window.location.pathname.split("/")[1]);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.location.pathname.split("/")[1] === "") {
+  //     setCurrentPage("home");
+  //   } else {
+  //     console.log(window.location.pathname.split("/")[1]);
+  //     setCurrentPage(window.location.pathname.split("/")[1]);
+  //   }
+  // }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (latest >= 0.02) {

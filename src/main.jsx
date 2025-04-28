@@ -11,10 +11,10 @@ import HeaderProvider from "./context/HeaderProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <HeaderProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <HeaderProvider>
         <App />
-      </BrowserRouter>
-    </HeaderProvider>
+      </HeaderProvider>
+    </BrowserRouter>
   </StrictMode>
 );

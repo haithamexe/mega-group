@@ -3,8 +3,11 @@ import "../styles/prices.css";
 import { CircleCheck, CircleMinus } from "lucide-react";
 import ImageShapesContainer from "../components/ImageShapesContainer";
 import { motion } from "motion/react";
+import { useOutletContext } from "react-router-dom";
 
 function Prices() {
+  const { handleScrollToElement } = useOutletContext();
+
   return (
     <motion.div
       className="prices"
@@ -29,17 +32,15 @@ function Prices() {
         </div>
       </header>
       <div className="prices-links-container">
-        <a onClick={() => scrollToElement("branding")} href="#branding">
+        <a onClick={() => handleScrollToElement("prices-websites")}>
           Websites And Digital Transformation
         </a>
-        <a onClick={() => scrollToElement("marketing")} href="#marketing">
+        <a onClick={() => handleScrollToElement("prices-social-media-content")}>
           Social Media and Content Management
         </a>
-        <a onClick={() => scrollToElement("contact")} href="#contact">
-          More
-        </a>
+        <a onClick={() => handleScrollToElement("prices-more")}>More</a>
       </div>
-      <section className="prices-cards-wrapper">
+      <section className="prices-cards-wrapper" id="prices-websites">
         <div className="prices-type-header">
           <hr />
           <h1>Websites And Digital Transformation</h1>
@@ -48,54 +49,72 @@ function Prices() {
         <div className="price-card">
           <div className="price-card-header">
             <p>Basic Plan</p>
-            <h1>$300</h1>
+            <h1>$500</h1>
             <button className="price-card-button">Get Started</button>
           </div>
           <hr />
           <ul className="prices-features">
             <li className="features-head">FEATURES</li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
-              5GB Storage
+              <CircleCheck fill="#56a8ff" color="white" />1 Langauge
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10GB Storage
+              Domain
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10 Users
+              Hosting
+            </li>
+            <li>
+              <CircleCheck fill="#56a8ff" color="white" />1 Website Emails
+            </li>
+            <li>
+              <CircleCheck fill="#56a8ff" color="white" />
+              Responsive Design
             </li>
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              Free Support
+              E-commerce Store
+            </li>
+            <li>
+              <CircleMinus fill="#c6d9f3" color="white" />1 Year Support
             </li>
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              100GB Bandwidth
+              Admin Panel
             </li>
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              10 Email Accounts
-            </li>
-            <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
-              Custom Domain
+              Payment Gateway Integration
             </li>
 
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              Monthly Reports
+              Custom Design
+            </li>
+            <li>
+              <CircleMinus fill="#c6d9f3" color="white" />
+              SEO Optimization
+            </li>
+            <li>
+              <CircleMinus fill="#c6d9f3" color="white" />
+              Live Chat Support
             </li>
           </ul>
         </div>
-        <div className="price-card">
+        <div
+          className="price-card"
+          style={{
+            scale: "1.05",
+          }}
+        >
           <div className="price-card-popup">
             <h1>Best Offer</h1>
           </div>
           <div className="price-card-header">
             <p>Business Plan</p>
-            <h1>$500</h1>
+            <h1>$900</h1>
             <button className="price-card-button middle-plan">
               Get Started
             </button>
@@ -104,44 +123,56 @@ function Prices() {
           <ul className="prices-features">
             <li className="features-head">FEATURES</li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
-              5GB Storage
+              <CircleCheck fill="#56a8ff" color="white" />2 Langauges
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10GB Storage
+              Domain
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10 Users
+              Hosting
+            </li>
+            <li>
+              <CircleCheck fill="#56a8ff" color="white" />5 Website Emails
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              Free Support
+              Responsive Design
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              100GB Bandwidth
+              E-commerce Store
+            </li>
+            <li>
+              <CircleCheck fill="#56a8ff" color="white" />1 Year Support
+            </li>
+            <li>
+              <CircleCheck fill="#56a8ff" color="white" />
+              Wordpress Admin Panel
             </li>
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              10 Email Accounts
+              Payment Gateway Integration
             </li>
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              Custom Domain
+              Custom Design
             </li>
-
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              Monthly Reports
+              SEO Optimization
+            </li>
+            <li>
+              <CircleMinus fill="#c6d9f3" color="white" />
+              Live Chat Support
             </li>
           </ul>
         </div>
         <div className="price-card">
           <div className="price-card-header">
             <p>Enterprise Plan</p>
-            <h1>$900</h1>
+            <h1>$1500</h1>
             <button className="price-card-button">Get Started</button>
           </div>
           <hr />
@@ -149,41 +180,58 @@ function Prices() {
             <li className="features-head">FEATURES</li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              5GB Storage
+              Multiple Langauges
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10GB Storage
+              Domain
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10 Users
+              Hosting
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              Free Support
+              10+ Website Emails
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              100GB Bandwidth
+              Responsive Design
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10 Email Accounts
+              E-commerce Store
+            </li>
+            <li>
+              <CircleCheck fill="#56a8ff" color="white" />1 Year Support
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              Custom Domain
+              Dedicated Admin Panel
             </li>
-
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              Monthly Reports
+              Payment Gateway Integration
+            </li>
+            <li>
+              <CircleCheck fill="#56a8ff" color="white" />
+              Custom Design
+            </li>
+            <li>
+              <CircleCheck fill="#56a8ff" color="white" />
+              SEO Optimization
+            </li>
+            <li>
+              <CircleCheck fill="#56a8ff" color="white" />
+              Live Chat Support
             </li>
           </ul>
         </div>
       </section>
-      <section className="prices-cards-wrapper">
+      <section
+        className="prices-cards-wrapper"
+        id="prices-social-media-content"
+      >
         <div className="prices-type-header">
           <hr />
           <h1>Social Media and Content Management</h1>
@@ -200,40 +248,36 @@ function Prices() {
             <li className="features-head">FEATURES</li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              5GB Storage
+              10 Desings
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10GB Storage
-            </li>
-            <li>
-              <CircleCheck fill="#56a8ff" color="white" />
-              10 Users
+              Social Media Posts
             </li>
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              Free Support
+              Visual Identity
             </li>
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              100GB Bandwidth
+              Branding
             </li>
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              10 Email Accounts
+              Social Media Ads
             </li>
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              Custom Domain
-            </li>
-
-            <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
-              Monthly Reports
+              Social Media Management
             </li>
           </ul>
         </div>
-        <div className="price-card">
+        <div
+          className="price-card"
+          style={{
+            scale: "1.05",
+          }}
+        >
           <div className="price-card-popup">
             <h1>Best Offer</h1>
           </div>
@@ -249,43 +293,34 @@ function Prices() {
             <li className="features-head">FEATURES</li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              5GB Storage
+              20 Desings
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10GB Storage
+              Social Media Posts
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10 Users
-            </li>
-            <li>
-              <CircleCheck fill="#56a8ff" color="white" />
-              Free Support
-            </li>
-            <li>
-              <CircleCheck fill="#56a8ff" color="white" />
-              100GB Bandwidth
+              Visual Identity
             </li>
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              10 Email Accounts
+              Branding
             </li>
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              Custom Domain
+              Social Media Ads
             </li>
-
             <li>
               <CircleMinus fill="#c6d9f3" color="white" />
-              Monthly Reports
+              Social Media Management
             </li>
           </ul>
         </div>
         <div className="price-card">
           <div className="price-card-header">
             <p>Enterprise Plan</p>
-            <h1>$900</h1>
+            <h1>$1000</h1>
             <button className="price-card-button">Get Started</button>
           </div>
           <hr />
@@ -293,42 +328,33 @@ function Prices() {
             <li className="features-head">FEATURES</li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              5GB Storage
+              30 Desings
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10GB Storage
+              Social Media Posts
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10 Users
+              Visual Identity
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              Free Support
+              Branding
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              100GB Bandwidth
+              Social Media Ads
             </li>
             <li>
               <CircleCheck fill="#56a8ff" color="white" />
-              10 Email Accounts
-            </li>
-            <li>
-              <CircleCheck fill="#56a8ff" color="white" />
-              Custom Domain
-            </li>
-
-            <li>
-              <CircleCheck fill="#56a8ff" color="white" />
-              Monthly Reports
+              Social Media Management
             </li>
           </ul>
         </div>
       </section>
 
-      <section className="custom-service">
+      <section className="custom-service" id="prices-more">
         <h1>
           you Need help with an individual Service or want custom tailored
           package?

@@ -49,42 +49,19 @@ function Services() {
         }}
       ></section> */}
       <div className="services-links-container">
-        <a onClick={() => scrollToElement("branding")} href="#branding">
-          Branding
-        </a>
-        <a onClick={() => scrollToElement("marketing")} href="#marketing">
-          Marketing
-        </a>
-        <a
-          onClick={() => scrollToElement("graphic-design")}
-          href="#graphic-design"
-        >
-          Graphic Design
-        </a>
-        <a
-          onClick={() => scrollToElement("digital-transformation")}
-          href="#digital-transformation"
-        >
+        <a onClick={() => scrollToElement("branding")}>Branding</a>
+        <a onClick={() => scrollToElement("marketing")}>Marketing</a>
+        <a onClick={() => scrollToElement("graphic-design")}>Graphic Design</a>
+        <a onClick={() => scrollToElement("digital-transformation")}>
           Digital Transformation
         </a>
-        <a
-          onClick={() => scrollToElement("social-media-management")}
-          href="#social-media-management"
-        >
+        <a onClick={() => scrollToElement("social-media-management")}>
           Social Media Management
         </a>
-        <a
-          onClick={() => scrollToElement("software-and-web-development")}
-          href="#software-and-web-development"
-        >
+        <a onClick={() => scrollToElement("software-and-web-development")}>
           Software And Web Development
         </a>
-        <a
-          onClick={() => scrollToElement("custom-service")}
-          href="#custom-service"
-        >
-          ...
-        </a>
+        <a onClick={() => scrollToElement("custom-service")}>...</a>
       </div>
       <section className="services-content">
         <motion.div

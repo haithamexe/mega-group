@@ -8,7 +8,7 @@ import {
   useTransform,
   AnimatePresence,
 } from "motion/react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 import ContactContainer from "../components/ContactContainer";
 
 function Home() {
@@ -107,6 +107,7 @@ function Home() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.7, delay: 0.1, ease: "easeInOut" }}
+      s
     >
       <div className="home-hero" id="home-hero">
         <video
@@ -193,15 +194,17 @@ function Home() {
                 }}
                 size="30"
               /> */}
-              <i
-                className="fa-brands fa-whatsapp"
-                style={{
-                  // width: "100%",
-                  // height: "100%",
-                  fontSize: "2rem",
-                  color: "#00D757",
-                }}
-              ></i>
+              <Link to="/contact">
+                <i
+                  className="fa-brands fa-whatsapp"
+                  style={{
+                    // width: "100%",
+                    // height: "100%",
+                    fontSize: "2rem",
+                    color: "#00D757",
+                  }}
+                ></i>
+              </Link>
             </motion.div>
 
             <motion.div

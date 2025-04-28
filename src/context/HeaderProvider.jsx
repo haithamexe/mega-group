@@ -1,4 +1,5 @@
 import React, { useState, createContext, useContext, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export const HeaderContext = createContext();
 
@@ -9,15 +10,17 @@ export const useHeaderContext = () => {
 function HeaderProvider({ children }) {
   const [currentPage, setCurrentPage] = useState("");
 
-  useEffect(() => {
-    handlePageLoad();
-  }, []);
+  const location = useLocation();
 
-  const handlePageLoad = async () => {
-    if (window.location.pathname.split("/")[1] === "") {
+  useEffect(() => {
+    handlePageLoad(location);
+  }, [location]);
+
+  const handlePageLoad = async (location) => {
+    if (location.pathname.split("/")[1] === "") {
       setCurrentPage("home");
     } else {
-      setCurrentPage(window.location.pathname.split("/")[1]);
+      setCurrentPage(location.pathname.split("/")[1]);
     }
   };
 
