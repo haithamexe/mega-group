@@ -68,7 +68,6 @@
   display: flex;
   padding: 1rem 21rem;
   padding-top: 0;
-
   gap: 1rem;
 }
 
@@ -76,6 +75,7 @@
   padding: 1rem;
   background-color: #cde9ff;
   border-radius: 10px;
+  /* width: 30%; */
 }
 .about-address h2 {
   color: var(--accent);
@@ -87,4 +87,10 @@
   color: #000000;
   font-size: 1rem;
   font-weight: 600;
+  width: 210px;
+  /* width: 40%;
+  text-wrap: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  overflow: wrap; */
 }

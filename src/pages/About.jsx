@@ -143,15 +143,11 @@ function About() {
       <section className="about-adresses">
         <div className="about-address">
           <h2>Libya</h2>
-          <p>1234 Street Name</p>
-          <p>trablus, al3asma, 12345</p>
-          <p>276 33 10 535 90+</p>
+          <p>1234 Street Name trablus, al3asma, 12345 276 33 10 535 90+</p>
         </div>
         <div className="about-address">
           <h2>Turkey</h2>
-          <p>1234 Street Name</p>
-          <p>Istanbul, bubuduzu, 12345</p>
-          <p>276 33 10 535 90+</p>
+          <p>1234 Street Name Istanbul, bubuduzu, 12345 276 33 10 535 90+</p>
         </div>
       </section>
       <section className="about-socials">{/* Add a socials here */}</section>

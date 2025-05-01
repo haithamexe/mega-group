@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext, createContext } from "react";
+import { getLanguage } from "../utils/languages";
 
 const LanguageContext = createContext();
 
@@ -7,7 +8,7 @@ const useLanguageContext = () => {
 };
 
 function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState("");
+  const [language, setLanguage] = useState("en");
 
   const countryToLanguage = {
     TR: "tr",
@@ -34,7 +35,8 @@ function LanguageProvider({ children }) {
 
   const setLanguageFunction = (language) => {
     localStorage.setItem("language", language);
-    setLanguage(language);
+    const langFormated = getLanguage(language);
+    setLanguage(langFormated);
   };
 
   useEffect(() => {
@@ -42,7 +44,9 @@ function LanguageProvider({ children }) {
       try {
         const localLanguage = localStorage.getItem("language");
         if (localLanguage) {
-          setLanguage(localLanguage);
+          const langFormated = getLanguage(localLanguage);
+          console.log("localLanguage", langFormated);
+          setLanguage(langFormated);
           return;
         }
         const response = await fetch("https://ipapi.co/json");
@@ -53,7 +57,8 @@ function LanguageProvider({ children }) {
         console.log("language", lang);
         setLanguageFunction(lang);
       } catch {
-        setLanguage("ar");
+        const langFormated = getLanguage("ar");
+        setLanguage(langFormated);
         console.error("Failed to detect language");
       }
     };
