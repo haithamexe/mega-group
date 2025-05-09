@@ -49,11 +49,11 @@ function LanguageProvider({ children }) {
           setLanguage(langFormated);
           return;
         }
-        const response = await fetch("http://ip-api.com/json");
+        const response = await fetch("https://ip-api.com/json");
         const data = await response.json();
         const country = data.countryCode;
         console.log("country", country);
-        const lang = countryToLanguage[country] || "en";
+        const lang = countryToLanguage[country] || "ar";
         console.log("language", lang);
         setLanguageFunction(lang);
       } catch {
