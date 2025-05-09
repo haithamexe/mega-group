@@ -49,15 +49,22 @@ function LanguageProvider({ children }) {
           setLanguage(langFormated);
           return;
         }
-        const response = await fetch("https://ip-api.com/json");
+        const requestOptions = {
+          method: "GET",
+          redirect: "follow",
+        };
+        const response = await fetch(
+          `https://api.ipgeolocation.io/v2/ipgeo?apiKey=${
+            import.meta.env.VITE_IP_GEOLOCATION_API_KEY
+          }`,
+          requestOptions
+        );
         const data = await response.json();
-        const country = data.countryCode;
-        console.log("country", country);
-        const lang = countryToLanguage[country] || "ar";
-        console.log("language", lang);
+        const country = data.location.country_code2;
+        const lang = countryToLanguage[country] || "en";
         setLanguageFunction(lang);
       } catch {
-        const langFormated = getLanguage("ar");
+        const langFormated = getLanguage("en");
         setLanguage(langFormated);
         console.error("Failed to detect language");
       }
