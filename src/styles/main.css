@@ -13,20 +13,24 @@
 .header {
   display: flex;
   justify-content: flex-end;
-  /* padding-right: 22.5rem; */
-  /* gap: 1rem; */
   height: 70px;
-  /* height: 8vh; */
-  padding: 1rem 21rem;
+  /* padding: 1rem 21rem; */
+  padding: 1rem 17vw;
   border: 1px solid var(--accent);
   width: 100%;
   max-width: 100%;
-  /* margin-top: 2rem; */
-  /* border-radius: 3rem; */
   position: fixed;
   z-index: 100;
   background-color: "white";
   gap: 1rem;
+
+  @media screen and (min-width: 2000px) {
+    padding: 2vw 10%;
+  }
+
+  @media screen and (max-width: 900px) {
+    padding: 1rem 1rem;
+  }
 }
 
 .header-scrolled {
@@ -64,6 +68,14 @@
   top: 0;
   left: 0;
   width: 100px;
+
+  @media screen and (min-width: 2000px) {
+    width: 5vw;
+  }
+
+  @media screen and (max-width: 1300px) {
+    width: 70px;
+  }
 }
 .header-logo-img-container p {
   position: absolute;
@@ -75,12 +87,6 @@
   word-spacing: 0.06rem;
   letter-spacing: 0.02rem;
   font-weight: 100;
-  /* font-weight: 500; */
-  /* color: white; */
-  /* left: 0; */
-  /* width: 100px; */
-  /* height: 100px; */
-  /* height: 100%; */
 }
 
 .header-logo-backdrop-container {
@@ -126,6 +132,18 @@
   /* width: 100%; */
   gap: 1.7rem;
   /* width: 50%; */
+
+  @media screen and (min-width: 2000px) {
+    gap: 1vw;
+  }
+
+  @media screen and (max-width: 1300px) {
+    gap: 0.6rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    gap: 0.5rem;
+  }
 }
 
 .header nav ul li div {
@@ -137,6 +155,18 @@
   font-size: 1.2rem;
   font-weight: 550;
   color: "white";
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1vw;
+  }
+
+  @media screen and (max-width: 1300px) {
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.7rem;
+  }
 }
 .header nav ul h1:hover {
   color: var(--accent) !important;
@@ -149,129 +179,43 @@
   padding: 0.5rem 1rem;
   border-radius: 2px;
   color: white;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1vw;
+    padding: 0.2vw 0.8vw;
+    border-radius: 7px;
+  }
+
+  @media screen and (max-width: 1300px) {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.3rem;
+    border-radius: 1px;
+  }
 }
 .header-contact-button:hover {
   background-color: var(--dark-blue);
   transition: background-color 0.2s;
 }
 
-/* .home-scroll-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  color: white;
-  width: 40px;
-  height: 40px;
-  background-color: black;
-  font-size: 1rem;
-  padding: 9px;
-  border-radius: 20%;
-  
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-} */
-
-/* .footer-container {
-  width: 100%;
-  height: 70vh;
-  height: 70svh;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-.footer {
-  color: white;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background-color: #06111c;
-  background-color: #001d3d;
-  padding: 2rem 5rem;
-  padding-bottom: 6rem;
-
-  @media screen and (max-height: 800px) {
-    padding: 2rem 2rem;
-  }
-}
-
-.footer-links {
-  display: flex;
-
-  padding: 1rem;
-  gap: 4rem;
-}
-
-.footer-addressess {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 1rem;
-}
-
-.footer-address {
-  border-left: 1px solid white;
-  padding-left: 2rem;
-}
-
-.no-border-address {
-  padding-left: 0;
-  border-left: none;
-}
-
-.footer-socials {
-  display: flex;
-  margin-top: auto;
-  height: 100%;
-  gap: 1.2rem;
-  padding-bottom: 3px;
-  padding-left: 0.5rem;
-}
-.footer-socials {
-  font-size: 2rem;
-}
-
-.footer-contact {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-end;
-  margin-top: 1rem;
-  padding: 1rem;
-}
-
-.footer-contact h1 {
-  font-size: 0.8rem;
-}
-
-.footer-contact p {
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: #dddddd;
-}
-
-.footer-logo {
-  height: 50px;
-  margin-left: auto;
-}
-
-.footer-logo img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-} */
-
 .footer-container {
   width: 100%;
   height: 550px;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+  @media screen and (min-width: 2000px) {
+    height: 40vh;
+  }
+
+  @media screen and (max-width: 1300px) {
+    height: 60vh;
+  }
 }
 
 .footer {
@@ -294,25 +238,22 @@
   }
 }
 
-/* .footer-head {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1rem 22rem;
-  gap: 1rem;
-}
-.footer-head h1 {
-  font-size: 3rem;
-  font-weight: 500;
-  width: 100%;
-} */
-
 .footer-body {
   display: flex;
   padding: 2rem 21rem;
   padding-left: 19rem;
 
-  gap: 1rem;
+  @media screen and (min-width: 2000px) {
+    padding: 1vw 10%;
+  }
+
+  @media screen and (max-width: 900px) {
+    padding: 2rem 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
 }
 .footer-socials {
   display: flex;
@@ -322,11 +263,26 @@
 }
 .footer-logo {
   width: 300px;
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .footer-body img {
   height: 100%;
-  width: 80%;
+  width: 100%;
   object-fit: contain;
+
+  @media screen and (min-width: 2000px) {
+    width: 5vw;
+  }
+
+  @media screen and (max-width: 1300px) {
+    width: 40%;
+  }
 }
 
 .footer-social-links {
@@ -341,11 +297,27 @@
   font-size: 2rem;
   color: white;
   text-decoration: none;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.5vw;
+  }
+
+  @media screen and (max-width: 1300px) {
+    font-size: 1.5rem;
+  }
 }
 
 .footer-links {
   display: flex;
   gap: 4.3rem;
+
+  @media screen and (min-width: 2000px) {
+    gap: 2vw;
+  }
+
+  @media screen and (max-width: 1300px) {
+    gap: 1rem;
+  }
 }
 .footer-links h1 {
   cursor: pointer;
@@ -359,6 +331,14 @@
   font-weight: 500;
   color: white !important;
   cursor: pointer;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.5vw;
+  }
+
+  @media screen and (max-width: 1300px) {
+    font-size: 1rem;
+  }
 }
 
 .footer-link h1:hover {
@@ -372,6 +352,14 @@
   font-size: 0.9rem;
   font-weight: 400;
   color: #dddddd;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 0.8vw;
+  }
+
+  @media screen and (max-width: 1300px) {
+    font-size: 0.5rem;
+  }
 }
 .footer-link p:hover {
   color: var(--accent);
@@ -418,6 +406,14 @@
   font-weight: 500;
   color: #dddddd;
   text-align: right;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 0.8vw;
+  }
+
+  @media screen and (max-width: 1300px) {
+    font-size: 0.7rem;
+  }
 }
 
 .footer-foot {
@@ -428,6 +424,15 @@
   gap: 1rem;
   background-color: #001225;
   height: 150px;
+
+  @media screen and (min-width: 2000px) {
+    padding: 1vw 10%;
+  }
+
+  @media screen and (max-width: 900px) {
+    padding: 1rem 1rem;
+    height: 100px;
+  }
 }
 
 .header-link-text {

@@ -53,12 +53,19 @@ function LanguageProvider({ children }) {
           method: "GET",
           redirect: "follow",
         };
+        // const response = await fetch(
+        //   `https://api.ipgeolocation.io/v2/ipgeo?apiKey=${
+        //     import.meta.env.VITE_IP_GEOLOCATION_API_KEY
+        //   }`,
+        //   requestOptions
+        // );
         const response = await fetch(
-          `https://api.ipgeolocation.io/v2/ipgeo?apiKey=${
+          `https://api.ipgeolocakajsdhkajshdtion.io/v2/ipgeo?apiKey=${
             import.meta.env.VITE_IP_GEOLOCATION_API_KEY
           }`,
           requestOptions
         );
+
         const data = await response.json();
         const country = data.location.country_code2;
         const lang = countryToLanguage[country] || "en";
