@@ -3,9 +3,11 @@ import ImageShapesContainer from "../components/ImageShapesContainer";
 import ContactContainer from "../components/ContactContainer";
 import { motion, useScroll } from "motion/react";
 import "../styles/contactPage.css";
+import { useLanguageContext } from "../context/LanguageProvider";
 
 function Contact() {
   const { scrollYProgress } = useScroll();
+  const { language } = useLanguageContext();
 
   return (
     <motion.div
@@ -15,26 +17,37 @@ function Contact() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.7, delay: 0.1, ease: "easeInOut" }}
     >
-      <header className="services-header-wrapper">
+      <header
+        className={
+          language.language === "ar"
+            ? "services-header-wrapper direction-right"
+            : "services-header-wrapper"
+        }
+      >
         <div className="services-header">
-          <div className="header-hero-text">
-            <h1>Contact</h1>
-            <p>
-              We would love to hear from you! Please fill out the form below or
-              contact us through social media and we will get back to you as
-              soon as possible.
-            </p>
+          <div
+            className="header-hero-text"
+            style={language.language === "ar" ? { marginLeft: "auto" } : {}}
+          >
+            <h1>{language?.Contact?.title}</h1>
+            <p>{language?.Contact?.subtitle}</p>
           </div>
           <div className="header-hero-img">
             <ImageShapesContainer image="contact-us-bg.jpg" />
           </div>
         </div>
       </header>
-      <section className="contact-content">
+      <section
+        className={
+          language.language === "ar"
+            ? "contact-content direction-right"
+            : "contact-content"
+        }
+      >
         <div className="contact-content-wrapper">
           <div className="contact-content-options">
             <div className="contact-content-option">
-              <h3>Contact Us on </h3>
+              <h3>{language?.Contact?.contact_us_on}</h3>
               <div className="contact-logo-wrapper">
                 <img src="/images/whatsapp-text-logo.png" alt="Whatsapp logo" />
               </div>
@@ -42,11 +55,11 @@ function Contact() {
                 className="contact-whatsapp-button"
                 style={{ backgroundColor: "#25d366" }}
               >
-                Whatsapp Chat
+                {language?.Contact?.whatsapp_chat}
               </button>
             </div>
             <div className="contact-content-option">
-              <h3>Contact Us on </h3>
+              <h3>{language?.Contact?.contact_us_on} </h3>
               <div className="contact-logo-wrapper">
                 <img src="/images/facebook-text-logo.png" alt="facebook logo" />
               </div>
@@ -54,11 +67,11 @@ function Contact() {
                 className="contact-messenger-button"
                 style={{ backgroundColor: "#3b5998" }}
               >
-                Facebook Chat
+                {language?.Contact?.facebook_chat}
               </button>
             </div>
             <div className="contact-content-option">
-              <h3>Phone Number</h3>
+              <h3>{language?.Contact?.phone_number}</h3>
               <p
                 style={{
                   fontSize: "1.2rem",

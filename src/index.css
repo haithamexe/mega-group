@@ -67,3 +67,12 @@ body {
 .themed-element {
   transition: all 0.3s ease;
 }
+
+.direction-right {
+  direction: rtl !important;
+  text-align: right !important;
+}
+.direction-right-img {
+  left: 0 !important;
+  right: auto !important;
+}

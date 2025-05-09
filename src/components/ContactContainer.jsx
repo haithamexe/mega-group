@@ -1,8 +1,11 @@
 import React from "react";
 import "../styles/contact.css";
 import { motion, useTransform } from "motion/react";
+import { useLanguageContext } from "../context/LanguageProvider";
 
 function ContactContainer({ scrollYProgress }) {
+  const { language } = useLanguageContext();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Your message has been sent!");
@@ -19,22 +22,23 @@ function ContactContainer({ scrollYProgress }) {
     >
       <div className="contact">
         <div className="contact-head">
-          <h1>Start Your Journey</h1>
-          <p>Get in touch with us</p>
+          <h1>{language?.Contact?.form?.title}</h1>
+          <p>{language?.Contact?.form?.subtitle}</p>
         </div>
         <div className="contact-form">
           <form>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="text" placeholder="Subject" />
+            <input type="text" placeholder={language?.Contact?.form?.name} />
+            <input type="email" placeholder={language?.Contact?.form?.email} />
+            <input type="text" placeholder={language?.Contact?.form?.subject} />
             <textarea
-              placeholder="Message"
+              placeholder={language?.Contact?.form?.message}
               style={{
                 resize: "none",
               }}
-              //make it so that it doesnt resize
             ></textarea>
-            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={handleSubmit}>
+              {language?.Contact?.form?.submit}
+            </button>
           </form>
         </div>
       </div>
@@ -43,11 +47,11 @@ function ContactContainer({ scrollYProgress }) {
           textAlign: "center",
         }}
       >
-        Or
+        {language?.Contact?.form?.or}
       </p>
       <button className="whatsapp-button">
         <i className="fab fa-whatsapp"></i>
-        <h4>Whatsapp Us</h4>
+        <h4> {language?.Contact?.form?.whatsapp}</h4>
       </button>
     </motion.div>
   );

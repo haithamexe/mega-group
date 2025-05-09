@@ -1,69 +1,51 @@
 export const languages = {
   en: {
     Header: {
-      home: "Home",
-      services: "Services",
-      prices: "Prices",
-      our_work: "Our Work",
-      contact: "Contact",
-      about: "About",
+      home: "HOME",
+      services: "SERVICES",
+      prices: "PRICES",
+      our_work: "OUR WORK",
+      contact: "CONTACT",
+      about: "ABOUT",
     },
     Footer: {
       home: {
         title: "Home",
-        links: {
-          mission: "About Us",
-          services: "Services",
-          why_us: "Why Us",
-          clients: "Clients",
-        },
+        links: ["About Us", "Services", "Why Us", "Clients"],
       },
       services: {
         title: "Services",
-        links: {
-          branding: "Branding",
-          marketing: "Marketing",
-          graphic_design: "Graphic Design",
-          digital_transformation: "Digital Transformation",
-          social_media_management: "Social Media Management",
-          software_and_web_development: "Software And Web Development",
-        },
+        links: [
+          "Branding",
+          "Marketing",
+          "Graphic Design",
+          "Digital Transformation",
+          "Social Media Management",
+          "Software And Web Development",
+        ],
       },
       prices: {
         title: "Prices",
-        links: {
-          websites_and_digital_transformation:
-            "Websites And Digital Transformation",
-          social_media_and_content_management:
-            "Social Media And Content Management",
-        },
+        links: [
+          "Websites And Digital Transformation",
+          "Social Media And Content Management",
+        ],
       },
-      our_works: {
-        title: "Our Works",
-        links: {
-          web_development_and_digital_transformation:
-            "Web Development And Digital Transformation",
-          social_media_management_and_posts:
-            "Social Media Management And Posts",
-          graphic_design_and_branding: "Graphic Design And Branding",
-        },
+      our_work: {
+        title: "Our Work",
+        links: [
+          "Web Development And Digital Transformation",
+          "Social Media Management And Posts",
+          "Graphic Design And Branding",
+        ],
       },
       contact: {
         title: "Contact",
-        links: {
-          contact_us: "Get In Touch",
-          whatsApp: "WhatsApp",
-          facebook: "Facebook",
-        },
+        links: ["Get In Touch", "WhatsApp", "Facebook"],
       },
       about: {
         title: "About",
-        links: {
-          our_mission: "Our Mission",
-          our_team: "Our Vision",
-          our_clients: "Our Values",
-          our_location: "Our Location",
-        },
+        links: ["Our Mission", "Our Vision", "Our Values", "Our Location"],
       },
     },
     Home: {
@@ -81,49 +63,54 @@ export const languages = {
         title: "Services",
         subtitle: "We help businesses build, grow, and scale.",
         button: "Explore Services",
-        types: {
-          branding: {
+        types: [
+          {
             title: "Branding",
             subtitle:
               "Our branding experts can help you create a brand that resonates with your target audience, communicates your values, and sets you apart from the competition.",
             button: "Explore Branding",
+            img: "/images/2d-vects/6666301.jpg",
           },
-          marketing: {
+          {
             title: "Marketing",
             subtitle:
               "From social media marketing to SEO, our marketing team can help you reach your target audience, drive traffic, and generate leads.",
             button: "Explore Marketing",
+            img: "/images/2d-vects/3129505.jpg",
           },
-          graphic_design: {
+          {
             title: "Graphic Design",
             subtitle:
               "Our graphic designers can help you create stunning visuals from UI to UX or any other design you are looking for that helps capture attention, communicate your message, and elevate your brand.",
             button: "Explore Graphic Design",
+            img: "/images/2d-vects/Video-Files.jpg",
           },
-          digital_transformation: {
+          {
             title: "Digital Transformation",
             subtitle:
               "Our digital transformation experts can help you leverage the power of technology to streamline your operations, improve efficiency, and drive growth.",
             button: "Explore Digital Transformation",
+            img: "/images/2d-vects/6155818.jpg",
           },
-          social_media_management: {
+          {
             title: "Social Media Management",
             subtitle:
               "Our social media experts can help you create engaging content, build a loyal following, and drive traffic to your website.",
             button: "Explore Social Media Management",
+            img: "/images/2d-vects/5057942.jpg",
           },
-          software_and_web_development: {
+          {
             title: "Software And Web Development",
             subtitle:
               "Our software developers can help you build custom software solutions like web, mobile or desktop apps that streamline your operations, improve efficiency, and drive growth.",
             button: "Explore Software And Web Development",
+            img: "/images/2d-vects/6579900.jpg",
           },
-        },
+        ],
       },
       Why_Us: {
         title: "Why Us",
-        subtitle:
-          "We are a team of experts who are passionate about helping businesses succeed. We have the skills, experience, and knowledge to help you achieve your goals.",
+        subtitle: "What sets us apart from the rest?",
         types: {
           all_in_one_digital_help: {
             title: "All-in-One Digital Help",
@@ -166,6 +153,7 @@ export const languages = {
         title: "Featred Clients",
       },
     },
+
     Services: {
       title: "Services",
       subtitle:
@@ -181,6 +169,7 @@ export const languages = {
       types: {
         branding: {
           title: "Branding",
+          img: "/images/2d-vects/2953998.jpg",
           subtitle:
             "Our branding experts can help you create a brand that resonates with your target audience, communicates your values, and sets you apart from the competition.",
           list: {
@@ -213,6 +202,7 @@ export const languages = {
         },
         marketing: {
           title: "Marketing",
+          img: "/images/2d-vects/10075627.jpg",
           subtitle:
             "From social media marketing to SEO, our marketing team can help you reach your target audience, drive traffic, and generate leads.",
           list: {
@@ -244,6 +234,7 @@ export const languages = {
         },
         graphic_design: {
           title: "Graphic Design",
+          img: "/images/2d-vects/10191042.jpg",
           subtitle:
             "Our graphic designers can help you create stunning visuals from UI to UX or any other design you are looking for that helps capture attention, communicate your message, and elevate your brand.",
           list: {
@@ -271,6 +262,7 @@ export const languages = {
         },
         digital_transformation: {
           title: "Digital Transformation",
+          img: "/images/2d-vects/9848264.jpg",
           subtitle:
             "Our digital transformation experts can help you leverage the power of technology to streamline your operations, improve efficiency, and drive growth.",
           list: {
@@ -298,6 +290,7 @@ export const languages = {
         },
         social_media_management: {
           title: "Social Media Management",
+          img: "/images/2d-vects/5994306.jpg",
           subtitle:
             "Our social media experts can help you create engaging content, build a loyal following, and drive traffic to your website.",
           list: {
@@ -325,6 +318,7 @@ export const languages = {
         },
         software_and_web_development: {
           title: "Software And Web Development",
+          img: "/images/2d-vects/4944103.jpg",
           subtitle:
             "Our software and web development team can help you build custom solutions that meet your unique needs, from websites to mobile apps.",
           list: {
@@ -378,8 +372,8 @@ export const languages = {
         websites_and_digital_transformation: {
           title: "Websites And Digital Transformation",
           best_offer: "Best Offer",
-          plans: {
-            basic_plan: {
+          plans: [
+            {
               title: "Basic Plan",
               price: "$500",
               button: "Get Started",
@@ -401,7 +395,7 @@ export const languages = {
                 ],
               },
             },
-            business_plan: {
+            {
               title: "Business Plan",
               price: "$900",
               button: "Get Started",
@@ -423,7 +417,7 @@ export const languages = {
                 ],
               },
             },
-            enterprise_plan: {
+            {
               title: "Enterprise Plan",
               price: "$1500",
               button: "Get Started",
@@ -445,13 +439,13 @@ export const languages = {
                 ],
               },
             },
-          },
+          ],
         },
         social_media_and_content_management: {
           title: "Social Media And Content Management",
           best_offer: "Best Offer",
-          plans: {
-            basic_plan: {
+          plans: [
+            {
               title: "Basic Plan",
               price: "$300",
               button: "Get Started",
@@ -467,7 +461,7 @@ export const languages = {
                 ],
               },
             },
-            business_plan: {
+            {
               title: "Business Plan",
               price: "$500",
               button: "Get Started",
@@ -483,7 +477,7 @@ export const languages = {
                 ],
               },
             },
-            enterprise_plan: {
+            {
               title: "Enterprise Plan",
               price: "$1000",
               button: "Get Started",
@@ -499,12 +493,12 @@ export const languages = {
                 ],
               },
             },
-          },
+          ],
         },
       },
       custom: {
         title:
-          "you Need help with an individual Service or want custom tailored package?",
+          "You need help with an individual Service or want custom tailored package?",
         subtitle:
           "Contact us for a custom quote. We are here to help you with a single project or a long-term partnership.",
         contact_us: "Contact Us",
@@ -603,59 +597,41 @@ export const languages = {
     Footer: {
       home: {
         title: "Ana Sayfa",
-        links: {
-          mission: "Hakkımızda",
-          services: "Hizmetler",
-          why_us: "Neden Biz",
-          clients: "Müşteriler",
-        },
+        links: ["Hakkımızda", "Hizmetler", "Neden Biz", "Müşteriler"],
       },
       services: {
         title: "Hizmetler",
-        links: {
-          branding: "Marka Kimliği",
-          marketing: "Pazarlama",
-          graphic_design: "Grafik Tasarım",
-          digital_transformation: "Dijital Dönüşüm",
-          social_media_management: "Sosyal Medya Yönetimi",
-          software_and_web_development: "Yazılım ve Web Geliştirme",
-        },
+        links: [
+          "Marka Kimliği",
+          "Pazarlama",
+          "Grafik Tasarım",
+          "Dijital Dönüşüm",
+          "Sosyal Medya Yönetimi",
+          "Yazılım ve Web Geliştirme",
+        ],
       },
       prices: {
         title: "Fiyatlar",
-        links: {
-          websites_and_digital_transformation:
-            "Web Siteleri ve Dijital Dönüşüm",
-          social_media_and_content_management:
-            "Sosyal Medya ve İçerik Yönetimi",
-        },
+        links: [
+          "Web Siteleri ve Dijital Dönüşüm",
+          "Sosyal Medya ve İçerik Yönetimi",
+        ],
       },
-      our_works: {
+      our_work: {
         title: "Çalışmalarımız",
-        links: {
-          web_development_and_digital_transformation:
-            "Web Geliştirme ve Dijital Dönüşüm",
-          social_media_management_and_posts:
-            "Sosyal Medya Yönetimi ve Gönderiler",
-          graphic_design_and_branding: "Grafik Tasarım ve Marka Kimliği",
-        },
+        links: [
+          "Web Geliştirme ve Dijital Dönüşüm",
+          "Sosyal Medya Yönetimi ve Gönderiler",
+          "Grafik Tasarım ve Marka Kimliği",
+        ],
       },
       contact: {
         title: "İletişim",
-        links: {
-          contact_us: "Bize Ulaşın",
-          whatsApp: "WhatsApp",
-          facebook: "Facebook",
-        },
+        links: ["Bize Ulaşın", "WhatsApp", "Facebook"],
       },
       about: {
         title: "Hakkımızda",
-        links: {
-          our_mission: "Misyonumuz",
-          our_team: "Vizyonumuz",
-          our_clients: "Değerlerimiz",
-          our_location: "Konumumuz",
-        },
+        links: ["Misyonumuz", "Vizyonumuz", "Değerlerimiz", "Konumumuz"],
       },
     },
     Home: {
@@ -674,49 +650,54 @@ export const languages = {
         subtitle:
           "İşletmelerin büyümesine ve ölçeklenmesine yardımcı oluyoruz.",
         button: "Hizmetleri Keşfet",
-        types: {
-          branding: {
+        types: [
+          {
             title: "Marka Kimliği",
             subtitle:
               "Marka kimliği uzmanlarımız, hedef kitlenizle rezonansa giren, değerlerinizi ileten ve sizi rakiplerinizden ayıran bir marka oluşturmanıza yardımcı olabilir.",
             button: "Marka Kimliğini Keşfet",
+            img: "/images/2d-vects/6666301.jpg", // Added image
           },
-          marketing: {
+          {
             title: "Pazarlama",
             subtitle:
               "Sosyal medya pazarlamasından SEO'ya kadar, pazarlama ekibimiz hedef kitlenize ulaşmanıza, trafik oluşturmanıza ve potansiyel müşteriler kazanmanıza yardımcı olabilir.",
             button: "Pazarlamayı Keşfet",
+            img: "/images/2d-vects/3129505.jpg", // Added image
           },
-          graphic_design: {
+          {
             title: "Grafik Tasarım",
             subtitle:
               "Grafik tasarımcılarımız, dikkat çeken, mesajınızı ileten ve markanızı yükselten görseller oluşturmanıza yardımcı olabilir.",
             button: "Grafik Tasarımı Keşfet",
+            img: "/images/2d-vects/Video-Files.jpg", // Added image
           },
-          digital_transformation: {
+          {
             title: "Dijital Dönüşüm",
             subtitle:
               "Dijital dönüşüm uzmanlarımız, operasyonlarınızı kolaylaştırmak, verimliliği artırmak ve büyümeyi sağlamak için teknolojinin gücünden yararlanmanıza yardımcı olabilir.",
             button: "Dijital Dönüşümü Keşfet",
+            img: "/images/2d-vects/6155818.jpg", // Added image
           },
-          social_media_management: {
+          {
             title: "Sosyal Medya Yönetimi",
             subtitle:
               "Sosyal medya uzmanlarımız, etkileyici içerik oluşturmanıza, sadık bir takipçi kitlesi oluşturmanıza ve web sitenize trafik çekmenize yardımcı olabilir.",
             button: "Sosyal Medya Yönetimini Keşfet",
+            img: "/images/2d-vects/5057942.jpg", // Added image
           },
-          software_and_web_development: {
+          {
             title: "Yazılım ve Web Geliştirme",
             subtitle:
               "Yazılım geliştiricilerimiz, operasyonlarınızı kolaylaştıran, verimliliği artıran ve büyümenizi sağlayan özel yazılım çözümleri oluşturmanıza yardımcı olabilir.",
             button: "Yazılım ve Web Geliştirmeyi Keşfet",
+            img: "/images/2d-vects/6579900.jpg", // Added image
           },
-        },
+        ],
       },
       Why_Us: {
         title: "Neden Biz",
-        subtitle:
-          "İşletmelerin başarılı olmasına tutkuyla bağlı bir uzman ekibiyiz. Hedeflerinize ulaşmanız için gerekli beceri, deneyim ve bilgiye sahibiz.",
+        subtitle: "Bizi diğerlerinden farklı kılan nedir?",
         types: {
           all_in_one_digital_help: {
             title: "Tümü Bir Arada Dijital Yardım",
@@ -774,6 +755,7 @@ export const languages = {
       types: {
         branding: {
           title: "Marka Kimliği",
+          img: "/images/2d-vects/2953998.jpg", // Added image
           subtitle:
             "Marka kimliği uzmanlarımız, hedef kitlenizle rezonansa giren, değerlerinizi ileten ve sizi rakiplerinizden ayıran bir marka oluşturmanıza yardımcı olabilir.",
           list: {
@@ -806,6 +788,7 @@ export const languages = {
         },
         marketing: {
           title: "Pazarlama",
+          img: "/images/2d-vects/10075627.jpg", // Added image
           subtitle:
             "Sosyal medya pazarlamasından SEO'ya kadar, pazarlama ekibimiz hedef kitlenize ulaşmanıza, trafik oluşturmanıza ve potansiyel müşteriler kazanmanıza yardımcı olabilir.",
           list: {
@@ -838,6 +821,7 @@ export const languages = {
         },
         graphic_design: {
           title: "Grafik Tasarım",
+          img: "/images/2d-vects/10191042.jpg", // Added image
           subtitle:
             "Grafik tasarımcılarımız, dikkat çeken, mesajınızı ileten ve markanızı yükselten görseller oluşturmanıza yardımcı olabilir.",
           list: {
@@ -865,6 +849,7 @@ export const languages = {
         },
         digital_transformation: {
           title: "Dijital Dönüşüm",
+          img: "/images/2d-vects/9848264.jpg", // Added image
           subtitle:
             "Dijital dönüşüm uzmanlarımız, operasyonlarınızı kolaylaştırmak, verimliliği artırmak ve büyümeyi sağlamak için teknolojinin gücünden yararlanmanıza yardımcı olabilir.",
           list: {
@@ -892,6 +877,7 @@ export const languages = {
         },
         social_media_management: {
           title: "Sosyal Medya Yönetimi",
+          img: "/images/2d-vects/5994306.jpg", // Added image
           subtitle:
             "Sosyal medya uzmanlarımız, etkileyici içerik oluşturmanıza, sadık bir takipçi kitlesi oluşturmanıza ve web sitenize trafik çekmenize yardımcı olabilir.",
           list: {
@@ -919,6 +905,7 @@ export const languages = {
         },
         software_and_web_development: {
           title: "Yazılım ve Web Geliştirme",
+          img: "/images/2d-vects/4944103.jpg", // Added image
           subtitle:
             "Yazılım ve web geliştirme ekibimiz, web sitelerinden mobil uygulamalara kadar özel ihtiyaçlarınıza uygun çözümler oluşturmanıza yardımcı olabilir.",
           list: {
@@ -970,9 +957,9 @@ export const languages = {
         websites_and_digital_transformation: {
           title: "Web Siteleri ve Dijital Dönüşüm",
           best_offer: "En İyi Teklif",
-          plans: {
-            basic_plan: {
-              title: "Temel Plan",
+          plans: [
+            {
+              title: "Temel Paket",
               price: "$500",
               button: "Başlayın",
               features: {
@@ -981,7 +968,7 @@ export const languages = {
                   "1 Dil",
                   "Alan Adı",
                   "Hosting",
-                  "1 Web Sitesi E-postası",
+                  "1 Website E-postası",
                   "Duyarlı Tasarım",
                   "E-ticaret Mağazası",
                   "1 Yıl Destek",
@@ -993,8 +980,8 @@ export const languages = {
                 ],
               },
             },
-            business_plan: {
-              title: "İş Planı",
+            {
+              title: "İş Paketi",
               price: "$900",
               button: "Başlayın",
               features: {
@@ -1003,7 +990,7 @@ export const languages = {
                   "2 Dil",
                   "Alan Adı",
                   "Hosting",
-                  "5 Web Sitesi E-postası",
+                  "5 Website E-postası",
                   "Duyarlı Tasarım",
                   "E-ticaret Mağazası",
                   "1 Yıl Destek",
@@ -1015,8 +1002,8 @@ export const languages = {
                 ],
               },
             },
-            enterprise_plan: {
-              title: "Kurumsal Plan",
+            {
+              title: "Kurumsal Paket",
               price: "$1500",
               button: "Başlayın",
               features: {
@@ -1025,7 +1012,7 @@ export const languages = {
                   "Çoklu Dil Desteği",
                   "Alan Adı",
                   "Hosting",
-                  "10+ Web Sitesi E-postası",
+                  "10+ Website E-postası",
                   "Duyarlı Tasarım",
                   "E-ticaret Mağazası",
                   "1 Yıl Destek",
@@ -1037,14 +1024,14 @@ export const languages = {
                 ],
               },
             },
-          },
+          ],
         },
         social_media_and_content_management: {
           title: "Sosyal Medya ve İçerik Yönetimi",
           best_offer: "En İyi Teklif",
-          plans: {
-            basic_plan: {
-              title: "Temel Plan",
+          plans: [
+            {
+              title: "Temel Paket",
               price: "$300",
               button: "Başlayın",
               features: {
@@ -1059,8 +1046,8 @@ export const languages = {
                 ],
               },
             },
-            business_plan: {
-              title: "İş Planı",
+            {
+              title: "İş Paketi",
               price: "$500",
               button: "Başlayın",
               features: {
@@ -1075,8 +1062,8 @@ export const languages = {
                 ],
               },
             },
-            enterprise_plan: {
-              title: "Kurumsal Plan",
+            {
+              title: "Kurumsal Paket",
               price: "$1000",
               button: "Başlayın",
               features: {
@@ -1091,7 +1078,7 @@ export const languages = {
                 ],
               },
             },
-          },
+          ],
         },
       },
       custom: {
@@ -1197,58 +1184,41 @@ export const languages = {
     Footer: {
       home: {
         title: "الرئيسية",
-        links: {
-          mission: "من نحن",
-          services: "الخدمات",
-          why_us: "لماذا نحن",
-          clients: "العملاء",
-        },
+        links: ["من نحن", "الخدمات", "لماذا نحن", "العملاء"],
       },
       services: {
         title: "الخدمات",
-        links: {
-          branding: "الهوية التجارية",
-          marketing: "التسويق",
-          graphic_design: "التصميم الجرافيكي",
-          digital_transformation: "التحول الرقمي",
-          social_media_management: "إدارة وسائل التواصل الاجتماعي",
-          software_and_web_development: "تطوير البرمجيات والويب",
-        },
+        links: [
+          "الهوية التجارية",
+          "التسويق",
+          "التصميم الجرافيكي",
+          "التحول الرقمي",
+          "إدارة وسائل التواصل الاجتماعي",
+          "تطوير البرمجيات والويب",
+        ],
       },
       prices: {
         title: "الأسعار",
-        links: {
-          websites_and_digital_transformation: "مواقع الويب والتحول الرقمي",
-          social_media_and_content_management:
-            "إدارة وسائل التواصل الاجتماعي والمحتوى",
-        },
+        links: [
+          "مواقع الويب والتحول الرقمي",
+          "إدارة وسائل التواصل الاجتماعي والمحتوى",
+        ],
       },
-      our_works: {
+      our_work: {
         title: "أعمالنا",
-        links: {
-          web_development_and_digital_transformation:
-            "تطوير الويب والتحول الرقمي",
-          social_media_management_and_posts:
-            "إدارة وسائل التواصل الاجتماعي والمنشورات",
-          graphic_design_and_branding: "التصميم الجرافيكي والهوية التجارية",
-        },
+        links: [
+          "تطوير الويب والتحول الرقمي",
+          "إدارة وسائل التواصل الاجتماعي والمنشورات",
+          "التصميم الجرافيكي والهوية التجارية",
+        ],
       },
       contact: {
         title: "اتصل بنا",
-        links: {
-          contact_us: "تواصل معنا",
-          whatsApp: "واتساب",
-          facebook: "فيسبوك",
-        },
+        links: ["تواصل معنا", "واتساب", "فيسبوك"],
       },
       about: {
         title: "من نحن",
-        links: {
-          our_mission: "مهمتنا",
-          our_team: "رؤيتنا",
-          our_clients: "قيمنا",
-          our_location: "موقعنا",
-        },
+        links: ["مهمتنا", "رؤيتنا", "قيمنا", "موقعنا"],
       },
     },
     Home: {
@@ -1260,55 +1230,60 @@ export const languages = {
       Mission: {
         box1: "ابنِ بشكل أفضل",
         box2: "ابنِ بشكل أكبر",
-        box3: "ابنِ بذكاء",
+        box3: "ابنِ بشكل أذكى",
       },
       Services: {
         title: "الخدمات",
         subtitle: "نساعد الشركات على البناء والنمو والتوسع.",
         button: "استكشف الخدمات",
-        types: {
-          branding: {
+        types: [
+          {
             title: "الهوية التجارية",
             subtitle:
               "يمكن أن يساعدك خبراء الهوية التجارية لدينا في إنشاء علامة تجارية تلقى صدى لدى جمهورك المستهدف، وتنقل قيمك، وتميزك عن المنافسة.",
             button: "استكشف الهوية التجارية",
+            img: "/images/2d-vects/6666301.jpg", // Added image
           },
-          marketing: {
+          {
             title: "التسويق",
             subtitle:
               "من التسويق عبر وسائل التواصل الاجتماعي إلى تحسين محركات البحث، يمكن لفريق التسويق لدينا مساعدتك في الوصول إلى جمهورك المستهدف، وجذب الزيارات، وتوليد العملاء المحتملين.",
             button: "استكشف التسويق",
+            img: "/images/2d-vects/3129505.jpg", // Added image
           },
-          graphic_design: {
+          {
             title: "التصميم الجرافيكي",
             subtitle:
               "يمكن لمصممي الجرافيك لدينا مساعدتك في إنشاء مرئيات مذهلة من واجهة المستخدم إلى تجربة المستخدم أو أي تصميم آخر تبحث عنه يساعد على جذب الانتباه، وإيصال رسالتك، ورفع مستوى علامتك التجارية.",
             button: "استكشف التصميم الجرافيكي",
+            img: "/images/2d-vects/Video-Files.jpg", // Added image
           },
-          digital_transformation: {
+          {
             title: "التحول الرقمي",
             subtitle:
               "يمكن لخبراء التحول الرقمي لدينا مساعدتك في الاستفادة من قوة التكنولوجيا لتبسيط عملياتك، وتحسين الكفاءة، ودفع النمو.",
             button: "استكشف التحول الرقمي",
+            img: "/images/2d-vects/6155818.jpg", // Added image
           },
-          social_media_management: {
+          {
             title: "إدارة وسائل التواصل الاجتماعي",
             subtitle:
               "يمكن لخبراء وسائل التواصل الاجتماعي لدينا مساعدتك في إنشاء محتوى جذاب، وبناء قاعدة متابعين مخلصين، وجذب الزيارات إلى موقعك الإلكتروني.",
             button: "استكشف إدارة وسائل التواصل الاجتماعي",
+            img: "/images/2d-vects/5057942.jpg", // Added image
           },
-          software_and_web_development: {
+          {
             title: "تطوير البرمجيات والويب",
             subtitle:
               "يمكن لمطوري البرمجيات لدينا مساعدتك في بناء حلول برمجية مخصصة مثل تطبيقات الويب أو الجوال أو سطح المكتب التي تبسط عملياتك، وتحسن الكفاءة، وتدفع النمو.",
             button: "استكشف تطوير البرمجيات والويب",
+            img: "/images/2d-vects/6579900.jpg", // Added image
           },
-        },
+        ],
       },
       Why_Us: {
         title: "لماذا نحن",
-        subtitle:
-          "نحن فريق من الخبراء المتحمسين لمساعدة الشركات على النجاح. لدينا المهارات والخبرة والمعرفة لمساعدتك في تحقيق أهدافك.",
+        subtitle: "ما الذي يجعلنا مختلفين عن الآخرين",
         types: {
           all_in_one_digital_help: {
             title: "مساعدة رقمية شاملة",
@@ -1365,6 +1340,7 @@ export const languages = {
       types: {
         branding: {
           title: "الهوية التجارية",
+          img: "/images/2d-vects/2953998.jpg", // Added image
           subtitle:
             "يمكن أن يساعدك خبراء الهوية التجارية لدينا في إنشاء علامة تجارية تلقى صدى لدى جمهورك المستهدف، وتنقل قيمك، وتميزك عن المنافسة.",
           list: {
@@ -1397,6 +1373,7 @@ export const languages = {
         },
         marketing: {
           title: "التسويق",
+          img: "/images/2d-vects/10075627.jpg", // Added image
           subtitle:
             "من التسويق عبر وسائل التواصل الاجتماعي إلى تحسين محركات البحث، يمكن لفريق التسويق لدينا مساعدتك في الوصول إلى جمهورك المستهدف، وجذب الزيارات، وتوليد العملاء المحتملين.",
           list: {
@@ -1427,6 +1404,7 @@ export const languages = {
         },
         graphic_design: {
           title: "التصميم الجرافيكي",
+          img: "/images/2d-vects/10191042.jpg", // Added image
           subtitle:
             "يمكن لمصممي الجرافيك لدينا مساعدتك في إنشاء مرئيات مذهلة من واجهة المستخدم إلى تجربة المستخدم أو أي تصميم آخر تبحث عنه يساعد على جذب الانتباه، وإيصال رسالتك، ورفع مستوى علامتك التجارية.",
           list: {
@@ -1454,6 +1432,7 @@ export const languages = {
         },
         digital_transformation: {
           title: "التحول الرقمي",
+          img: "/images/2d-vects/9848264.jpg", // Added image
           subtitle:
             "يمكن لخبراء التحول الرقمي لدينا مساعدتك في الاستفادة من قوة التكنولوجيا لتبسيط عملياتك، وتحسين الكفاءة، ودفع النمو.",
           list: {
@@ -1481,6 +1460,7 @@ export const languages = {
         },
         social_media_management: {
           title: "إدارة وسائل التواصل الاجتماعي",
+          img: "/images/2d-vects/5994306.jpg", // Added image
           subtitle:
             "يمكن لخبراء وسائل التواصل الاجتماعي لدينا مساعدتك في إنشاء محتوى جذاب، وبناء قاعدة متابعين مخلصين، وجذب الزيارات إلى موقعك الإلكتروني.",
           list: {
@@ -1508,6 +1488,7 @@ export const languages = {
         },
         software_and_web_development: {
           title: "تطوير البرمجيات والويب",
+          img: "/images/2d-vects/4944103.jpg", // Added image
           subtitle:
             "يمكن لفريق تطوير البرمجيات والويب لدينا مساعدتك في بناء حلول مخصصة تلبي احتياجاتك الفريدة، من مواقع الويب إلى التطبيقات المحمولة.",
           list: {
@@ -1560,13 +1541,13 @@ export const languages = {
         websites_and_digital_transformation: {
           title: "مواقع الويب والتحول الرقمي",
           best_offer: "أفضل عرض",
-          plans: {
-            basic_plan: {
+          plans: [
+            {
               title: "الخطة الأساسية",
               price: "$500",
               button: "ابدأ الآن",
               features: {
-                title: "الميزات",
+                title: "المميزات",
                 features_list: [
                   "لغة واحدة",
                   "نطاق",
@@ -1578,17 +1559,17 @@ export const languages = {
                   "لوحة تحكم",
                   "تكامل بوابة الدفع",
                   "تصميم مخصص",
-                  "تحسين محركات البحث",
+                  "تحسين محركات البحث (SEO)",
                   "دعم دردشة مباشرة",
                 ],
               },
             },
-            business_plan: {
+            {
               title: "الخطة التجارية",
               price: "$900",
               button: "ابدأ الآن",
               features: {
-                title: "الميزات",
+                title: "المميزات",
                 features_list: [
                   "لغتان",
                   "نطاق",
@@ -1597,20 +1578,20 @@ export const languages = {
                   "تصميم متجاوب",
                   "متجر إلكتروني",
                   "دعم لمدة سنة",
-                  "لوحة تحكم WordPress",
+                  "لوحة تحكم ووردبريس",
                   "تكامل بوابة الدفع",
                   "تصميم مخصص",
-                  "تحسين محركات البحث",
+                  "تحسين محركات البحث (SEO)",
                   "دعم دردشة مباشرة",
                 ],
               },
             },
-            enterprise_plan: {
+            {
               title: "الخطة المؤسسية",
               price: "$1500",
               button: "ابدأ الآن",
               features: {
-                title: "الميزات",
+                title: "المميزات",
                 features_list: [
                   "لغات متعددة",
                   "نطاق",
@@ -1622,23 +1603,23 @@ export const languages = {
                   "لوحة تحكم مخصصة",
                   "تكامل بوابة الدفع",
                   "تصميم مخصص",
-                  "تحسين محركات البحث",
+                  "تحسين محركات البحث (SEO)",
                   "دعم دردشة مباشرة",
                 ],
               },
             },
-          },
+          ],
         },
         social_media_and_content_management: {
           title: "إدارة وسائل التواصل الاجتماعي والمحتوى",
           best_offer: "أفضل عرض",
-          plans: {
-            basic_plan: {
+          plans: [
+            {
               title: "الخطة الأساسية",
               price: "$300",
               button: "ابدأ الآن",
               features: {
-                title: "الميزات",
+                title: "المميزات",
                 features_list: [
                   "10 تصاميم",
                   "منشورات وسائل التواصل الاجتماعي",
@@ -1649,12 +1630,12 @@ export const languages = {
                 ],
               },
             },
-            business_plan: {
+            {
               title: "الخطة التجارية",
               price: "$500",
               button: "ابدأ الآن",
               features: {
-                title: "الميزات",
+                title: "المميزات",
                 features_list: [
                   "20 تصميمًا",
                   "منشورات وسائل التواصل الاجتماعي",
@@ -1665,12 +1646,12 @@ export const languages = {
                 ],
               },
             },
-            enterprise_plan: {
+            {
               title: "الخطة المؤسسية",
               price: "$1000",
               button: "ابدأ الآن",
               features: {
-                title: "الميزات",
+                title: "المميزات",
                 features_list: [
                   "30 تصميمًا",
                   "منشورات وسائل التواصل الاجتماعي",
@@ -1681,7 +1662,7 @@ export const languages = {
                 ],
               },
             },
-          },
+          ],
         },
       },
       custom: {
@@ -1764,7 +1745,7 @@ export const languages = {
         whatsapp: "راسلنا على واتساب",
       },
       contact_us_on: "تواصل معنا على",
-      whatsapp_chat: "دردشة واتساب",
+      whatsapp_chat: "دردشة واتس اب",
       facebook_chat: "دردشة فيسبوك",
       phone_number: "رقم الهاتف",
       email_address: "البريد الإلكتروني",

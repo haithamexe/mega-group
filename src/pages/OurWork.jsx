@@ -10,12 +10,14 @@ import {
 import { useState } from "react";
 import { Languages, MoveUp, Globe, Images, Factory } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
+import { useLanguageContext } from "../context/LanguageProvider";
 
 function OurWork() {
   const [viewMoreWebsites, setViewMoreWebsites] = useState(false);
   const [viewMoreGraphicDesigns, setViewMoreGraphicDesigns] = useState(false);
   const [showBar, setShowBar] = useState(false);
   const { scrollYProgress } = useScroll();
+  const { language } = useLanguageContext();
 
   const { handleScrollToElement } = useOutletContext();
 
@@ -35,35 +37,50 @@ function OurWork() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.7, delay: 0.1, ease: "easeInOut" }}
     >
-      <header className="services-header-wrapper">
+      <header
+        className={
+          language.language === "ar"
+            ? "services-header-wrapper direction-right"
+            : "services-header-wrapper"
+        }
+      >
         <div className="services-header">
-          <div className="header-hero-text">
-            <h1>Our Work</h1>
-            <p>
-              We have worked with a variety of clients to create beautiful
-              websites and branding. Take a look at some of our work below.
-            </p>
+          <div
+            className="header-hero-text"
+            style={language.language === "ar" ? { marginLeft: "auto" } : {}}
+          >
+            <h1>{language?.Our_Work?.title}</h1>
+            <p>{language?.Our_Work?.subtitle}</p>
           </div>
           <div className="header-hero-img">
             <ImageShapesContainer image="tech-companies.jpg" />
           </div>
         </div>
       </header>
-      <section className="ourwork-content">
+      <section
+        className={
+          language.language === "ar"
+            ? "ourwork-content direction-right"
+            : "ourwork-content"
+        }
+      >
         <div className="services-links-container">
           <a onClick={() => handleScrollToElement("web-development-our-work")}>
-            Web Development And Digital Transformation
+            {
+              language?.Our_Work?.links
+                ?.web_development_and_digital_transformation
+            }
           </a>
           <a
             onClick={() =>
               handleScrollToElement("social-media-management-our-work")
             }
           >
-            Social Media Management And Posts
+            {language?.Our_Work?.links?.social_media_management_and_posts}
           </a>
 
           <a onClick={() => handleScrollToElement("graphic-design-our-work")}>
-            Graphic Design And Branding
+            {language?.Our_Work?.links?.graphic_design_and_branding}
           </a>
         </div>
         <div className="ourwork-content-wrapper">
@@ -77,11 +94,17 @@ function OurWork() {
                 padding: "1rem",
               }}
             >
-              <h1>Web Development</h1>
+              <h1>
+                {
+                  language?.Our_Work?.types
+                    ?.web_development_and_digital_transformation.title
+                }
+              </h1>
               <p>
-                We have worked with a variety of clients to create beautiful
-                websites, brand identity, and marketing materials. Take a look
-                at some of our work below.
+                {
+                  language?.Our_Work?.types
+                    ?.web_development_and_digital_transformation.subtitle
+                }
               </p>
             </div>
             <div className="ourwork-project">
@@ -377,8 +400,18 @@ function OurWork() {
                 padding: "1rem",
               }}
             >
-              <h1>Social Media Management and Posts</h1>
-              <p>posts, stories, and ads for social media platforms.</p>
+              <h1>
+                {
+                  language?.Our_Work?.types?.social_media_management_and_posts
+                    ?.title
+                }
+              </h1>
+              <p>
+                {
+                  language?.Our_Work?.types?.social_media_management_and_posts
+                    .subtitle
+                }
+              </p>
             </div>
             <div className="ourwork-project project-post">
               <img
@@ -465,8 +498,15 @@ function OurWork() {
                 padding: "1rem",
               }}
             >
-              <h1>Graphic Design Logos</h1>
-              <p>Branding and Identity Design Logos</p>
+              <h1>
+                {language?.Our_Work?.types?.graphic_design_and_branding.title}
+              </h1>
+              <p>
+                {
+                  language?.Our_Work?.types?.graphic_design_and_branding
+                    .subtitle
+                }
+              </p>
             </div>
             <div className="ourwork-project project-post">
               <img

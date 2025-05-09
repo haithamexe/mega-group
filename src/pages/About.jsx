@@ -7,11 +7,13 @@ import {
   useMotionValueEvent,
   useTransform,
 } from "motion/react";
+import { useLanguageContext } from "../context/LanguageProvider";
 
 function About() {
   const { scrollYProgress } = useScroll();
   const [wordIndex, setWordIndex] = React.useState(0);
   const scrollNormalized = useTransform(scrollYProgress, [0, 1], [0, 11]);
+  const { language } = useLanguageContext();
 
   const words = [
     "",
@@ -39,46 +41,42 @@ function About() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.7, delay: 0.1, ease: "easeInOut" }}
     >
-      <header className="services-header-wrapper">
+      <header
+        className={
+          language.language === "ar"
+            ? "services-header-wrapper direction-right"
+            : "services-header-wrapper"
+        }
+      >
         <div className="services-header">
           <div className="header-hero-text">
-            <h1>About</h1>
-            <p>
-              We are passionate about helping businesses grow and scale. We
-              specialize in web design, branding, marketing, and digital
-              transformation. Our team is dedicated to helping you succeed.
-            </p>
+            <h1>{language?.About?.title}</h1>
+            <p>{language?.About?.subtitle}</p>
           </div>
           <div className="header-hero-img">
             <ImageShapesContainer image="2021_Janasduari_61-1.jpg" />
           </div>
         </div>
       </header>
-      <section className="about-content">
+      <section
+        className={
+          language.language === "ar"
+            ? "about-content direction-right"
+            : "about-content"
+        }
+      >
         <div className="about-content-wrapper">
           <div className="about-content-item">
-            <h2>Our Mission</h2>
-            <p>
-              Our mission is to help businesses grow and succeed. We are
-              dedicated to providing the best services to our clients and
-              helping them achieve their goals.
-            </p>
+            <h2>{language?.About?.mission.title}</h2>
+            <p>{language?.About?.mission.subtitle}</p>
           </div>
           <div className="about-content-item">
-            <h2>Our Vision</h2>
-            <p>
-              Our vision is to be the leading provider of web design, branding,
-              marketing, and digital transformation services. We are committed
-              to helping businesses thrive in the digital age.
-            </p>
+            <h2>{language?.About?.vision.title}</h2>
+            <p>{language?.About?.vision.subtitle}</p>
           </div>
           <div className="about-content-item">
-            <h2>Our Values</h2>
-            <p>
-              Our values are integrity, excellence, and innovation. We believe
-              in doing the right thing, delivering high-quality work, and
-              pushing the boundaries of what is possible.
-            </p>
+            <h2>{language?.About?.values.title}</h2>
+            <p>{language?.About?.values.subtitle}</p>
           </div>
         </div>
         {/* <div className="about-image-container">
@@ -140,14 +138,20 @@ function About() {
           </div>
         </div>
       </section>
-      <section className="about-adresses">
+      <section
+        className={
+          language.language === "ar"
+            ? "about-adresses direction-right"
+            : "about-adresses"
+        }
+      >
         <div className="about-address">
-          <h2>Libya</h2>
-          <p>1234 Street Name trablus, al3asma, 12345 276 33 10 535 90+</p>
+          <h2>{language?.About?.locations?.libya.title}</h2>
+          <p>{language?.About?.locations?.libya.subtitle}</p>
         </div>
         <div className="about-address">
-          <h2>Turkey</h2>
-          <p>1234 Street Name Istanbul, bubuduzu, 12345 276 33 10 535 90+</p>
+          <h2>{language?.About?.locations?.turkey.title}</h2>
+          <p>{language?.About?.locations?.turkey.subtitle}</p>
         </div>
       </section>
       <section className="about-socials">{/* Add a socials here */}</section>

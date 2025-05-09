@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import "../styles/main.css";
 import { Languages } from "lucide-react";
+import { useLanguageContext } from "../context/LanguageProvider";
 
 function Footer() {
   const [dropDownOpen, setDropDownOpen] = useState(false);
-  const [language, setLanguage] = useState("en");
   const dropdownRef = useRef(null);
+  const { setLanguage, language } = useLanguageContext();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -21,15 +22,15 @@ function Footer() {
   }, [dropdownRef]);
 
   return (
-    <div className="footer-container">
+    <div className={"footer-container"}>
       <div className="footer">
-        {/* <section className="footer-head">
-          <h1>
-            Start a your journy with us. Let's get in touch and discuss your
-            next project
-          </h1>
-        </section> */}
-        <section className="footer-body">
+        <section
+          className={
+            language.language === "ar"
+              ? "footer-body direction-right"
+              : "footer-body"
+          }
+        >
           <div className="footer-socials">
             <div className="footer-logo">
               <img
@@ -37,57 +38,43 @@ function Footer() {
                 alt="Mega Group Logo"
               />
             </div>
-            {/* <div className="footer-social-links">
-              <a href="https://www.instagram.com/megagroup.ly/">
-                <i className="fa-brands fa-instagram"></i>
-              </a>
-              <a href="https://www.facebook.com/megagroup.ly">
-                <i className="fa-brands fa-facebook"></i>
-              </a>
-              <a href="https://wa.me/218923310535">
-                <i className="fa-brands fa-whatsapp"></i>
-              </a>
-            </div> */}
           </div>
-          <div className="footer-links">
+          <div className={"footer-links"}>
             <div className="footer-link">
-              <h1>Home</h1>
-              <p>Mission</p>
-              <p>Services</p>
-              <p>Why Us</p>
-              <p>Clients</p>
+              <h1>{language?.Footer?.home?.title}</h1>
+              {language?.Footer?.home?.links.map((link, index) => (
+                <p key={index}>{link}</p>
+              ))}
             </div>
             <div className="footer-link footer-services-link">
-              <h1>Services</h1>
-              <p>Branding</p>
-              <p>Marketing</p>
-              <p>Graphic Design</p>
-              <p>Web Development</p>
-              <p>Software Development</p>
-              <p>Digital Transformation</p>
-              <p>Social Media Management</p>
+              <h1>{language?.Footer?.services?.title}</h1>
+              {language?.Footer?.services?.links.map((link, index) => (
+                <p key={index}>{link}</p>
+              ))}
             </div>
             <div className="footer-link">
-              <h1>Prices</h1>
-              <p>Prices</p>
-              <p>Prices</p>
+              <h1>{language?.Footer?.prices?.title}</h1>
+              {language?.Footer?.prices?.links.map((link, index) => (
+                <p key={index}>{link}</p>
+              ))}
             </div>
             <div className="footer-link">
-              <h1>Our Work</h1>
-              <p>Case Studies</p>
-              <p>Projects</p>
+              <h1>{language?.Footer?.our_work?.title}</h1>
+              {language?.Footer?.our_work?.links.map((link, index) => (
+                <p key={index}>{link}</p>
+              ))}
             </div>
             <div className="footer-link">
-              <h1>Contact</h1>
-              <p>Get in Touch</p>
-              <p>Location</p>
-              <p>FAQ</p>
+              <h1>{language?.Footer?.contact?.title}</h1>
+              {language?.Footer?.contact?.links.map((link, index) => (
+                <p key={index}>{link}</p>
+              ))}
             </div>
             <div className="footer-link">
-              <h1>About</h1>
-              <p>Team</p>
-              <p>History</p>
-              <p>Testimonials</p>
+              <h1>{language?.Footer?.about?.title}</h1>
+              {language?.Footer?.about?.links.map((link, index) => (
+                <p key={index}>{link}</p>
+              ))}
             </div>
           </div>
         </section>
@@ -133,10 +120,13 @@ function Footer() {
               <h1
                 className="languages-icon-footer"
                 onClick={() => setDropDownOpen(!dropDownOpen)}
+                style={{
+                  cursor: "pointer",
+                }}
               >
-                {language === "en"
+                {language.language === "en"
                   ? "Language"
-                  : language === "tr"
+                  : language.language === "tr"
                   ? "Dil"
                   : "اللغة"}
               </h1>
@@ -145,20 +135,20 @@ function Footer() {
                   <div
                     className="languages-dropdown-item"
                     onClick={() => {
-                      setLanguage("en");
-                      setDropDownOpen(false);
-                    }}
-                  >
-                    <p>English</p>
-                  </div>
-                  <div
-                    className="languages-dropdown-item"
-                    onClick={() => {
                       setLanguage("ar");
                       setDropDownOpen(false);
                     }}
                   >
                     <p>عربي</p>
+                  </div>
+                  <div
+                    className="languages-dropdown-item"
+                    onClick={() => {
+                      setLanguage("en");
+                      setDropDownOpen(false);
+                    }}
+                  >
+                    <p> English </p>
                   </div>
                   <div
                     className="languages-dropdown-item"

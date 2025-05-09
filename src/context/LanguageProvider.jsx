@@ -3,7 +3,7 @@ import { getLanguage } from "../utils/languages";
 
 const LanguageContext = createContext();
 
-const useLanguageContext = () => {
+export const useLanguageContext = () => {
   return useContext(LanguageContext);
 };
 
@@ -34,9 +34,9 @@ function LanguageProvider({ children }) {
   };
 
   const setLanguageFunction = (language) => {
-    localStorage.setItem("language", language);
     const langFormated = getLanguage(language);
     setLanguage(langFormated);
+    localStorage.setItem("language", language.toLowerCase());
   };
 
   useEffect(() => {
@@ -49,9 +49,9 @@ function LanguageProvider({ children }) {
           setLanguage(langFormated);
           return;
         }
-        const response = await fetch("https://ipapi.co/json");
+        const response = await fetch("http://ip-api.com/json");
         const data = await response.json();
-        const country = data.country_code;
+        const country = data.countryCode;
         console.log("country", country);
         const lang = countryToLanguage[country] || "en";
         console.log("language", lang);
@@ -65,6 +65,15 @@ function LanguageProvider({ children }) {
 
     detectLanguage();
   }, []);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (language.language === "ar") {
+      root.setAttribute("lang-dir", "rtl");
+    } else {
+      root.setAttribute("lang-dir", "ltr");
+    }
+  }, [language]);
 
   const values = {
     language,

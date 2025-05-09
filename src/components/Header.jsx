@@ -10,41 +10,44 @@ import {
   useSpring,
 } from "motion/react";
 import { useHeaderContext } from "../context/HeaderProvider";
-
-const links = [
-  {
-    url: "/",
-    text: "HOME",
-    link: "home",
-  },
-  {
-    url: "/services",
-    text: "SERVICES",
-    link: "services",
-  },
-  {
-    url: "/prices",
-    text: "PRICES",
-    link: "prices",
-  },
-  {
-    url: "/ourwork",
-    text: "OUR WORK",
-    link: "ourwork",
-  },
-  {
-    url: "/about",
-    text: "ABOUT",
-    link: "about",
-  },
-  {
-    url: "/contact",
-    text: "CONTACT",
-    link: "contact",
-  },
-];
+import { useLanguageContext } from "../context/LanguageProvider";
 
 function Header({ scrollYProgress, normalizedY }) {
+  const { language } = useLanguageContext();
+
+  const links = [
+    {
+      url: "/",
+      text: language?.Header?.home,
+      link: "home",
+    },
+    {
+      url: "/services",
+      text: language?.Header?.services,
+      link: "services",
+    },
+    {
+      url: "/prices",
+      text: language?.Header?.prices,
+      link: "prices",
+    },
+    {
+      url: "/ourwork",
+      text: language?.Header?.our_work,
+      link: "ourwork",
+    },
+    {
+      url: "/about",
+      text: language?.Header?.about,
+      link: "about",
+    },
+    {
+      url: "/contact",
+      text: language?.Header?.contact,
+      link: "contact",
+    },
+  ];
+
   // const { scrollYProgress } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   const { currentPage, setCurrentPage } = useHeaderContext();
@@ -152,7 +155,9 @@ function Header({ scrollYProgress, normalizedY }) {
                     : "header-link-text"
                 }
               >
-                {link.text !== "CONTACT" ? (
+                {link.text !== "CONTACT" &&
+                link.text !== "اتصل بنا" &&
+                link.text !== "İletişim" ? (
                   <h1
                     className={
                       currentPage === link.link ? "header-link-active" : ""

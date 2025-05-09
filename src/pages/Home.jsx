@@ -10,6 +10,7 @@ import {
 } from "motion/react";
 import { useOutletContext, Link } from "react-router-dom";
 import ContactContainer from "../components/ContactContainer";
+import { useLanguageContext } from "../context/LanguageProvider";
 
 function Home() {
   const {
@@ -19,6 +20,8 @@ function Home() {
     handleScrollToBottom,
     handleScrollToElement,
   } = useOutletContext();
+
+  const { language } = useLanguageContext();
 
   const servicesRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -119,15 +122,16 @@ function Home() {
           src="/videos/abstract 3d geometric pattern_preview.mp4"
           // src="/videos/stock-footage-blurred-blue-background-with-diagonal-light-streaks-suitable-for-technology-or-abstract-designs.webm"
         />
-        <div className="home-hero-content">
+        <div
+          className={
+            language.language === "ar"
+              ? "home-hero-content direction-right"
+              : "home-hero-content"
+          }
+        >
           <div className="home-hero-content-inner">
-            <h1>Build Tomorrow, Today</h1>
-            <p>
-              At MEGA, we help entrepreneurs and businesses build, grow, and
-              scale with expert branding, marketing, web design, and digital
-              transformation strategies. Whether you’re launching or rebranding,
-              we’re here to take you to the next level.
-            </p>
+            <h1>{language?.Home?.Hero?.title}</h1>
+            <p>{language?.Home?.Hero?.subtitle}</p>
           </div>
         </div>
       </div>
@@ -314,7 +318,11 @@ function Home() {
           id="mission"
         >
           <div className="home-mission-inner">
-            <h1>Build Better</h1>
+            <h1
+              style={language?.language === "tr" ? { fontSize: "1.5rem" } : {}}
+            >
+              {language?.Home?.Mission?.box1}
+            </h1>
             <img src="/images/2d-vects/0.jpg" />
           </div>
         </motion.div>
@@ -335,7 +343,11 @@ function Home() {
           id="mission"
         >
           <div className="home-mission-inner">
-            <h1>Build Bigger</h1>
+            <h1
+              style={language?.language === "tr" ? { fontSize: "1.5rem" } : {}}
+            >
+              {language?.Home?.Mission?.box2}
+            </h1>
 
             <img src="/images/2d-vects/10191042.jpg" />
           </div>
@@ -360,13 +372,24 @@ function Home() {
           id="mission"
         >
           <div className="home-mission-inner">
-            <h1>Build Smarter</h1>
+            <h1
+              style={language?.language === "tr" ? { fontSize: "1.5rem" } : {}}
+            >
+              {language?.Home?.Mission?.box3}
+            </h1>
             <img src="/images/2d-vects/4966425.jpg" />
           </div>
         </motion.div>
       </div>
 
-      <div className="home-services" id="services">
+      <div
+        className={
+          language.language === "ar"
+            ? "home-services direction-right"
+            : "home-services"
+        }
+        id="services"
+      >
         <motion.div
           whileInView={{ paddingTop: 0 }}
           initial={{ paddingTop: 140 }}
@@ -375,7 +398,7 @@ function Home() {
           }}
           className="home-services-hero"
         >
-          <motion.h1>Services</motion.h1>
+          <motion.h1>{language?.Home?.Services?.title}</motion.h1>
           <motion.div
             style={{
               paddingTop: paddingTop,
@@ -383,161 +406,52 @@ function Home() {
             className="home-services-content"
             ref={servicesRef}
           >
-            <h2>We help businesses build, grow, and scale.</h2>
-            <p>Explore Services</p>
+            <h2>{language?.Home?.Services?.subtitle}</h2>
+            <p>{language?.Home?.Services?.button}</p>
           </motion.div>
         </motion.div>
         <div className="home-services-inner">
-          <div
-            className="home-service"
-            onMouseEnter={() => setServiceShowMore("branding")}
-            onMouseLeave={() => setServiceShowMore("")}
-            style={{
-              cursor: "pointer",
-            }}
-          >
-            <img src="/images/2d-vects/6666301.jpg" />
-            <div className="home-service-content">
-              <h3>Branding</h3>
-              <p>
-                Our branding experts can help you create a brand that resonates
-                with your target audience, communicates your values, and sets
-                you apart from the competition.
-              </p>
-            </div>
-            <div className="home-service-explore">
-              {serviceShowMore === "branding" && <a>Explore More</a>}
-              <MoveRight size="30" />
-            </div>
-          </div>
-          <div
-            className="home-service odd-service"
-            onMouseEnter={() => setServiceShowMore("marketing")}
-            onMouseLeave={() => setServiceShowMore("")}
-            style={{
-              cursor: "pointer",
-            }}
-          >
-            <img src="/images/2d-vects/3129505.jpg" />
-            <div className="home-service-content">
-              <h3>Marketing</h3>
-              <p>
-                From social media marketing to SEO, our marketing team can help
-                you reach your target audience, drive traffic, and generate
-                leads.
-              </p>
-              <div className="home-service-explore">
-                {serviceShowMore === "marketing" && <a>Explore More</a>}
-                <MoveRight size="30" />
+          {language?.Home?.Services?.types.map((service, index) => {
+            return (
+              <div
+                className="home-service"
+                onMouseEnter={() =>
+                  setServiceShowMore(service?.title.toLowerCase())
+                }
+                onMouseLeave={() => setServiceShowMore("")}
+                style={{
+                  cursor: "pointer",
+                }}
+                key={index}
+              >
+                <img
+                  className={
+                    language.language === "ar" ? "direction-right-img" : ""
+                  }
+                  src={service?.img}
+                />
+                <div className="home-service-content">
+                  <h3>{service?.title}</h3>
+                  <p>{service?.subtitle}</p>
+                </div>
+                <div className="home-service-explore">
+                  {serviceShowMore === service.title.toLowerCase() && (
+                    <a>Explore More</a>
+                  )}
+                  <MoveRight size="30" />
+                </div>
               </div>
-            </div>
-          </div>
-          <div
-            className="home-service "
-            onMouseEnter={() => setServiceShowMore("graphic_design")}
-            onMouseLeave={() => setServiceShowMore("")}
-            style={{
-              cursor: "pointer",
-            }}
-          >
-            <img src="/images/2d-vects/Video-Files.jpg" />
-            <div className="home-service-content">
-              <h3>Graphic Design</h3>
-              <p>
-                Our graphic designers can help you create stunning visuals from
-                UI to UX or any other design you are looking for that helps
-                capture attention, communicate your message, and elevate your
-                brand.
-              </p>
-              <div className="home-service-explore">
-                {serviceShowMore === "graphic_design" && <a>Explore More</a>}
-                <MoveRight size="30" />
-              </div>
-            </div>
-          </div>
-          <div
-            className="home-service odd-service "
-            onMouseEnter={() => setServiceShowMore("digital_transformation")}
-            onMouseLeave={() => setServiceShowMore("")}
-          >
-            <img src="/images/2d-vects/6155818.jpg" />
-            <div className="home-service-content">
-              <h3>Digital Transformation</h3>
-              <p>
-                Our digital transformation experts can help you leverage the
-                power of technology to streamline your operations, improve
-                efficiency, and drive growth.
-              </p>
-              <div className="home-service-explore">
-                {serviceShowMore === "digital_transformation" && (
-                  <a>Explore More</a>
-                )}
-                <MoveRight size="30" />
-              </div>
-            </div>
-          </div>
-          <div
-            className="home-service "
-            onMouseEnter={() => setServiceShowMore("social_media_management")}
-            onMouseLeave={() => setServiceShowMore("")}
-            style={{
-              cursor: "pointer",
-            }}
-          >
-            <img src="/images/2d-vects/5057942.jpg" />
-            <div className="home-service-content">
-              <h3>Social Media Management</h3>
-              <p>
-                Our social media experts can help you create engaging content,
-                build a loyal following, and drive traffic to your website.
-              </p>
-              <div className="home-service-explore">
-                {serviceShowMore === "social_media_management" && (
-                  <a>Explore More</a>
-                )}
-                <MoveRight size="30" />
-              </div>
-            </div>
-          </div>
-          <div
-            className="home-service  odd-service"
-            onMouseEnter={() =>
-              setServiceShowMore("software_and_web_development")
-            }
-            onMouseLeave={() => setServiceShowMore("")}
-            style={{
-              cursor: "pointer",
-            }}
-          >
-            <img src="/images/2d-vects/6579900.jpg" />
-            <div className="home-service-content">
-              <h3>Software And Web Development</h3>
-              <p>
-                Our software developers can help you build custom software
-                solutions like web, mobile or desktop apps that streamline your
-                operations, improve efficiency, and drive growth.
-              </p>
-              <div className="home-service-explore">
-                {serviceShowMore === "software_and_web_development" && (
-                  <a>Explore More</a>
-                )}
-                <MoveRight size="30" />
-              </div>
-            </div>
-          </div>
-          {/* <div className="home-service odd-service last-service">
-            <img src="/images/mega-logo-blue.png" />
-            <div className="home-service-content">
-              <h3>Consultation</h3>
-              <p>
-                Our business consultants can help you identify opportunities,
-                overcome challenges, and achieve your business goals.
-              </p>
-            </div>
-          </div> */}
+            );
+          })}
         </div>
       </div>
-      <div className="home-why-us-wrapper">
+      <div
+        className={
+          language.language === "ar"
+            ? "home-why-us-wrapper direction-right"
+            : "home-why-us-wrapper"
+        }
+      >
         <motion.div
           className="home-why-us"
           id="why_us"
@@ -564,8 +478,8 @@ function Home() {
             }}
             className="home-why-us-block one"
           >
-            <h2>Why Us</h2>
-            <p>What sets us apart</p>
+            <h2>{language?.Home?.Why_Us?.title}</h2>
+            <p>{language?.Home?.Why_Us?.subtitle}</p>
           </motion.div>
           <motion.div
             initial={{
@@ -584,10 +498,11 @@ function Home() {
                 : "home-why-us-block two"
             }
           >
-            <h2>All-in-One Digital Help</h2>
+            <h2>
+              {language?.Home?.Why_Us?.types?.all_in_one_digital_help?.title}
+            </h2>
             <p>
-              We’ve helped retail, finance, and manufacturing businesses adapt
-              to the digital age. Every industry gets a tailored plan.
+              {language?.Home?.Why_Us?.types?.all_in_one_digital_help?.subtitle}
             </p>
           </motion.div>
           <motion.div
@@ -606,11 +521,8 @@ function Home() {
                 : "home-why-us-block three"
             }
           >
-            <h2>Proven Results</h2>
-            <p>
-              Clients save time, cut costs, and work smarter. We deliver what we
-              promise.
-            </p>
+            <h2>{language?.Home?.Why_Us?.types?.proven_results?.title}</h2>
+            <p>{language?.Home?.Why_Us?.types?.proven_results?.subtitle}</p>
           </motion.div>
           <motion.div
             initial={{
@@ -628,10 +540,11 @@ function Home() {
                 : "home-why-us-block four"
             }
           >
-            <h2>Flexible & Future-Proof</h2>
+            <h2>
+              {language?.Home?.Why_Us?.types?.flexible_future_proof?.title}
+            </h2>
             <p>
-              We build systems that grow with you. If your needs change, your
-              tools can adapt – no starting over.
+              {language?.Home?.Why_Us?.types?.flexible_future_proof?.subtitle}
             </p>
           </motion.div>
           <motion.div
@@ -650,13 +563,8 @@ function Home() {
                 : "home-why-us-block five"
             }
           >
-            <h2>Tools for Tomorrow</h2>
-            <p>
-              Stay ahead with technology that’s built to last, Easy-to-Use Tech:
-              Tools your team will actually enjoy, Always Protected: Guard
-              against online threats. We pick tech that works today and
-              tomorrow.
-            </p>
+            <h2>{language?.Home?.Why_Us?.types?.tools_for_tomorrow?.title}</h2>
+            <p>{language?.Home?.Why_Us?.types?.tools_for_tomorrow?.subtitle}</p>
           </motion.div>
           <motion.div
             initial={{
@@ -674,11 +582,8 @@ function Home() {
                 : "home-why-us-block six"
             }
           >
-            <h2>Teamwork First</h2>
-            <p>
-              You’re part of the process. We listen, collaborate, and build
-              solutions that fit your goals – not ours.
-            </p>
+            <h2>{language?.Home?.Why_Us?.types?.teamwork_first?.title}</h2>
+            <p>{language?.Home?.Why_Us?.types?.teamwork_first?.subtitle}</p>
           </motion.div>
           <motion.div
             initial={{
@@ -696,16 +601,8 @@ function Home() {
                 : "home-why-us-block seven"
             }
           >
-            <h2>Fast & Reliable</h2>
-            <p>
-              In today’s fast-paced world, delays can cost you opportunities,
-              customers, and momentum. That’s why we’ve built our entire process
-              around speed without compromise. From day one, we work backward
-              from your deadlines, breaking projects into clear milestones with
-              built-in buffers for unexpected challenges. Our team uses proven
-              project management frameworks, like Agile and Scrum, to keep
-              workflows smooth and transparent.
-            </p>
+            <h2>{language?.Home?.Why_Us?.types?.fast_reliable?.title}</h2>
+            <p>{language?.Home?.Why_Us?.types?.fast_reliable?.subtitle}</p>
           </motion.div>
           <motion.div
             initial={{
@@ -723,16 +620,21 @@ function Home() {
                 : "home-why-us-block eight"
             }
           >
-            <h2>Active Support</h2>
-            <p>
-              We’re here round the clock. Questions? Issues? We’ve got your back
-            </p>
+            <h2>{language?.Home?.Why_Us?.types?.active_support?.title}</h2>
+            <p>{language?.Home?.Why_Us?.types?.active_support?.subtitle}</p>
           </motion.div>
         </motion.div>
       </div>
-      <div className="home-clients" id="clients">
+      <div
+        className={
+          language.language === "ar"
+            ? "home-clients direction-right"
+            : "home-clients"
+        }
+        id="clients"
+      >
         <div className="home-clients-inner">
-          <h1>Featured Clients</h1>
+          <h1>{language?.Home?.Clients?.title}</h1>
           <div className="home-clients-logos">
             <img src="/images/logos/agar.png" alt="client image" />
             <img src="/images/logos/az.png" alt="client image" />
