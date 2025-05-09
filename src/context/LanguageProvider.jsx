@@ -61,10 +61,10 @@ function LanguageProvider({ children }) {
         );
         const data = await response.json();
         const country = data.location.country_code2;
-        const lang = countryToLanguage[country] || "en";
+        const lang = countryToLanguage[country] || "ar";
         setLanguageFunction(lang);
       } catch {
-        const langFormated = getLanguage("en");
+        const langFormated = getLanguage("ar");
         setLanguage(langFormated);
         console.error("Failed to detect language");
       }
