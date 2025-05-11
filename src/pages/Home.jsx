@@ -36,13 +36,14 @@ function Home() {
   const paddingTop = useTransform(scrollYProgress, [0, 0.1], [0, 11], {
     clamp: false,
   });
-  const missionTop = useTransform(scrollMission, [0, 0.16], [-355, -190], {
+  const missionTop = useTransform(scrollMission, [0, 0.16], [-300, -190], {
     clamp: false,
   });
 
   const [scrollToElement, setScrollToElement] = useState("");
   const [scrollToTop, setScrollToTop] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const topVar = -355;
 
@@ -53,6 +54,14 @@ function Home() {
   });
 
   const [serviceShowMore, setServiceShowMore] = useState("");
+
+  const handleWindowSize = () => {
+    if (window.innerWidth > 900) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+  };
 
   useEffect(() => {
     if (scrollToElement === "") return;
@@ -71,6 +80,19 @@ function Home() {
         setShowScrollToTop(false);
       }
     });
+    window.addEventListener("resize", handleWindowSize);
+    handleWindowSize();
+
+    return () => {
+      window.removeEventListener("scroll", () => {
+        if (window.scrollY > 1200) {
+          setShowScrollToTop(true);
+        } else {
+          setShowScrollToTop(false);
+        }
+      });
+      window.removeEventListener("resize", handleWindowSize);
+    };
   }, []);
 
   useMotionValueEvent(scrollWhyUs, "change", (latest) => {
@@ -172,12 +194,13 @@ function Home() {
               className="home-scroll-to-top"
               initial={{
                 right: 0,
-                bottom: 35 * 5,
+                bottom: !isMobile ? 35 * 5 : 25 * 3.95,
                 opacity: 0,
               }}
               animate={{
                 right: 40,
                 opacity: 1,
+                bottom: !isMobile ? 35 * 5 : 25 * 3.95,
               }}
               exit={{
                 right: 0,
@@ -200,10 +223,8 @@ function Home() {
               /> */}
               <Link to="/contact">
                 <i
-                  className="fa-brands fa-whatsapp"
+                  className="fa-brands fa-whatsapp home-scroll-to-top-icon"
                   style={{
-                    // width: "100%",
-                    // height: "100%",
                     fontSize: "2rem",
                     color: "#00D757",
                   }}
@@ -216,12 +237,13 @@ function Home() {
               className="home-scroll-to-top"
               initial={{
                 right: 0,
-                bottom: 35 * 3,
+                bottom: !isMobile ? 35 * 3 : 25 * 2.5,
                 opacity: 0,
               }}
               animate={{
                 right: 40,
                 opacity: 1,
+                bottom: !isMobile ? 35 * 3 : 25 * 2.5,
               }}
               exit={{
                 right: 0,
@@ -232,11 +254,12 @@ function Home() {
               }}
             >
               <Languages
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-                size="30"
+                className="home-scroll-to-top-icon"
+                // style={{
+                //   width: "100%",
+                //   height: "100%",
+                // }}
+                // size="30"
               />
             </motion.div>
             <motion.div
@@ -244,11 +267,12 @@ function Home() {
               className="home-scroll-to-top"
               initial={{
                 right: 0,
-                bottom: 35,
+                bottom: !isMobile ? 35 : 25,
               }}
               animate={{
                 right: 40,
                 opacity: 1,
+                bottom: !isMobile ? 35 : 25,
               }}
               exit={{
                 right: 0,
@@ -259,11 +283,12 @@ function Home() {
               }}
             >
               <MoveUp
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-                size="30"
+                className="home-scroll-to-top-icon"
+                // style={{
+                //   width: "100%",
+                //   height: "100%",
+                // }}
+                // size="30"
               />
             </motion.div>
           </div>
@@ -318,17 +343,13 @@ function Home() {
           id="mission"
         >
           <div className="home-mission-inner">
-            <h1
-              style={language?.language === "tr" ? { fontSize: "1.5rem" } : {}}
-            >
-              {language?.Home?.Mission?.box1}
-            </h1>
+            <h1>{language?.Home?.Mission?.box1}</h1>
             <img src="/images/2d-vects/0.jpg" />
           </div>
         </motion.div>
         <motion.div
           animate={{
-            top: topVar,
+            top: "-300px",
           }}
           initial={{
             top: 0,
@@ -336,18 +357,11 @@ function Home() {
           transition={{
             duration: 1,
           }}
-          // style={{
-          //   top: missionTop,
-          // }}
           className="home-mission"
           id="mission"
         >
           <div className="home-mission-inner">
-            <h1
-              style={language?.language === "tr" ? { fontSize: "1.5rem" } : {}}
-            >
-              {language?.Home?.Mission?.box2}
-            </h1>
+            <h1>{language?.Home?.Mission?.box2}</h1>
 
             <img src="/images/2d-vects/10191042.jpg" />
           </div>
@@ -372,11 +386,7 @@ function Home() {
           id="mission"
         >
           <div className="home-mission-inner">
-            <h1
-              style={language?.language === "tr" ? { fontSize: "1.5rem" } : {}}
-            >
-              {language?.Home?.Mission?.box3}
-            </h1>
+            <h1>{language?.Home?.Mission?.box3}</h1>
             <img src="/images/2d-vects/4966425.jpg" />
           </div>
         </motion.div>
@@ -438,7 +448,7 @@ function Home() {
                   {serviceShowMore === service.title.toLowerCase() && (
                     <a>Explore More</a>
                   )}
-                  <MoveRight size="30" />
+                  <MoveRight className="home-service-explore-button" />
                 </div>
               </div>
             );

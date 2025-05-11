@@ -23,12 +23,20 @@
 
 .contact-container h1 {
   color: var(--accent);
+
+  @media screen and (max-width: 900px) {
+    font-size: 1rem;
+  }
 }
 .contact-container p {
   color: var(--text-secondary);
   font-size: 1rem;
   font-weight: 500;
   /* margin-bottom: 10px; */
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.8rem;
+  }
 }
 
 .contact-head {
@@ -91,15 +99,17 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+
   padding: 0.5rem;
   border-radius: 4px;
   border: none;
   background-color: rgb(78, 196, 94);
   color: var(--background);
-  font-size: 1rem;
+  font-size: 0.8rem;
   cursor: pointer;
   width: 100%;
   font-family: "Montserrat";
+  text-align: center;
 }
 .whatsapp-button:hover {
   background-color: rgb(26, 165, 56);

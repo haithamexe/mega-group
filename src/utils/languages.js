@@ -112,6 +112,10 @@ export const languages = {
         title: "Why Us",
         subtitle: "What sets us apart from the rest?",
         types: {
+          why_us: {
+            title: "Why us?",
+            subtitle: "what makes us different from others ?",
+          },
           all_in_one_digital_help: {
             title: "All-in-One Digital Help",
             subtitle:
@@ -140,7 +144,7 @@ export const languages = {
           fast_reliable: {
             title: "Fast & Reliable",
             subtitle:
-              "In today’s fast-paced world, delays can cost you opportunities, customers, and momentum. That’s why we’ve built our entire process around speed without compromise. From day one, we work backward from your deadlines, breaking projects into clear milestones with built-in buffers for unexpected challenges. Our team uses proven project management frameworks, like Agile and Scrum, to keep workflows smooth and transparent.",
+              "In today’s fast-paced world, delays can cost you opportunities, customers, and momentum. That’s why we’ve built our entire process around speed without compromise.  ",
           },
           active_support: {
             title: "Active Support",
@@ -727,7 +731,7 @@ export const languages = {
           fast_reliable: {
             title: "Hızlı ve Güvenilir",
             subtitle:
-              "Hızlı tempolu dünyamızda gecikmeler fırsatların, müşterilerin ve ivmenin kaybına neden olabilir. Bu yüzden tüm sürecimizi hız ve güvenilirlik üzerine kurduk. İlk günden itibaren, projeleri net kilometre taşlarına bölüyor ve beklenmedik zorluklar için tamponlar oluşturuyoruz. Agile ve Scrum gibi kanıtlanmış proje yönetimi çerçevelerini kullanıyoruz.",
+              "Hızlı tempolu dünyamızda gecikmeler fırsatların, müşterilerin ve ivmenin kaybına neden olabilir. Bu yüzden tüm sürecimizi hız ve güvenilirlik üzerine kurduk. ",
           },
           active_support: {
             title: "Aktif Destek",

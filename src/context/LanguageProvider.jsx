@@ -87,6 +87,12 @@ function LanguageProvider({ children }) {
     } else {
       root.setAttribute("lang-dir", "ltr");
     }
+
+    if (language.language === "tr") {
+      root.setAttribute("lang-type", "long");
+    } else {
+      root.setAttribute("lang-type", "normal");
+    }
   }, [language]);
 
   const values = {
