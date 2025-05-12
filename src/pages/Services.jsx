@@ -25,10 +25,6 @@ function Services() {
       transition={{ duration: 0.7, delay: 0.1, ease: "easeInOut" }}
     >
       <header className="services-header-wrapper">
-        {/* <img
-          src="/images/Capgemini_The-Key-to-Designing-Inclusive-Tech.webp"
-          alt="placeholder"
-        /> */}
         <div
           className={
             language.language === "ar"
@@ -45,12 +41,7 @@ function Services() {
           </div>
         </div>
       </header>
-      {/* <section
-        className="services-contetnt"
-        style={{
-          height: "5vh",
-        }}
-      ></section> */}
+
       <div
         className={
           language.language === "ar"
@@ -120,11 +111,17 @@ function Services() {
                       >
                         <div className="services-service-option-text">
                           <h1>{language?.Services?.prices}</h1>
-                          <MoveRight size={30} />
+                          <MoveRight
+                            className="services-service-arrows"
+                            // size={30}
+                          />
                         </div>
                         <div className="services-service-option-text">
                           <h1>{language?.Services?.inquire}</h1>
-                          <MoveRight size={30} />
+                          <MoveRight
+                            className="services-service-arrows"
+                            // size={30}
+                          />
                         </div>
                       </motion.div>
                     </div>
@@ -189,12 +186,18 @@ function Services() {
                         className="services-service-option"
                       >
                         <div className="services-service-option-text">
-                          <h1>Prices</h1>
-                          <MoveRight size={30} />
+                          <h1>{language?.Services?.prices}</h1>
+                          <MoveRight
+                            className="services-service-arrows"
+                            // size={30}
+                          />
                         </div>
                         <div className="services-service-option-text">
-                          <h1>Inquire </h1>
-                          <MoveRight size={30} />
+                          <h1>{language?.Services?.inquire} </h1>
+                          <MoveRight
+                            className="services-service-arrows"
+                            // size={30}
+                          />
                         </div>
                       </motion.div>
                     </div>

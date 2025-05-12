@@ -10,7 +10,12 @@ function Footer() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      console.log(event);
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        event.target.className != "languages-icon-footer"
+      ) {
         setDropDownOpen(false);
       }
     };
@@ -119,7 +124,7 @@ function Footer() {
               /> */}
               <h1
                 className="languages-icon-footer"
-                onClick={() => setDropDownOpen(!dropDownOpen)}
+                onClick={() => setDropDownOpen((prev) => !prev)}
                 style={{
                   cursor: "pointer",
                 }}

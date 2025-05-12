@@ -43,7 +43,7 @@ function Home() {
   const [scrollToElement, setScrollToElement] = useState("");
   const [scrollToTop, setScrollToTop] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState();
 
   const topVar = -355;
 
@@ -55,8 +55,18 @@ function Home() {
 
   const [serviceShowMore, setServiceShowMore] = useState("");
 
+  const handleWindowSizeLoad = () => {
+    if (window.innerWidth > 1000) {
+      alert(window.innerWidth);
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+  };
   const handleWindowSize = () => {
     if (window.innerWidth > 900) {
+      alert(window.innerWidth);
+
       setIsMobile(false);
     } else {
       setIsMobile(true);
@@ -72,28 +82,29 @@ function Home() {
     setScrollToElement("");
   }, [scrollToElement]);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 1200) {
-        setShowScrollToTop(true);
-      } else {
-        setShowScrollToTop(false);
-      }
-    });
-    window.addEventListener("resize", handleWindowSize);
-    handleWindowSize();
+  // useEffect(() => {
+  //   handleWindowSizeLoad();
 
-    return () => {
-      window.removeEventListener("scroll", () => {
-        if (window.scrollY > 1200) {
-          setShowScrollToTop(true);
-        } else {
-          setShowScrollToTop(false);
-        }
-      });
-      window.removeEventListener("resize", handleWindowSize);
-    };
-  }, []);
+  //   window.addEventListener("scroll", () => {
+  //     if (window.scrollY > 1200) {
+  //       setShowScrollToTop(true);
+  //     } else {
+  //       setShowScrollToTop(false);
+  //     }
+  //   });
+  //   window.addEventListener("resize", handleWindowSize);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", () => {
+  //       if (window.scrollY > 1200) {
+  //         setShowScrollToTop(true);
+  //       } else {
+  //         setShowScrollToTop(false);
+  //       }
+  //     });
+  //     window.removeEventListener("resize", handleWindowSize);
+  //   };
+  // }, []);
 
   useMotionValueEvent(scrollWhyUs, "change", (latest) => {
     console.log("scroll value for why:", latest);
@@ -191,16 +202,16 @@ function Home() {
           <div className="home-sidebar">
             <motion.div
               onClick={forceSmoothScroll}
-              className="home-scroll-to-top"
+              className="home-scroll-to-top home-scroll-to-top-icon-1"
               initial={{
                 right: 0,
-                bottom: !isMobile ? 35 * 5 : 25 * 3.95,
+                // bottom: !isMobile ? 35 * 5 : 15 * 5.8,
                 opacity: 0,
               }}
               animate={{
                 right: 40,
                 opacity: 1,
-                bottom: !isMobile ? 35 * 5 : 25 * 3.95,
+                // bottom: !isMobile ? 35 * 5 : 15 * 5.8,
               }}
               exit={{
                 right: 0,
@@ -223,7 +234,7 @@ function Home() {
               /> */}
               <Link to="/contact">
                 <i
-                  className="fa-brands fa-whatsapp home-scroll-to-top-icon"
+                  className="fa-brands fa-whatsapp"
                   style={{
                     fontSize: "2rem",
                     color: "#00D757",
@@ -234,16 +245,16 @@ function Home() {
 
             <motion.div
               onClick={handleScrollToBottom}
-              className="home-scroll-to-top"
+              className="home-scroll-to-top home-scroll-to-top-icon-2"
               initial={{
                 right: 0,
-                bottom: !isMobile ? 35 * 3 : 25 * 2.5,
+                // bottom: !isMobile ? 35 * 3 : 15 * 3.4,
                 opacity: 0,
               }}
               animate={{
                 right: 40,
                 opacity: 1,
-                bottom: !isMobile ? 35 * 3 : 25 * 2.5,
+                // bottom: !isMobile ? 35 * 3 : 15 * 3.4,
               }}
               exit={{
                 right: 0,
@@ -254,25 +265,24 @@ function Home() {
               }}
             >
               <Languages
-                className="home-scroll-to-top-icon"
-                // style={{
-                //   width: "100%",
-                //   height: "100%",
-                // }}
-                // size="30"
+              // style={{
+              //   width: "100%",
+              //   height: "100%",
+              // }}
+              // size="30"
               />
             </motion.div>
             <motion.div
               onClick={forceSmoothScroll}
-              className="home-scroll-to-top"
+              className="home-scroll-to-top home-scroll-to-top-icon-3"
               initial={{
                 right: 0,
-                bottom: !isMobile ? 35 : 25,
+                // bottom: !isMobile ? 35 : 15,
               }}
               animate={{
                 right: 40,
                 opacity: 1,
-                bottom: !isMobile ? 35 : 25,
+                // bottom: !isMobile ? 35 : 15,
               }}
               exit={{
                 right: 0,
@@ -283,12 +293,11 @@ function Home() {
               }}
             >
               <MoveUp
-                className="home-scroll-to-top-icon"
-                // style={{
-                //   width: "100%",
-                //   height: "100%",
-                // }}
-                // size="30"
+              // style={{
+              //   width: "100%",
+              //   height: "100%",
+              // }}
+              // size="30"
               />
             </motion.div>
           </div>

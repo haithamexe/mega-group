@@ -37,8 +37,8 @@ function Prices() {
       <div
         className={
           language.language === "ar"
-            ? "prices-links-container direction-right"
-            : "prices-links-container"
+            ? "services-links-container direction-right"
+            : "services-links-container"
         }
       >
         <a onClick={() => handleScrollToElement("prices-websites")}>

@@ -280,16 +280,16 @@
 
 .footer-container {
   width: 100%;
-  height: 550px;
+  height: 65vh;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
-  @media screen and (min-width: 2000px) {
-    height: 40vh;
+  @media screen and (min-width: 1400px) {
+    height: 70vh;
   }
 
-  @media screen and (max-width: 1300px) {
-    height: 60vh;
+  @media screen and (max-width: 900px) {
+    height: 52vh;
   }
 }
 
@@ -305,7 +305,11 @@
   justify-content: flex-end;
   background-color: #06111c;
   background-color: #001d3d;
-  gap: 1rem;
+  gap: 3rem;
+
+  @media screen and (max-width: 900px) {
+    gap: 0rem;
+  }
 }
 
 .footer-body {
@@ -314,6 +318,7 @@
   padding-left: 19rem; */
 
   padding: 0 17vw;
+  gap: 3rem;
 
   @media screen and (min-width: 2000px) {
     padding: 1vw 10%;
@@ -324,17 +329,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
   }
 }
 .footer-socials {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 1rem; */
+  gap: 1rem;
 }
 .footer-logo {
-  width: 300px;
+  /* width: 300px; */
 
   @media screen and (max-width: 900px) {
     width: 100%;
@@ -343,17 +348,14 @@
     align-items: center;
   }
 }
+
 .footer-body img {
-  height: 100%;
-  width: 100%;
+  /* height: 100%; */
+  width: 40%;
   object-fit: contain;
 
-  @media screen and (min-width: 2000px) {
-    width: 5vw;
-  }
-
-  @media screen and (max-width: 1300px) {
-    width: 40%;
+  @media screen and (max-width: 900px) {
+    width: 20vw;
   }
 }
 
@@ -365,30 +367,35 @@
   gap: 2rem;
   /* padding: 0.4rem 1.6rem; */
 }
+
 .footer-social-links a {
   font-size: 2rem;
   color: white;
   text-decoration: none;
 
-  @media screen and (min-width: 2000px) {
+  /* @media screen and (min-width: 2000px) {
     font-size: 1.5vw;
-  }
-
-  @media screen and (max-width: 1300px) {
-    font-size: 1.5rem;
-  }
+  } */
 }
 
 .footer-links {
   display: flex;
   gap: 4.3rem;
+  gap: 3rem;
 
-  @media screen and (min-width: 2000px) {
+  /* @media screen and (min-width: 2000px) {
     gap: 2vw;
   }
 
   @media screen and (max-width: 1300px) {
     gap: 1rem;
+  } */
+
+  @media screen and (max-width: 900px) {
+    gap: 1rem;
+  }
+  @media screen and (max-width: 600px) {
+    gap: 0.5rem;
   }
 }
 .footer-links h1 {
@@ -398,9 +405,9 @@
   cursor: pointer;
 }
 
-.footer-links h1 {
+[lang-type="normal"] .footer-links h1 {
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 700;
   color: white !important;
   cursor: pointer;
 
@@ -410,6 +417,33 @@
 
   @media screen and (max-width: 1300px) {
     font-size: 1rem;
+  }
+  @media screen and (max-width: 900px) {
+    font-size: 0.9rem;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 0.6rem;
+  }
+}
+
+[lang-type="long"] .footer-links h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white !important;
+  cursor: pointer;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.5vw;
+  }
+
+  @media screen and (max-width: 1300px) {
+    font-size: 0.8rem;
+  }
+  @media screen and (max-width: 900px) {
+    font-size: 0.65rem;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 0.5rem;
   }
 }
 
@@ -431,6 +465,9 @@
 
   @media screen and (max-width: 1300px) {
     font-size: 0.5rem;
+  }
+  @media screen and (max-width: 900px) {
+    font-size: 0.4rem;
   }
 }
 .footer-link p:hover {
@@ -479,12 +516,15 @@
   color: #dddddd;
   text-align: right;
 
-  @media screen and (min-width: 2000px) {
+  /* @media screen and (min-width: 2000px) {
     font-size: 0.8vw;
   }
 
   @media screen and (max-width: 1300px) {
     font-size: 0.7rem;
+  } */
+  @media screen and (max-width: 900px) {
+    font-size: 0.6rem;
   }
 }
 
@@ -503,7 +543,7 @@
 
   @media screen and (max-width: 900px) {
     padding: 1rem 1rem;
-    height: 100px;
+    height: 70px;
   }
 }
 
