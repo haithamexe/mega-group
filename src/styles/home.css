@@ -604,7 +604,10 @@
   @media screen and (max-width: 900px) {
     font-size: 0.8rem;
     text-align: unset;
-    width: 90%;
+    width: 75%;
+  }
+  @media screen and (max-width: 500px) {
+    width: 82%;
   }
 }
 
@@ -950,6 +953,12 @@
 
   z-index: 1000;
 
+  @media screen and (min-width: 2000px) {
+    padding: 0;
+    scale: 2;
+    right: 50px;
+  }
+
   @media screen and (max-width: 900px) {
     width: 30px;
     height: 30px;
@@ -961,6 +970,10 @@
 .home-scroll-to-top-icon-1 {
   bottom: 146px;
 
+  @media screen and (min-width: 2000px) {
+    bottom: 290px;
+  }
+
   @media screen and (max-width: 900px) {
     bottom: 85px;
   }
@@ -968,12 +981,20 @@
 .home-scroll-to-top-icon-2 {
   bottom: 85px;
 
+  @media screen and (min-width: 2000px) {
+    bottom: 170px;
+  }
+
   @media screen and (max-width: 900px) {
     bottom: 50px;
   }
 }
 .home-scroll-to-top-icon-3 {
   bottom: 25px;
+
+  @media screen and (min-width: 2000px) {
+    bottom: 50px;
+  }
 
   @media screen and (max-width: 900px) {
     bottom: 15px;
@@ -1016,5 +1037,13 @@
     font-size: 0.5rem;
     /* padding: 0 1rem; */
     /* margin: 0; */
+  }
+}
+
+.home-whatsapp-icon {
+  font-size: 2rem;
+
+  @media screen and (max-width: 900px) {
+    font-size: 1.2rem;
   }
 }

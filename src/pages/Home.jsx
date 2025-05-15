@@ -209,7 +209,7 @@ function Home() {
                 opacity: 0,
               }}
               animate={{
-                right: 40,
+                right: "4vw",
                 opacity: 1,
                 // bottom: !isMobile ? 35 * 5 : 15 * 5.8,
               }}
@@ -234,9 +234,9 @@ function Home() {
               /> */}
               <Link to="/contact">
                 <i
-                  className="fa-brands fa-whatsapp"
+                  className="fa-brands fa-whatsapp home-whatsapp-icon"
                   style={{
-                    fontSize: "2rem",
+                    // fontSize: "2rem",
                     color: "#00D757",
                   }}
                 ></i>
@@ -252,7 +252,7 @@ function Home() {
                 opacity: 0,
               }}
               animate={{
-                right: 40,
+                right: "4vw",
                 opacity: 1,
                 // bottom: !isMobile ? 35 * 3 : 15 * 3.4,
               }}
@@ -280,7 +280,7 @@ function Home() {
                 // bottom: !isMobile ? 35 : 15,
               }}
               animate={{
-                right: 40,
+                right: "4vw",
                 opacity: 1,
                 // bottom: !isMobile ? 35 : 15,
               }}

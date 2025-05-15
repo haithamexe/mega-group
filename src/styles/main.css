@@ -351,7 +351,7 @@
 
 .footer-body img {
   /* height: 100%; */
-  width: 40%;
+  width: 5vw;
   object-fit: contain;
 
   @media screen and (max-width: 900px) {
@@ -362,10 +362,14 @@
 .footer-social-links {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  /* width: 85%; */
+  /* justify-content: center; */
+  width: 100%;
   gap: 2rem;
   /* padding: 0.4rem 1.6rem; */
+
+  @media screen and (max-width: 900px) {
+    gap: 1rem;
+  }
 }
 
 .footer-social-links a {
@@ -376,12 +380,20 @@
   /* @media screen and (min-width: 2000px) {
     font-size: 1.5vw;
   } */
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2.5vw;
+  }
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.9rem;
+  }
 }
 
 .footer-links {
   display: flex;
-  gap: 4.3rem;
-  gap: 3rem;
+  /* gap: 4.3rem; */
+  gap: 2rem;
 
   /* @media screen and (min-width: 2000px) {
     gap: 2vw;
@@ -412,7 +424,7 @@
   cursor: pointer;
 
   @media screen and (min-width: 2000px) {
-    font-size: 1.5vw;
+    font-size: 2vw;
   }
 
   @media screen and (max-width: 1300px) {
@@ -433,7 +445,7 @@
   cursor: pointer;
 
   @media screen and (min-width: 2000px) {
-    font-size: 1.5vw;
+    font-size: 2vw;
   }
 
   @media screen and (max-width: 1300px) {
@@ -460,7 +472,7 @@
   color: #dddddd;
 
   @media screen and (min-width: 2000px) {
-    font-size: 0.8vw;
+    font-size: 1.1vw;
   }
 
   @media screen and (max-width: 1300px) {
@@ -485,7 +497,7 @@
 }
 .footer-addressess {
   display: flex;
-  padding: 1rem 21rem;
+  padding: 1rem 17vw;
 }
 
 .footer-address {
@@ -509,6 +521,10 @@
 .footer-rights {
   margin-left: auto;
   /* width: 300px; */
+
+  @media screen and (max-width: 900px) {
+    margin-left: 0;
+  }
 }
 .footer-rights h1 {
   font-size: 1rem;
@@ -523,6 +539,11 @@
   @media screen and (max-width: 1300px) {
     font-size: 0.7rem;
   } */
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.4vw;
+  }
+
   @media screen and (max-width: 900px) {
     font-size: 0.6rem;
   }
@@ -533,17 +554,19 @@
   justify-content: center;
   align-items: center;
   padding: 0 17vw;
-  gap: 1rem;
+  /* gap: 1rem; */
   background-color: #001225;
   height: 150px;
-
   @media screen and (min-width: 2000px) {
-    padding: 1vw 10%;
+    /* padding: 1vw 10%; */
   }
 
   @media screen and (max-width: 900px) {
     padding: 1rem 1rem;
     height: 70px;
+    flex-direction: column-reverse;
+    gap: 0.3rem;
+    align-items: center;
   }
 }
 
