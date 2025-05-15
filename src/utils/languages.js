@@ -1745,7 +1745,7 @@ export const languages = {
         message: "الرسالة",
         submit: "إرسال",
         or: "أو",
-        whatsapp: "راسلنا على واتساب",
+        whatsapp: "راسلنا على واتس اب",
       },
       contact_us_on: "تواصل معنا على",
       whatsapp_chat: "دردشة واتس اب",
