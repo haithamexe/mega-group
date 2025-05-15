@@ -4,8 +4,13 @@
   flex-wrap: wrap;
   gap: 1.5rem 0.5rem;
   /* justify-content: flex-start; */
-  padding: 3rem 21rem;
+  padding: 3rem 17vw;
   scroll-margin-top: 80px;
+
+  @media screen and (max-width: 900px) {
+    padding: 1rem;
+    /* justify-content: center; */
+  }
 }
 
 .ourwork-project {
@@ -24,16 +29,64 @@
 
   position: relative;
   color: var(--accent);
+
+  @media screen and (max-width: 900px) {
+    /* padding: 1rem; */
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+  }
 }
+
 .ourwork-project h1 {
   font-size: 3rem;
   font-weight: 700;
+
+  @media screen and (max-width: 900px) {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
 }
+
+[lang-type="long"] .ourwork-project h1 {
+  font-size: 3rem;
+  font-weight: 700;
+
+  @media screen and (max-width: 900px) {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+}
+
 .ourwork-project p {
   font-size: 1.25rem;
   font-weight: 500;
   color: #000000;
   text-align: justify;
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.8rem;
+    text-align: unset;
+  }
+}
+
+[lang-type="long"] .ourwork-project p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #000000;
+  text-align: justify;
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.8rem;
+    text-align: unset;
+  }
+}
+
+.ourwork-link-arrow {
+  @media screen and (max-width: 900px) {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 .ourwork-project img {
@@ -71,7 +124,14 @@
   border: 2px solid var(--accent);
   font-size: 1rem;
   z-index: 5;
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.4rem;
+    padding: 0.3rem 0.5rem;
+    left: 0.5rem;
+  }
 }
+
 .ourwork-project-text a {
   display: flex;
   justify-content: center;
@@ -81,13 +141,35 @@
   font-weight: 700;
   font-size: 0.8rem;
   height: 100%;
+
+  @media screen and (max-width: 900px) {
+    height: 100%;
+  }
 }
 
 .project-post {
   width: 300px;
   height: 300px;
   padding: 1rem;
+
+  @media screen and (max-width: 900px) {
+    /* padding: 1rem; */
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+  }
 }
+
+.logo-post {
+  @media screen and (max-width: 900px) {
+    /* padding: 1rem; */
+    width: 48%;
+    height: 100%;
+    /* height: 200%; */
+    flex-grow: 1;
+  }
+}
+
 .project-post h1 {
   font-size: 2.2rem;
   font-weight: 700;

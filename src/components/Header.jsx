@@ -128,8 +128,6 @@ function Header({ scrollYProgress, normalizedY }) {
         borderWidth: borderAll,
         borderBottomWidth: borderBottomWidth,
         backgroundColor: background,
-        borderBottomWidth: borderBottomWidth,
-        borderWidth: borderAll,
       }}
       className="header"
     >

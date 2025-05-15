@@ -521,8 +521,7 @@ export const languages = {
       types: {
         web_development_and_digital_transformation: {
           title: "Web Development",
-          subtitle:
-            "We have worked with a variety of clients to create beautiful websites, brand identity, and marketing materials. Take a look at some of our work below.",
+          subtitle: "We did websites development for variety of clients",
         },
         social_media_management_and_posts: {
           title: "Social Media Management And Posts",
@@ -1108,7 +1107,7 @@ export const languages = {
         web_development_and_digital_transformation: {
           title: "Web Geliştirme",
           subtitle:
-            "Çeşitli müşterilerle güzel web siteleri, marka kimlikleri ve pazarlama materyalleri oluşturmak için çalıştık. Çalışmalarımızdan bazılarına göz atın.",
+            "Çeşitli müşterilerle güzel web siteleri, marka kimlikleri ve pazarlama materyalleri oluşturmak için çalıştık.",
         },
         social_media_management_and_posts: {
           title: "Sosyal Medya Yönetimi ve Gönderiler",

@@ -48,9 +48,9 @@ function Contact() {
           <div className="contact-content-options">
             <div className="contact-content-option">
               <h3>{language?.Contact?.contact_us_on}</h3>
-              <div className="contact-logo-wrapper">
+              {/* <div className="contact-logo-wrapper">
                 <img src="/images/whatsapp-text-logo.png" alt="Whatsapp logo" />
-              </div>
+              </div> */}
               <button
                 className="contact-whatsapp-button"
                 style={{ backgroundColor: "#25d366" }}
@@ -60,9 +60,9 @@ function Contact() {
             </div>
             <div className="contact-content-option">
               <h3>{language?.Contact?.contact_us_on} </h3>
-              <div className="contact-logo-wrapper">
+              {/* <div className="contact-logo-wrapper">
                 <img src="/images/facebook-text-logo.png" alt="facebook logo" />
-              </div>
+              </div> */}
               <button
                 className="contact-messenger-button"
                 style={{ backgroundColor: "#3b5998" }}
@@ -73,11 +73,13 @@ function Contact() {
             <div className="contact-content-option">
               <h3>{language?.Contact?.phone_number}</h3>
               <p
-                style={{
-                  fontSize: "1.2rem",
-                  fontWeight: "bold",
-                  color: "#333",
-                }}
+                style={
+                  {
+                    // fontSize: "1.2rem",
+                    // fontWeight: "bold",
+                    // color: "#333",
+                  }
+                }
               >
                 +1 234 567 890
               </p>

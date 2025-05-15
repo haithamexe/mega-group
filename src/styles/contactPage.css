@@ -1,9 +1,14 @@
 .contact-content-wrapper {
-  padding: 0rem 21rem;
-
+  padding: 1rem 17vw;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
+
+  @media screen and (max-width: 900px) {
+    padding: 1rem 1rem;
+    gap: 0.5rem;
+    height: 65vh;
+  }
 }
 
 .contact-content-options {
@@ -11,7 +16,33 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media screen and (max-width: 900px) {
+    gap: 1rem;
+    /*  */
+  }
 }
+.contact-content-options h3 {
+  @media screen and (min-width: 2000px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.9rem;
+  }
+}
+.contact-content-options p {
+  @media screen and (min-width: 2000px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+}
+
 .contact-content-options button {
   width: 100%;
   padding: 1rem;
@@ -23,6 +54,16 @@
   transition: all 0.3s ease;
   font-size: 1.2rem;
   font-weight: 700;
+  margin-top: 5px;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.6rem;
+  }
 }
 
 .contact-content-option {

@@ -130,8 +130,8 @@ function About() {
                 transform: "translate(-50%, -50%)",
                 color: "#1b8ecd",
                 zIndex: 10,
-                fontSize: "8rem",
               }}
+              className="about-words-scroll"
             >
               {words[wordIndex]}
             </motion.h1>

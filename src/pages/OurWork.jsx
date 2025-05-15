@@ -493,7 +493,7 @@ function OurWork() {
             id="graphic-design-our-work"
           >
             <div
-              className="ourwork-project project-post"
+              className="ourwork-project project-post "
               style={{
                 padding: "1rem",
               }}
@@ -508,7 +508,7 @@ function OurWork() {
                 }
               </p>
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/agar.png"
                 alt="Graphic Design 1"
@@ -517,7 +517,7 @@ function OurWork() {
               />
             </div>
 
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/az.png"
                 alt="Graphic Design 1"
@@ -525,7 +525,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/bunian.png"
                 alt="Graphic Design 1"
@@ -533,7 +533,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/cloud.png"
                 alt="Graphic Design 1"
@@ -541,7 +541,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/lujain.png"
                 alt="Graphic Design 1"
@@ -549,7 +549,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/majal.png"
                 alt="Graphic Design 1"
@@ -557,7 +557,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/maps.png"
                 alt="Graphic Design 1"
@@ -565,7 +565,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/mesc.png"
                 alt="Graphic Design 1"
@@ -573,7 +573,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/mobtakarat.png"
                 alt="Graphic Design 1"
@@ -581,7 +581,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/qafla.png"
                 alt="Graphic Design 1"
@@ -589,7 +589,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/rahma.png"
                 alt="Graphic Design 1"
@@ -597,7 +597,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/refqa.png"
                 alt="Graphic Design 1"
@@ -605,7 +605,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/royal.png"
                 alt="Graphic Design 1"
@@ -613,7 +613,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/sonbla.png"
                 alt="Graphic Design 1"
@@ -621,7 +621,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/vpet.png"
                 alt="Graphic Design 1"
@@ -629,7 +629,7 @@ function OurWork() {
                 loading="lazy"
               />
             </div>
-            <div className="ourwork-project project-post">
+            <div className="ourwork-project project-post logo-post">
               <img
                 src="/images/logos/zain.png"
                 alt="Graphic Design 1"
@@ -647,10 +647,10 @@ function OurWork() {
               onClick={() => {
                 handleScrollToElement("web-development-our-work");
               }}
-              className="home-scroll-to-top"
+              className="home-scroll-to-top home-scroll-to-top-icon-1"
               initial={{
                 right: 0,
-                bottom: 35 * 5,
+                // bottom: 35 * 5,
                 opacity: 0,
               }}
               animate={{
@@ -678,10 +678,10 @@ function OurWork() {
               onClick={() => {
                 handleScrollToElement("social-media-management-our-work");
               }}
-              className="home-scroll-to-top"
+              className="home-scroll-to-top home-scroll-to-top-icon-2"
               initial={{
                 right: 0,
-                bottom: 35 * 3,
+                // bottom: 35 * 3,
                 opacity: 0,
               }}
               animate={{
@@ -708,10 +708,10 @@ function OurWork() {
               onClick={() => {
                 handleScrollToElement("graphic-design-our-work");
               }}
-              className="home-scroll-to-top"
+              className="home-scroll-to-top home-scroll-to-top-icon-3"
               initial={{
                 right: 0,
-                bottom: 35,
+                // bottom: 35,
               }}
               animate={{
                 right: 40,

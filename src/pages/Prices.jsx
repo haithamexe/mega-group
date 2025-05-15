@@ -37,8 +37,8 @@ function Prices() {
       <div
         className={
           language.language === "ar"
-            ? "services-links-container direction-right"
-            : "services-links-container"
+            ? "services-links-container prices-links-container  direction-right"
+            : "services-links-container prices-links-container "
         }
       >
         <a onClick={() => handleScrollToElement("prices-websites")}>
@@ -96,63 +96,99 @@ function Prices() {
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[0]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[1]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[2]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[3]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[4]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[5]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[6]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[7]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[8]
@@ -160,21 +196,33 @@ function Prices() {
             </li>
 
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[9]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[10]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[0].features.features_list[11]
@@ -184,9 +232,9 @@ function Prices() {
         </div>
         <div
           className="price-card"
-          style={{
-            scale: "1.05",
-          }}
+          // style={{
+          //   scale: "1.05",
+          // }}
         >
           <div
             className="price-card-popup"
@@ -235,84 +283,132 @@ function Prices() {
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[0]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[1]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[2]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[3]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[4]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[5]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[6]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[7]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[8]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[9]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[10]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[1].features.features_list[11]
@@ -343,86 +439,139 @@ function Prices() {
           </div>
           <hr />
           <ul className="prices-features">
-            <li className="features-head">FEATURES</li>
+            <li className="features-head">
+              {
+                language?.Prices?.types?.websites_and_digital_transformation
+                  ?.plans[2].features.title
+              }
+            </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[0]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[1]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[2]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[3]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[4]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[5]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[6]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[7]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[8]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[9]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[10]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   .plans[2].features.features_list[11]
@@ -476,42 +625,66 @@ function Prices() {
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[0].features.features_list[0]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[0].features.features_list[1]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[0].features.features_list[2]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[0].features.features_list[3]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[0].features.features_list[4]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[0].features.features_list[5]
@@ -521,9 +694,9 @@ function Prices() {
         </div>
         <div
           className="price-card"
-          style={{
-            scale: "1.05",
-          }}
+          // style={{
+          //   scale: "1.05",
+          // }}
         >
           <div
             className="price-card-popup"
@@ -572,42 +745,66 @@ function Prices() {
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[1].features.features_list[0]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[1].features.features_list[1]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[1].features.features_list[2]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[1].features.features_list[3]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[1].features.features_list[4]
               }
             </li>
             <li>
-              <CircleMinus fill="#c6d9f3" color="white" />
+              <CircleMinus
+                fill="#c6d9f3"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[1].features.features_list[5]
@@ -645,42 +842,66 @@ function Prices() {
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[2].features.features_list[0]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[2].features.features_list[1]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[2].features.features_list[2]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[2].features.features_list[3]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[2].features.features_list[4]
               }
             </li>
             <li>
-              <CircleCheck fill="#56a8ff" color="white" />
+              <CircleCheck
+                fill="#56a8ff"
+                color="white"
+                className="price-circle"
+              />
               {
                 language?.Prices?.types?.social_media_and_content_management
                   .plans[2].features.features_list[5]
