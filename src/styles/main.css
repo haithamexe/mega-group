@@ -369,6 +369,7 @@
 
   @media screen and (max-width: 900px) {
     gap: 1rem;
+    justify-content: center;
   }
 }
 
