@@ -9,12 +9,9 @@ export const useHeaderContext = () => {
 
 function HeaderProvider({ children }) {
   const [currentPage, setCurrentPage] = useState("");
+  const [isMobile, setIsMobil] = useState(false);
 
   const location = useLocation();
-
-  useEffect(() => {
-    handlePageLoad(location);
-  }, [location]);
 
   const handlePageLoad = async (location) => {
     if (location.pathname.split("/")[1] === "") {
@@ -24,11 +21,34 @@ function HeaderProvider({ children }) {
     }
   };
 
+  const handleViewPort = () => {
+    if (window.innerWidth > 900) {
+      setIsMobil(false);
+    } else {
+      setIsMobil(true);
+    }
+  };
+
+  useEffect(() => {
+    handlePageLoad(location);
+  }, [location]);
+
+  useEffect(() => {
+    handleViewPort();
+
+    window.addEventListener("resize", handleViewPort);
+
+    return () => {
+      window.removeEventListener("resize", handleViewPort);
+    };
+  }, []);
+
   return (
     <HeaderContext.Provider
       value={{
         currentPage,
         setCurrentPage,
+        isMobile,
       }}
     >
       {children}

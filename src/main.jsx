@@ -9,15 +9,18 @@ import ScrollProvider from "./context/ScrollProvider.jsx";
 import SlowScrollContainer from "./components/SlowScrollContainer.jsx";
 import HeaderProvider from "./context/HeaderProvider.jsx";
 import LanguageProvider from "./context/LanguageProvider.jsx";
+import OnloadProvider from "./context/OnloadProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <LanguageProvider>
-        <HeaderProvider>
-          <App />
-        </HeaderProvider>
-      </LanguageProvider>
+      <OnloadProvider>
+        <LanguageProvider>
+          <HeaderProvider>
+            <App />
+          </HeaderProvider>
+        </LanguageProvider>
+      </OnloadProvider>
     </BrowserRouter>
   </StrictMode>
 );

@@ -8,7 +8,7 @@ import {
   useTransform,
   AnimatePresence,
 } from "motion/react";
-import { useOutletContext, Link } from "react-router-dom";
+import { useOutletContext, Link, useNavigate } from "react-router-dom";
 import ContactContainer from "../components/ContactContainer";
 import { useLanguageContext } from "../context/LanguageProvider";
 
@@ -22,6 +22,7 @@ function Home() {
   } = useOutletContext();
 
   const { language } = useLanguageContext();
+  const navigate = useNavigate();
 
   const servicesRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -37,7 +38,7 @@ function Home() {
     clamp: false,
   });
   const missionTop = useTransform(scrollMission, [0, 0.16], [-300, -190], {
-    clamp: false,
+    // clamp: false,
   });
 
   const [scrollToElement, setScrollToElement] = useState("");
@@ -45,7 +46,7 @@ function Home() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [isMobile, setIsMobile] = useState();
 
-  const topVar = -355;
+  const topVar = -300;
 
   const [whyUsscrollValue, setWhyUsScrollValue] = useState(0);
 
@@ -336,10 +337,11 @@ function Home() {
           animate={{
             left: 0,
             opacity: 1,
+            // top: topVar,
           }}
           initial={{
             top: topVar,
-            left: -320,
+            // left: -50,
             opacity: 0,
           }}
           transition={{
@@ -358,7 +360,8 @@ function Home() {
         </motion.div>
         <motion.div
           animate={{
-            top: "-300px",
+            // top: "-300px",
+            top: topVar,
           }}
           initial={{
             top: 0,
@@ -379,10 +382,13 @@ function Home() {
           animate={{
             right: 0,
             opacity: 1,
+            // top: topVar,
           }}
           initial={{
             top: topVar,
-            right: -320,
+
+            // right: -320,
+            // right: -50,
             opacity: 0,
           }}
           transition={{

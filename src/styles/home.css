@@ -7,6 +7,7 @@
   /* overflow: hidden; */
 
   background-color: var(--background);
+  /* overflow: hidden; */
 
   /* background-image: url("/public/videos/stock-footage-abstract-blue-light-explosion-that-expands-in-space-forming-a-human-eye-concept-of-technological.webm"); */
 }
@@ -219,6 +220,7 @@
   flex-direction: column;
   position: relative;
   gap: 1rem;
+
   box-shadow: 0px 10px 10px 0 rgba(56, 56, 56, 0.2);
   /* width: 389px; */
   /* height: 310px; */

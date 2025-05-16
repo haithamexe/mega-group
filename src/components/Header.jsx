@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/main.css";
 import LogoEffect from "./LogoEffect";
@@ -8,9 +8,11 @@ import {
   useTransform,
   useMotionValueEvent,
   useSpring,
+  AnimatePresence,
 } from "motion/react";
 import { useHeaderContext } from "../context/HeaderProvider";
 import { useLanguageContext } from "../context/LanguageProvider";
+import { Menu, CircleX } from "lucide-react";
 
 function Header({ scrollYProgress, normalizedY }) {
   const { language } = useLanguageContext();
@@ -50,7 +52,7 @@ function Header({ scrollYProgress, normalizedY }) {
 
   // const { scrollYProgress } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
-  const { currentPage, setCurrentPage } = useHeaderContext();
+  const { currentPage, setCurrentPage, isMobile } = useHeaderContext();
   // const [currentPage, setCurrentPage] = useState("");
   const [textColorScroled, setTextColorScrolled] = useState(true);
 
@@ -105,6 +107,12 @@ function Header({ scrollYProgress, normalizedY }) {
     ["0px", "60px"]
   );
 
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [dropDownOpen, setDropDownOpen] = useState(true);
+  const [menuButtonColor, setMenuButtonColor] = useState("white");
+
+  const menuRef = useRef();
+
   // useEffect(() => {
   //   if (window.location.pathname.split("/")[1] === "") {
   //     setCurrentPage("home");
@@ -122,6 +130,24 @@ function Header({ scrollYProgress, normalizedY }) {
     }
   });
 
+  const handleMouseClick = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setMenuIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousedown", handleMouseClick);
+
+    return () => {
+      window.removeEventListener("mousedown", handleMouseClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    setMenuIsOpen(false);
+  }, [currentPage]);
+
   return (
     <motion.div
       style={{
@@ -138,44 +164,146 @@ function Header({ scrollYProgress, normalizedY }) {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
-      <nav>
-        <ul className="header-links">
-          {links.map((link) => (
-            <li key={link.url}>
-              <Link
-                to={link.url}
-                onClick={() => {
-                  setCurrentPage(link.link);
-                }}
-                className={
-                  currentPage === "home" && textColorScroled
-                    ? "header-link-text-home"
-                    : "header-link-text"
-                }
-              >
-                {link.text !== "CONTACT" &&
-                link.text !== "اتصل بنا" &&
-                link.text !== "İletişim" ? (
-                  <h1
+      {!isMobile ? (
+        <>
+          <nav>
+            <ul className="header-links">
+              {links.map((link) => (
+                <li key={link.url}>
+                  <Link
+                    to={link.url}
+                    onClick={() => {
+                      setCurrentPage(link.link);
+                    }}
                     className={
-                      currentPage === link.link ? "header-link-active" : ""
+                      currentPage === "home" && textColorScroled
+                        ? "header-link-text-home"
+                        : "header-link-text"
                     }
                   >
-                    {link.text}
-                  </h1>
-                ) : (
-                  <div
-                    className="header-contact-button"
-                    onClick={handleContactClick}
-                  >
-                    {link.text}
-                  </div>
-                )}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+                    {link.text !== "CONTACT" &&
+                    link.text !== "اتصل بنا" &&
+                    link.text !== "İletişim" ? (
+                      <h1
+                        className={
+                          currentPage === link.link ? "header-link-active" : ""
+                        }
+                      >
+                        {link.text}
+                      </h1>
+                    ) : (
+                      <div
+                        className="header-contact-button"
+                        onClick={handleContactClick}
+                      >
+                        {link.text}
+                      </div>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="language-change-mobile"></div>
+        </>
+      ) : !menuIsOpen ? (
+        <Menu
+          onClick={() => setMenuIsOpen(true)}
+          size={30}
+          style={{
+            color:
+              !textColorScroled || currentPage != "home" ? "black" : "white",
+            height: "100%",
+            textAlign: "center",
+          }}
+        />
+      ) : (
+        <>
+          <CircleX
+            onClick={() => setMenuIsOpen(false)}
+            size={30}
+            style={{
+              color: "white",
+              textAlign: "center",
+              position: "absolute",
+              zIndex: "9999",
+              cursor: "pointer",
+              height: "100%",
+            }}
+          />
+          <div className="header-links-mobile-container">
+            <nav>
+              <AnimatePresence>
+                <motion.ul
+                  initial={{
+                    right: -100,
+                    top: -100,
+                  }}
+                  animate={{
+                    right: 0,
+                    top: 0,
+                  }}
+                  exit={{
+                    right: -100,
+                    top: 0,
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "easeInOut",
+                    type: "spring",
+                    bounce: 0.6,
+                    stiffness: 70,
+                    mass: 0.3,
+                  }}
+                  className="header-links-mobile"
+                  ref={menuRef}
+                >
+                  {links.map((link) => (
+                    <li key={link.url}>
+                      <Link
+                        to={link.url}
+                        onClick={() => {
+                          setCurrentPage(link.link);
+                        }}
+                        className={"header-link-text"}
+                      >
+                        {link.text !== "CONTACT" &&
+                        link.text !== "اتصل بنا" &&
+                        link.text !== "İletişim" ? (
+                          <h1
+                            className={
+                              currentPage === link.link
+                                ? "header-link-active"
+                                : ""
+                            }
+                          >
+                            {link.text}
+                          </h1>
+                        ) : (
+                          <h1
+                            // className="header-contact-button"
+                            onClick={handleContactClick}
+                            className={
+                              currentPage === "contact"
+                                ? "header-link-active"
+                                : ""
+                            }
+
+                            // className="header-link-text"
+                          >
+                            {link.text}
+                          </h1>
+                        )}
+                      </Link>
+                    </li>
+                  ))}
+                </motion.ul>
+              </AnimatePresence>
+            </nav>
+            {/* <div className="mobile-language"></div> */}
+          </div>
+        </>
+      )}
       {/* <button className="header-contact-button" onClick={handleContactClick}> */}
       {/* <svg></svg> */}
       {/* <h4>Contact Us</h4> */}
