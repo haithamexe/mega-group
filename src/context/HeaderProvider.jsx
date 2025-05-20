@@ -22,7 +22,7 @@ function HeaderProvider({ children }) {
   };
 
   const handleViewPort = () => {
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 600) {
       setIsMobil(false);
     } else {
       setIsMobil(true);

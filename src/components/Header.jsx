@@ -15,7 +15,7 @@ import { useLanguageContext } from "../context/LanguageProvider";
 import { Menu, CircleX } from "lucide-react";
 
 function Header({ scrollYProgress, normalizedY }) {
-  const { language } = useLanguageContext();
+  const { language, setLanguage } = useLanguageContext();
 
   const links = [
     {
@@ -107,11 +107,12 @@ function Header({ scrollYProgress, normalizedY }) {
     ["0px", "60px"]
   );
 
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [dropDownOpen, setDropDownOpen] = useState(true);
+  const [menuIsOpen, setMenuIsOpen] = useState(true);
+  const [dropDownOpen, setDropDownOpen] = useState(false);
   const [menuButtonColor, setMenuButtonColor] = useState("white");
 
   const menuRef = useRef();
+  const dropdownRef = useRef();
 
   // useEffect(() => {
   //   if (window.location.pathname.split("/")[1] === "") {
@@ -133,6 +134,7 @@ function Header({ scrollYProgress, normalizedY }) {
   const handleMouseClick = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setMenuIsOpen(false);
+      setDropDownOpen(false);
     }
   };
 
@@ -145,6 +147,7 @@ function Header({ scrollYProgress, normalizedY }) {
   }, []);
 
   useEffect(() => {
+    setDropDownOpen(false);
     setMenuIsOpen(false);
   }, [currentPage]);
 
@@ -288,6 +291,9 @@ function Header({ scrollYProgress, normalizedY }) {
                                 ? "header-link-active"
                                 : ""
                             }
+                            style={{
+                              border: "none",
+                            }}
 
                             // className="header-link-text"
                           >
@@ -297,8 +303,50 @@ function Header({ scrollYProgress, normalizedY }) {
                       </Link>
                     </li>
                   ))}
+                  <div className="mobile-header-buttons">
+                    <h1 className="whatsapp-button">WhatsApp</h1>
+                    <h1 onClick={() => setDropDownOpen((prev) => !prev)}>
+                      {language.language === "en"
+                        ? "Language"
+                        : language.language === "tr"
+                        ? "Dil"
+                        : "اللغة"}
+                    </h1>
+                    {dropDownOpen && (
+                      <div className="mobile-dropdown-footer" ref={dropdownRef}>
+                        <div
+                          className="mobile-dropdown-item"
+                          onClick={() => {
+                            setLanguage("ar");
+                            setDropDownOpen(false);
+                          }}
+                        >
+                          <p>عربي</p>
+                        </div>
+                        <div
+                          className="mobile-dropdown-item"
+                          onClick={() => {
+                            setLanguage("en");
+                            setDropDownOpen(false);
+                          }}
+                        >
+                          <p> English </p>
+                        </div>
+                        <div
+                          className="mobile-dropdown-item"
+                          onClick={() => {
+                            setLanguage("tr");
+                            setDropDownOpen(false);
+                          }}
+                        >
+                          <p>Türkçe</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </motion.ul>
               </AnimatePresence>
+              <div className="mobile-languages"></div>
             </nav>
             {/* <div className="mobile-language"></div> */}
           </div>

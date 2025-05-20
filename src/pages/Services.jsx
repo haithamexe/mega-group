@@ -2,14 +2,14 @@ import React from "react";
 import "../styles/services.css";
 import { motion, useTransform, useSpring } from "motion/react";
 import { MoveRight } from "lucide-react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 import ImageShapesContainer from "../components/ImageShapesContainer";
 import { useLanguageContext } from "../context/LanguageProvider";
 
 function Services() {
   const { stopLenis, startLenis } = useOutletContext();
   const { language } = useLanguageContext();
-
+  const navigate = useNavigate();
   const scrollToElement = (id) => {
     stopLenis();
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
@@ -218,6 +218,7 @@ function Services() {
         <h1>{language?.Services?.you_name_it}</h1>
         <p>{language?.Services?.you_name_it_subtitle}</p>
         <button
+          onClick={() => navigate("/contact")}
           style={
             language.language === "ar"
               ? { marginRight: "0", marginLeft: "auto" }

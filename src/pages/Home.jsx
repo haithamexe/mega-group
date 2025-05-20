@@ -11,6 +11,7 @@ import {
 import { useOutletContext, Link, useNavigate } from "react-router-dom";
 import ContactContainer from "../components/ContactContainer";
 import { useLanguageContext } from "../context/LanguageProvider";
+import { useHeaderContext } from "../context/HeaderProvider";
 
 function Home() {
   const {
@@ -20,6 +21,8 @@ function Home() {
     handleScrollToBottom,
     handleScrollToElement,
   } = useOutletContext();
+
+  const { isMobile } = useHeaderContext();
 
   const { language } = useLanguageContext();
   const navigate = useNavigate();
@@ -37,16 +40,23 @@ function Home() {
   const paddingTop = useTransform(scrollYProgress, [0, 0.1], [0, 11], {
     clamp: false,
   });
-  const missionTop = useTransform(scrollMission, [0, 0.16], [-300, -190], {
-    // clamp: false,
-  });
 
   const [scrollToElement, setScrollToElement] = useState("");
   const [scrollToTop, setScrollToTop] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
-  const [isMobile, setIsMobile] = useState();
 
-  const topVar = -300;
+  // const topVar = -300;
+  const topVar = isMobile ? -220 : -300;
+  const draftValue = isMobile ? -100 : -190;
+
+  const missionTop = useTransform(
+    scrollMission,
+    [0, 0.16],
+    [topVar, draftValue],
+    {
+      // clamp: false,
+    }
+  );
 
   const [whyUsscrollValue, setWhyUsScrollValue] = useState(0);
 
@@ -56,24 +66,6 @@ function Home() {
 
   const [serviceShowMore, setServiceShowMore] = useState("");
 
-  const handleWindowSizeLoad = () => {
-    if (window.innerWidth > 1000) {
-      alert(window.innerWidth);
-      setIsMobile(false);
-    } else {
-      setIsMobile(true);
-    }
-  };
-  const handleWindowSize = () => {
-    if (window.innerWidth > 900) {
-      alert(window.innerWidth);
-
-      setIsMobile(false);
-    } else {
-      setIsMobile(true);
-    }
-  };
-
   useEffect(() => {
     if (scrollToElement === "") return;
     window.scrollTo({
@@ -82,6 +74,16 @@ function Home() {
     });
     setScrollToElement("");
   }, [scrollToElement]);
+
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoaded(true);
+    }, 2);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   // useEffect(() => {
   //   handleWindowSizeLoad();
@@ -223,7 +225,7 @@ function Home() {
               }}
               style={{
                 borderColor: "#00D757",
-                borderWidth: 3,
+                borderWidth: 2,
               }}
             >
               {/* <MoveUp
@@ -432,7 +434,9 @@ function Home() {
             ref={servicesRef}
           >
             <h2>{language?.Home?.Services?.subtitle}</h2>
-            <p>{language?.Home?.Services?.button}</p>
+            <p onClick={() => navigate("/services")}>
+              {language?.Home?.Services?.button}
+            </p>
           </motion.div>
         </motion.div>
         <div className="home-services-inner">
@@ -470,185 +474,198 @@ function Home() {
           })}
         </div>
       </div>
+
       <div
-        className={
-          language.language === "ar"
-            ? "home-why-us-wrapper direction-right"
-            : "home-why-us-wrapper"
-        }
+        className="why-us-overlay-wrapper"
+        style={loaded ? { overflow: "visible" } : { overflow: "hidden" }}
       >
-        <motion.div
-          className="home-why-us"
-          id="why_us"
-          // initial={{
-          //   paddingTop: 50,
-          // }}
-          // viewport={{
-          //   amount: 0.99,
-          // }}
-          // whileInView={{
-          //   paddingTop: 100,
-          // }}
+        <div
+          className={
+            language.language === "ar"
+              ? "home-why-us-wrapper direction-right"
+              : "home-why-us-wrapper"
+          }
         >
           <motion.div
-            initial={{
-              left: -150,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: "easeIn",
-            }}
-            whileInView={{
-              left: 0,
-            }}
-            className="home-why-us-block one"
+            className="home-why-us"
+            id="why_us"
+            // initial={{
+            //   paddingTop: 50,
+            // }}
+            // viewport={{
+            //   amount: 0.99,
+            // }}
+            // whileInView={{
+            //   paddingTop: 100,
+            // }}
           >
-            <h2>{language?.Home?.Why_Us?.title}</h2>
-            <p>{language?.Home?.Why_Us?.subtitle}</p>
+            <motion.div
+              initial={{
+                left: -150,
+              }}
+              transition={{
+                duration: 0.2,
+                ease: "easeIn",
+              }}
+              whileInView={{
+                left: 0,
+              }}
+              className="home-why-us-block one"
+            >
+              <h2>{language?.Home?.Why_Us?.title}</h2>
+              <p>{language?.Home?.Why_Us?.subtitle}</p>
+            </motion.div>
+            <motion.div
+              initial={{
+                right: -150,
+              }}
+              transition={{
+                duration: 0.2,
+                ease: "easeIn",
+              }}
+              whileInView={{
+                right: 0,
+              }}
+              className={
+                whyUsscrollValue >= 0.59 && whyUsscrollValue < 0.61
+                  ? "home-why-us-block two scrolled-block"
+                  : "home-why-us-block two"
+              }
+            >
+              <h2>
+                {language?.Home?.Why_Us?.types?.all_in_one_digital_help?.title}
+              </h2>
+              <p>
+                {
+                  language?.Home?.Why_Us?.types?.all_in_one_digital_help
+                    ?.subtitle
+                }
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{
+                left: -150,
+              }}
+              transition={{
+                duration: 0.1,
+              }}
+              whileInView={{
+                left: 0,
+              }}
+              className={
+                whyUsscrollValue >= 0.61 && whyUsscrollValue < 0.63
+                  ? "home-why-us-block three scrolled-block"
+                  : "home-why-us-block three"
+              }
+            >
+              <h2>{language?.Home?.Why_Us?.types?.proven_results?.title}</h2>
+              <p>{language?.Home?.Why_Us?.types?.proven_results?.subtitle}</p>
+            </motion.div>
+            <motion.div
+              initial={{
+                right: -150,
+              }}
+              transition={{
+                duration: 0.1,
+              }}
+              whileInView={{
+                right: 0,
+              }}
+              className={
+                whyUsscrollValue >= 0.63 && whyUsscrollValue < 0.65
+                  ? "home-why-us-block four scrolled-block"
+                  : "home-why-us-block four"
+              }
+            >
+              <h2>
+                {language?.Home?.Why_Us?.types?.flexible_future_proof?.title}
+              </h2>
+              <p>
+                {language?.Home?.Why_Us?.types?.flexible_future_proof?.subtitle}
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{
+                left: -150,
+              }}
+              transition={{
+                duration: 0.1,
+              }}
+              whileInView={{
+                left: 0,
+              }}
+              className={
+                whyUsscrollValue >= 0.65 && whyUsscrollValue < 0.67
+                  ? "home-why-us-block five scrolled-block"
+                  : "home-why-us-block five"
+              }
+            >
+              <h2>
+                {language?.Home?.Why_Us?.types?.tools_for_tomorrow?.title}
+              </h2>
+              <p>
+                {language?.Home?.Why_Us?.types?.tools_for_tomorrow?.subtitle}
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{
+                right: -150,
+              }}
+              transition={{
+                duration: 0.1,
+              }}
+              whileInView={{
+                right: 0,
+              }}
+              className={
+                whyUsscrollValue >= 0.67 && whyUsscrollValue < 0.7
+                  ? "home-why-us-block six scrolled-block"
+                  : "home-why-us-block six"
+              }
+            >
+              <h2>{language?.Home?.Why_Us?.types?.teamwork_first?.title}</h2>
+              <p>{language?.Home?.Why_Us?.types?.teamwork_first?.subtitle}</p>
+            </motion.div>
+            <motion.div
+              initial={{
+                left: -150,
+              }}
+              transition={{
+                duration: 0.08,
+              }}
+              whileInView={{
+                left: 0,
+              }}
+              className={
+                whyUsscrollValue >= 0.7 && whyUsscrollValue < 0.72
+                  ? "home-why-us-block seven scrolled-block"
+                  : "home-why-us-block seven"
+              }
+            >
+              <h2>{language?.Home?.Why_Us?.types?.fast_reliable?.title}</h2>
+              <p>{language?.Home?.Why_Us?.types?.fast_reliable?.subtitle}</p>
+            </motion.div>
+            <motion.div
+              initial={{
+                right: -150,
+              }}
+              transition={{
+                duration: 0.08,
+              }}
+              whileInView={{
+                right: 0,
+              }}
+              className={
+                whyUsscrollValue >= 0.72 && whyUsscrollValue < 0.75
+                  ? "home-why-us-block eight scrolled-block"
+                  : "home-why-us-block eight"
+              }
+            >
+              <h2>{language?.Home?.Why_Us?.types?.active_support?.title}</h2>
+              <p>{language?.Home?.Why_Us?.types?.active_support?.subtitle}</p>
+            </motion.div>
           </motion.div>
-          <motion.div
-            initial={{
-              right: -150,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: "easeIn",
-            }}
-            whileInView={{
-              right: 0,
-            }}
-            className={
-              whyUsscrollValue >= 0.59 && whyUsscrollValue < 0.61
-                ? "home-why-us-block two scrolled-block"
-                : "home-why-us-block two"
-            }
-          >
-            <h2>
-              {language?.Home?.Why_Us?.types?.all_in_one_digital_help?.title}
-            </h2>
-            <p>
-              {language?.Home?.Why_Us?.types?.all_in_one_digital_help?.subtitle}
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{
-              left: -150,
-            }}
-            transition={{
-              duration: 0.1,
-            }}
-            whileInView={{
-              left: 0,
-            }}
-            className={
-              whyUsscrollValue >= 0.61 && whyUsscrollValue < 0.63
-                ? "home-why-us-block three scrolled-block"
-                : "home-why-us-block three"
-            }
-          >
-            <h2>{language?.Home?.Why_Us?.types?.proven_results?.title}</h2>
-            <p>{language?.Home?.Why_Us?.types?.proven_results?.subtitle}</p>
-          </motion.div>
-          <motion.div
-            initial={{
-              right: -150,
-            }}
-            transition={{
-              duration: 0.1,
-            }}
-            whileInView={{
-              right: 0,
-            }}
-            className={
-              whyUsscrollValue >= 0.63 && whyUsscrollValue < 0.65
-                ? "home-why-us-block four scrolled-block"
-                : "home-why-us-block four"
-            }
-          >
-            <h2>
-              {language?.Home?.Why_Us?.types?.flexible_future_proof?.title}
-            </h2>
-            <p>
-              {language?.Home?.Why_Us?.types?.flexible_future_proof?.subtitle}
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{
-              left: -150,
-            }}
-            transition={{
-              duration: 0.1,
-            }}
-            whileInView={{
-              left: 0,
-            }}
-            className={
-              whyUsscrollValue >= 0.65 && whyUsscrollValue < 0.67
-                ? "home-why-us-block five scrolled-block"
-                : "home-why-us-block five"
-            }
-          >
-            <h2>{language?.Home?.Why_Us?.types?.tools_for_tomorrow?.title}</h2>
-            <p>{language?.Home?.Why_Us?.types?.tools_for_tomorrow?.subtitle}</p>
-          </motion.div>
-          <motion.div
-            initial={{
-              right: -150,
-            }}
-            transition={{
-              duration: 0.1,
-            }}
-            whileInView={{
-              right: 0,
-            }}
-            className={
-              whyUsscrollValue >= 0.67 && whyUsscrollValue < 0.7
-                ? "home-why-us-block six scrolled-block"
-                : "home-why-us-block six"
-            }
-          >
-            <h2>{language?.Home?.Why_Us?.types?.teamwork_first?.title}</h2>
-            <p>{language?.Home?.Why_Us?.types?.teamwork_first?.subtitle}</p>
-          </motion.div>
-          <motion.div
-            initial={{
-              left: -150,
-            }}
-            transition={{
-              duration: 0.08,
-            }}
-            whileInView={{
-              left: 0,
-            }}
-            className={
-              whyUsscrollValue >= 0.7 && whyUsscrollValue < 0.72
-                ? "home-why-us-block seven scrolled-block"
-                : "home-why-us-block seven"
-            }
-          >
-            <h2>{language?.Home?.Why_Us?.types?.fast_reliable?.title}</h2>
-            <p>{language?.Home?.Why_Us?.types?.fast_reliable?.subtitle}</p>
-          </motion.div>
-          <motion.div
-            initial={{
-              right: -150,
-            }}
-            transition={{
-              duration: 0.08,
-            }}
-            whileInView={{
-              right: 0,
-            }}
-            className={
-              whyUsscrollValue >= 0.72 && whyUsscrollValue < 0.75
-                ? "home-why-us-block eight scrolled-block"
-                : "home-why-us-block eight"
-            }
-          >
-            <h2>{language?.Home?.Why_Us?.types?.active_support?.title}</h2>
-            <p>{language?.Home?.Why_Us?.types?.active_support?.subtitle}</p>
-          </motion.div>
-        </motion.div>
+        </div>
       </div>
       <div
         className={

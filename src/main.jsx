@@ -14,13 +14,13 @@ import OnloadProvider from "./context/OnloadProvider.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <OnloadProvider>
+      <HeaderProvider>
+        {/* <OnloadProvider> */}
         <LanguageProvider>
-          <HeaderProvider>
-            <App />
-          </HeaderProvider>
+          <App />
         </LanguageProvider>
-      </OnloadProvider>
+        {/* </OnloadProvider> */}
+      </HeaderProvider>
     </BrowserRouter>
   </StrictMode>
 );
