@@ -155,6 +155,7 @@
 }
 .whatsapp-button:hover {
   background-color: rgb(26, 165, 56);
+  color: white !important;
 }
 
 form input:focus {

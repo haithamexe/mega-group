@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import "../styles/main.css";
 import { Languages } from "lucide-react";
 import { useLanguageContext } from "../context/LanguageProvider";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const [dropDownOpen, setDropDownOpen] = useState(false);
@@ -46,39 +47,63 @@ function Footer() {
           </div>
           <div className={"footer-links"}>
             <div className="footer-link">
-              <h1>{language?.Footer?.home?.title}</h1>
+              <Link to="/">
+                <h1>{language?.Footer?.home?.title}</h1>
+              </Link>
               {language?.Footer?.home?.links.map((link, index) => (
-                <p key={index}>{link}</p>
+                <Link key={index} to={`/`}>
+                  <p>{link}</p>
+                </Link>
               ))}
             </div>
             <div className="footer-link footer-services-link">
-              <h1>{language?.Footer?.services?.title}</h1>
+              <Link to="/services">
+                <h1>{language?.Footer?.services?.title}</h1>
+              </Link>
               {language?.Footer?.services?.links.map((link, index) => (
-                <p key={index}>{link}</p>
+                <Link key={index} to="/services">
+                  <p>{link}</p>
+                </Link>
               ))}
             </div>
             <div className="footer-link">
-              <h1>{language?.Footer?.prices?.title}</h1>
+              <Link to="/prices">
+                <h1>{language?.Footer?.prices?.title}</h1>
+              </Link>
               {language?.Footer?.prices?.links.map((link, index) => (
-                <p key={index}>{link}</p>
+                <Link key={index} to="/prices">
+                  <p>{link}</p>
+                </Link>
               ))}
             </div>
             <div className="footer-link">
-              <h1>{language?.Footer?.our_work?.title}</h1>
+              <Link to="/ourwork">
+                <h1>{language?.Footer?.our_work?.title}</h1>
+              </Link>
               {language?.Footer?.our_work?.links.map((link, index) => (
-                <p key={index}>{link}</p>
+                <Link key={index} to="/ourwork">
+                  <p>{link}</p>
+                </Link>
               ))}
             </div>
             <div className="footer-link">
-              <h1>{language?.Footer?.contact?.title}</h1>
-              {language?.Footer?.contact?.links.map((link, index) => (
-                <p key={index}>{link}</p>
-              ))}
-            </div>
-            <div className="footer-link">
-              <h1>{language?.Footer?.about?.title}</h1>
+              <Link to="/about">
+                <h1>{language?.Footer?.about?.title}</h1>
+              </Link>
               {language?.Footer?.about?.links.map((link, index) => (
-                <p key={index}>{link}</p>
+                <Link to="/about" key={index}>
+                  <p>{link}</p>
+                </Link>
+              ))}
+            </div>
+            <div className="footer-link">
+              <Link to="/contact">
+                <h1>{language?.Footer?.contact?.title}</h1>
+              </Link>
+              {language?.Footer?.contact?.links.map((link, index) => (
+                <Link key={index} to="/contact">
+                  <p>{link}</p>
+                </Link>
               ))}
             </div>
           </div>

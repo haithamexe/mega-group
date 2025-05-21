@@ -304,8 +304,20 @@ function Header({ scrollYProgress, normalizedY }) {
                     </li>
                   ))}
                   <div className="mobile-header-buttons">
-                    <h1 className="whatsapp-button">WhatsApp</h1>
-                    <h1 onClick={() => setDropDownOpen((prev) => !prev)}>
+                    <h2
+                      style={{
+                        cursor: "pointer",
+                      }}
+                      className="whatsapp-button"
+                    >
+                      WhatsApp
+                    </h2>
+                    <h1
+                      style={{
+                        cursor: "pointer",
+                      }}
+                      onClick={() => setDropDownOpen((prev) => !prev)}
+                    >
                       {language.language === "en"
                         ? "Language"
                         : language.language === "tr"
@@ -321,7 +333,15 @@ function Header({ scrollYProgress, normalizedY }) {
                             setDropDownOpen(false);
                           }}
                         >
-                          <p>عربي</p>
+                          <h1
+                            style={{
+                              cursor: "pointer",
+                              padding: 0,
+                              border: "none",
+                            }}
+                          >
+                            عربي
+                          </h1>
                         </div>
                         <div
                           className="mobile-dropdown-item"
@@ -330,7 +350,16 @@ function Header({ scrollYProgress, normalizedY }) {
                             setDropDownOpen(false);
                           }}
                         >
-                          <p> English </p>
+                          <h1
+                            style={{
+                              cursor: "pointer",
+                              padding: 0,
+                              border: "none",
+                            }}
+                          >
+                            {" "}
+                            English{" "}
+                          </h1>
                         </div>
                         <div
                           className="mobile-dropdown-item"
@@ -339,14 +368,21 @@ function Header({ scrollYProgress, normalizedY }) {
                             setDropDownOpen(false);
                           }}
                         >
-                          <p>Türkçe</p>
+                          <h1
+                            style={{
+                              cursor: "pointer",
+                              padding: 0,
+                              border: "none",
+                            }}
+                          >
+                            Türkçe
+                          </h1>
                         </div>
                       </div>
                     )}
                   </div>
                 </motion.ul>
               </AnimatePresence>
-              <div className="mobile-languages"></div>
             </nav>
             {/* <div className="mobile-language"></div> */}
           </div>

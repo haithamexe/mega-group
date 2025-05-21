@@ -37,7 +37,10 @@ function Home() {
   const [showSideBar, setShowSideBar] = useState(false);
 
   const { scrollY } = useScroll();
-  const paddingTop = useTransform(scrollYProgress, [0, 0.1], [0, 11], {
+
+  const mobileTop = isMobile ? 8 : 11;
+
+  const paddingTop = useTransform(scrollYProgress, [0, 0.1], [0, mobileTop], {
     clamp: false,
   });
 

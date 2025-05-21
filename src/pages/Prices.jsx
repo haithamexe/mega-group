@@ -3,12 +3,13 @@ import "../styles/prices.css";
 import { CircleCheck, CircleMinus } from "lucide-react";
 import ImageShapesContainer from "../components/ImageShapesContainer";
 import { motion } from "motion/react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 import { useLanguageContext } from "../context/LanguageProvider";
 
 function Prices() {
   const { handleScrollToElement } = useOutletContext();
   const { language } = useLanguageContext();
+  const navigate = useNavigate();
   return (
     <motion.div
       className="prices"
@@ -80,7 +81,10 @@ function Prices() {
                   ?.plans[0]?.price
               }
             </h1>
-            <button className="price-card-button">
+            <button
+              className="price-card-button"
+              onClick={() => navigate("/contact")}
+            >
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   ?.plans[0]?.button
@@ -267,7 +271,10 @@ function Prices() {
                   ?.plans[1]?.price
               }
             </h1>
-            <button className="price-card-button middle-plan">
+            <button
+              className="price-card-button middle-plan"
+              onClick={() => navigate("/contact")}
+            >
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   ?.plans[1]?.button
@@ -430,7 +437,10 @@ function Prices() {
                   ?.plans[2]?.price
               }
             </h1>
-            <button className="price-card-button">
+            <button
+              className="price-card-button"
+              onClick={() => navigate("/contact")}
+            >
               {
                 language?.Prices?.types?.websites_and_digital_transformation
                   ?.plans[2]?.button
@@ -609,7 +619,10 @@ function Prices() {
                   ?.plans[0]?.price
               }
             </h1>
-            <button className="price-card-button">
+            <button
+              className="price-card-button"
+              onClick={() => navigate("/contact")}
+            >
               {
                 language?.Prices?.types?.social_media_and_content_management
                   ?.plans[0]?.button
@@ -729,7 +742,10 @@ function Prices() {
                   ?.plans[1]?.price
               }
             </h1>
-            <button className="price-card-button middle-plan">
+            <button
+              className="price-card-button middle-plan"
+              onClick={() => navigate("/contact")}
+            >
               {
                 language?.Prices?.types?.social_media_and_content_management
                   ?.plans[1]?.button
@@ -826,7 +842,10 @@ function Prices() {
                   ?.plans[2]?.price
               }
             </h1>
-            <button className="price-card-button">
+            <button
+              className="price-card-button"
+              onClick={() => navigate("/contact")}
+            >
               {
                 language?.Prices?.types?.social_media_and_content_management
                   ?.plans[2]?.button

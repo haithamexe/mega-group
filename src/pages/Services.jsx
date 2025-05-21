@@ -109,14 +109,20 @@ function Services() {
                         transition={{ duration: 0.4 }}
                         className="services-service-option"
                       >
-                        <div className="services-service-option-text">
+                        <div
+                          className="services-service-option-text"
+                          onClick={() => navigate("/prices")}
+                        >
                           <h1>{language?.Services?.prices}</h1>
                           <MoveRight
                             className="services-service-arrows"
                             // size={30}
                           />
                         </div>
-                        <div className="services-service-option-text">
+                        <div
+                          className="services-service-option-text"
+                          onClick={() => navigate("/contact")}
+                        >
                           <h1>{language?.Services?.inquire}</h1>
                           <MoveRight
                             className="services-service-arrows"
@@ -185,14 +191,20 @@ function Services() {
                         transition={{ duration: 0.4 }}
                         className="services-service-option"
                       >
-                        <div className="services-service-option-text">
+                        <div
+                          className="services-service-option-text"
+                          onClick={() => navigate("/prices")}
+                        >
                           <h1>{language?.Services?.prices}</h1>
                           <MoveRight
                             className="services-service-arrows"
                             // size={30}
                           />
                         </div>
-                        <div className="services-service-option-text">
+                        <div
+                          className="services-service-option-text"
+                          onClick={() => navigate("/contact")}
+                        >
                           <h1>{language?.Services?.inquire} </h1>
                           <MoveRight
                             className="services-service-arrows"
