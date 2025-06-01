@@ -8,7 +8,12 @@ import {
   useTransform,
   AnimatePresence,
 } from "motion/react";
-import { useOutletContext, Link, useNavigate } from "react-router-dom";
+import {
+  useOutletContext,
+  Link,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import ContactContainer from "../components/ContactContainer";
 import { useLanguageContext } from "../context/LanguageProvider";
 import { useHeaderContext } from "../context/HeaderProvider";
@@ -26,6 +31,7 @@ function Home() {
 
   const { language } = useLanguageContext();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const servicesRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -68,6 +74,22 @@ function Home() {
   });
 
   const [serviceShowMore, setServiceShowMore] = useState("");
+
+  const scrollTargetId = location.state?.scrollTargetId;
+
+  useEffect(() => {
+    if (scrollTargetId) {
+      console.log(scrollTargetId);
+      const element = document.getElementById(scrollTargetId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({
+            behavior: "smooth",
+          });
+        }, 50);
+      }
+    }
+  }, [scrollTargetId]);
 
   useEffect(() => {
     if (scrollToElement === "") return;
@@ -151,7 +173,7 @@ function Home() {
       transition={{ duration: 0.7, delay: 0.1, ease: "easeInOut" }}
       s
     >
-      <div className="home-hero" id="home-hero">
+      <div className="home-hero" id={language?.Footer?.home?.links[0]?.trim()}>
         <video
           autoPlay
           muted

@@ -51,11 +51,27 @@ function Footer() {
                 <h1>{language?.Footer?.home?.title}</h1>
               </Link>
               {language?.Footer?.home?.links.map((link, index) => (
-                <Link key={index} to={`/`}>
+                <Link
+                  key={index}
+                  to={`/`}
+                  state={{
+                    scrollTargetId: link,
+                  }}
+                >
                   <p>{link}</p>
                 </Link>
               ))}
             </div>
+            {/* <div className="footer-link">
+              <Link to="/">
+                <h1>{language?.Footer?.home?.title}</h1>
+              </Link>
+              {language?.Footer?.home?.links.map((link, index) => (
+                <Link key={index} to={`/`}>
+                  <p>{link}</p>
+                </Link>
+              ))}
+            </div> */}
             <div className="footer-link footer-services-link">
               <Link to="/services">
                 <h1>{language?.Footer?.services?.title}</h1>
