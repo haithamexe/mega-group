@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "../styles/main.css";
-import { Languages } from "lucide-react";
+import { Languages, Globe } from "lucide-react";
 import { useLanguageContext } from "../context/LanguageProvider";
 import { Link } from "react-router-dom";
 
@@ -51,13 +51,7 @@ function Footer() {
                 <h1>{language?.Footer?.home?.title}</h1>
               </Link>
               {language?.Footer?.home?.links.map((link, index) => (
-                <Link
-                  key={index}
-                  to={`/`}
-                  state={{
-                    scrollTargetId: link,
-                  }}
-                >
+                <Link to={`/`}>
                   <p>{link}</p>
                 </Link>
               ))}
@@ -145,13 +139,13 @@ function Footer() {
         </section> */}
         <section className="footer-foot">
           <div className="footer-social-links">
-            <a href="https://www.instagram.com/megagroup.ly/">
+            <a href="https://www.instagram.com/megagroup.ly/" target="_blank">
               <i className="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://www.facebook.com/megagroup.ly">
+            <a href="https://www.facebook.com/megagroup.ly" target="_blank">
               <i className="fa-brands fa-facebook"></i>
             </a>
-            <a href="https://wa.me/218923310535">
+            <a href="https://wa.me/905351033276" target="_blank">
               <i className="fa-brands fa-whatsapp"></i>
             </a>
           </div>
@@ -170,6 +164,7 @@ function Footer() {
                   cursor: "pointer",
                 }}
               >
+                <Globe className="languages-icon-footer-globe" />
                 {language.language === "en"
                   ? "Language"
                   : language.language === "tr"

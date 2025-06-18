@@ -5,10 +5,31 @@ import { useLanguageContext } from "../context/LanguageProvider";
 
 function ContactContainer({ scrollYProgress }) {
   const { language } = useLanguageContext();
+  const [formData, setFormData] = React.useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Your message has been sent!");
+    if (
+      formData.name &&
+      formData.email &&
+      formData.subject &&
+      formData.message
+    ) {
+      // Here you would typically send the form data to your server or API
+      console.log("Form submitted:", formData);
+      // Reset the form after submission
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    }
   };
 
   const top = useTransform(scrollYProgress, [0.925, 0.97], [80, -80]);
@@ -27,11 +48,37 @@ function ContactContainer({ scrollYProgress }) {
         </div>
         <div className="contact-form">
           <form>
-            <input type="text" placeholder={language?.Contact?.form?.name} />
-            <input type="email" placeholder={language?.Contact?.form?.email} />
-            <input type="text" placeholder={language?.Contact?.form?.subject} />
+            <input
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+              type="text"
+              placeholder={language?.Contact?.form?.name}
+            />
+            <input
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              type="email"
+              placeholder={language?.Contact?.form?.email}
+            />
+            <input
+              value={formData.subject}
+              onChange={(e) =>
+                setFormData({ ...formData, subject: e.target.value })
+              }
+              type="text"
+              placeholder={language?.Contact?.form?.subject}
+            />
             <textarea
               placeholder={language?.Contact?.form?.message}
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
+              rows="5"
               style={{
                 resize: "none",
               }}
@@ -49,10 +96,18 @@ function ContactContainer({ scrollYProgress }) {
       >
         {language?.Contact?.form?.or}
       </p>
-      <button className="whatsapp-button">
-        <i className="fab fa-whatsapp"></i>
-        <h4> {language?.Contact?.form?.whatsapp}</h4>
-      </button>
+      <a
+        href="https://wa.me/905351033276" // Replace with your WhatsApp link
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-link"
+        style={{ color: "#fff", textDecoration: "none" }}
+      >
+        <button className="whatsapp-button">
+          <i className="fab fa-whatsapp"></i>
+          <h4> {language?.Contact?.form?.whatsapp}</h4>
+        </button>
+      </a>
     </motion.div>
   );
 }

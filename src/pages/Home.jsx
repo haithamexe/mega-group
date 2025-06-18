@@ -55,8 +55,8 @@ function Home() {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   // const topVar = -300;
-  const topVar = isMobile ? -220 : -300;
-  const draftValue = isMobile ? -100 : -190;
+  const topVar = isMobile ? -300 : -350;
+  const draftValue = isMobile ? -100 : -130;
 
   const missionTop = useTransform(
     scrollMission,
@@ -228,78 +228,83 @@ function Home() {
       <AnimatePresence>
         {showSideBar && (
           <div className="home-sidebar">
-            <motion.div
-              onClick={forceSmoothScroll}
-              className="home-scroll-to-top home-scroll-to-top-icon-1"
-              initial={{
-                right: 0,
-                // bottom: !isMobile ? 35 * 5 : 15 * 5.8,
-                opacity: 0,
-              }}
-              animate={{
-                right: "4vw",
-                opacity: 1,
-                // bottom: !isMobile ? 35 * 5 : 15 * 5.8,
-              }}
-              exit={{
-                right: 0,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.1,
-              }}
-              style={{
-                borderColor: "#00D757",
-                borderWidth: 2,
-              }}
-            >
-              {/* <MoveUp
+            {!isMobile && (
+              <motion.div
+                onClick={forceSmoothScroll}
+                className="home-scroll-to-top home-scroll-to-top-icon-1"
+                initial={{
+                  right: 0,
+                  // bottom: !isMobile ? 35 * 5 : 15 * 5.8,
+                  opacity: 0,
+                }}
+                animate={{
+                  right: "4vw",
+                  opacity: 1,
+                  // bottom: !isMobile ? 35 * 5 : 15 * 5.8,
+                }}
+                exit={{
+                  right: 0,
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 0.1,
+                }}
+                style={{
+                  borderColor: "#00D757",
+                  borderWidth: 2,
+                }}
+              >
+                {/* <MoveUp
                 style={{
                   width: "100%",
                   height: "100%",
                 }}
                 size="30"
               /> */}
-              <Link to="/contact">
-                <i
-                  className="fa-brands fa-whatsapp home-whatsapp-icon"
-                  style={{
-                    // fontSize: "2rem",
-                    color: "#00D757",
-                  }}
-                ></i>
-              </Link>
-            </motion.div>
+                <Link to="/contact">
+                  <i
+                    className="fa-brands fa-whatsapp home-whatsapp-icon"
+                    style={{
+                      // fontSize: "2rem",
+                      color: "#00D757",
+                    }}
+                  ></i>
+                </Link>
+              </motion.div>
+            )}
 
-            <motion.div
-              onClick={handleScrollToBottom}
-              className="home-scroll-to-top home-scroll-to-top-icon-2"
-              initial={{
-                right: 0,
-                // bottom: !isMobile ? 35 * 3 : 15 * 3.4,
-                opacity: 0,
-              }}
-              animate={{
-                right: "4vw",
-                opacity: 1,
-                // bottom: !isMobile ? 35 * 3 : 15 * 3.4,
-              }}
-              exit={{
-                right: 0,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.2,
-              }}
-            >
-              <Languages
-              // style={{
-              //   width: "100%",
-              //   height: "100%",
-              // }}
-              // size="30"
-              />
-            </motion.div>
+            {!isMobile && (
+              <motion.div
+                onClick={handleScrollToBottom}
+                className="home-scroll-to-top home-scroll-to-top-icon-2"
+                initial={{
+                  right: 0,
+                  // bottom: !isMobile ? 35 * 3 : 15 * 3.4,
+                  opacity: 0,
+                }}
+                animate={{
+                  right: "4vw",
+                  opacity: 1,
+                  // bottom: !isMobile ? 35 * 3 : 15 * 3.4,
+                }}
+                exit={{
+                  right: 0,
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 0.2,
+                }}
+              >
+                <Languages
+                // style={{
+                //   width: "100%",
+                //   height: "100%",
+                // }}
+                // size="30"
+                />
+              </motion.div>
+            )}
+
             <motion.div
               onClick={forceSmoothScroll}
               className="home-scroll-to-top home-scroll-to-top-icon-3"
@@ -490,7 +495,7 @@ function Home() {
                 </div>
                 <div className="home-service-explore">
                   {serviceShowMore === service.title.toLowerCase() && (
-                    <a>Explore More</a>
+                    <a>{language?.Home?.Services?.explore_more}</a>
                   )}
                   <MoveRight className="home-service-explore-button" />
                 </div>

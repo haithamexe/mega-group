@@ -12,7 +12,7 @@ import {
 } from "motion/react";
 import { useHeaderContext } from "../context/HeaderProvider";
 import { useLanguageContext } from "../context/LanguageProvider";
-import { Menu, CircleX } from "lucide-react";
+import { Menu, CircleX, Globe } from "lucide-react";
 
 function Header({ scrollYProgress, normalizedY }) {
   const { language, setLanguage } = useLanguageContext();
@@ -210,19 +210,27 @@ function Header({ scrollYProgress, normalizedY }) {
           <div className="language-change-mobile"></div>
         </>
       ) : !menuIsOpen ? (
-        <Menu
-          onClick={() => setMenuIsOpen(true)}
-          size={30}
+        <div
           style={{
-            color:
-              !textColorScroled || currentPage != "home" ? "black" : "white",
             height: "100%",
-            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        />
+        >
+          <Menu
+            onClick={() => setMenuIsOpen(true)}
+            size={40}
+            style={{
+              color:
+                !textColorScroled || currentPage != "home" ? "black" : "white",
+              cursor: "pointer",
+            }}
+          />
+        </div>
       ) : (
         <>
-          <CircleX
+          {/* <CircleX
             onClick={() => setMenuIsOpen(false)}
             size={30}
             style={{
@@ -233,22 +241,22 @@ function Header({ scrollYProgress, normalizedY }) {
               cursor: "pointer",
               height: "100%",
             }}
-          />
+          /> */}
           <div className="header-links-mobile-container">
-            <nav>
+            <nav className={menuIsOpen ? "mobile-nav-wrapper" : " "}>
               <AnimatePresence>
                 <motion.ul
                   initial={{
                     right: -100,
-                    top: -100,
+                    // top: -100,
                   }}
                   animate={{
                     right: 0,
-                    top: 0,
+                    // top: 0,
                   }}
                   exit={{
                     right: -100,
-                    top: 0,
+                    // top: 0,
                   }}
                   transition={{
                     duration: 0.5,
@@ -261,69 +269,67 @@ function Header({ scrollYProgress, normalizedY }) {
                   className="header-links-mobile"
                   ref={menuRef}
                 >
-                  {links.map((link) => (
-                    <li key={link.url}>
-                      <Link
-                        to={link.url}
-                        onClick={() => {
-                          setCurrentPage(link.link);
-                        }}
-                        className={"header-link-text"}
-                      >
-                        {link.text !== "CONTACT" &&
-                        link.text !== "اتصل بنا" &&
-                        link.text !== "İletişim" ? (
-                          <h1
-                            className={
-                              currentPage === link.link
-                                ? "header-link-active"
-                                : ""
-                            }
-                          >
-                            {link.text}
-                          </h1>
-                        ) : (
-                          <h1
-                            // className="header-contact-button"
-                            onClick={handleContactClick}
-                            className={
-                              currentPage === "contact"
-                                ? "header-link-active"
-                                : ""
-                            }
-                            style={{
-                              border: "none",
-                            }}
+                  <div className="mobile-header-links-wrapper">
+                    {links.map((link) => (
+                      <li key={link.url}>
+                        <Link
+                          to={link.url}
+                          onClick={() => {
+                            setCurrentPage(link.link);
+                          }}
+                          className={"header-link-text"}
+                        >
+                          {link.text !== "CONTACT" &&
+                          link.text !== "اتصل بنا" &&
+                          link.text !== "İletişim" ? (
+                            <h1
+                              className={
+                                currentPage === link.link
+                                  ? "header-link-active"
+                                  : ""
+                              }
+                            >
+                              {link.text}
+                            </h1>
+                          ) : (
+                            <h1
+                              // className="header-contact-button"
+                              onClick={handleContactClick}
+                              className={
+                                currentPage === "contact"
+                                  ? "header-link-active"
+                                  : ""
+                              }
+                              style={{
+                                border: "none",
+                              }}
 
-                            // className="header-link-text"
-                          >
-                            {link.text}
-                          </h1>
-                        )}
-                      </Link>
-                    </li>
-                  ))}
+                              // className="header-link-text"
+                            >
+                              {link.text}
+                            </h1>
+                          )}
+                        </Link>
+                      </li>
+                    ))}
+                  </div>
                   <div className="mobile-header-buttons">
                     <h2
                       style={{
                         cursor: "pointer",
+                        padding: "0.6rem",
                       }}
                       className="whatsapp-button"
                     >
-                      WhatsApp
+                      <a
+                        href="https://wa.me/905351033276" // Replace with your WhatsApp link
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "#fff", textDecoration: "none" }}
+                      >
+                        WhatsApp
+                      </a>
                     </h2>
-                    <h1
-                      style={{
-                        cursor: "pointer",
-                      }}
-                      onClick={() => setDropDownOpen((prev) => !prev)}
-                    >
-                      {language.language === "en"
-                        ? "Language"
-                        : language.language === "tr"
-                        ? "Dil"
-                        : "اللغة"}
-                    </h1>
                     {dropDownOpen && (
                       <div className="mobile-dropdown-footer" ref={dropdownRef}>
                         <div
@@ -380,6 +386,24 @@ function Header({ scrollYProgress, normalizedY }) {
                         </div>
                       </div>
                     )}
+                    <h1
+                      style={{
+                        cursor: "pointer",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                      onClick={() => setDropDownOpen((prev) => !prev)}
+                    >
+                      <Globe className="languages-icon-header-globe" />
+                      {language.language === "en"
+                        ? "Language"
+                        : language.language === "tr"
+                        ? "Dil"
+                        : "اللغة"}
+                    </h1>
                   </div>
                 </motion.ul>
               </AnimatePresence>

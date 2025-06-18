@@ -63,6 +63,7 @@ export const languages = {
         title: "Services",
         subtitle: "We help businesses build, grow, and scale.",
         button: "Explore Services",
+        explore_more: "Explore More",
         types: [
           {
             title: "Branding",
@@ -556,11 +557,11 @@ export const languages = {
         libya: {
           title: "Libya",
           subtitle:
-            "1234 Street Name trablus, al3asma, 12345 276 33 10 535 90+",
+            "Tripoli, Libya, HAI ALANDLUS, alandlus gate floor 0 office 3",
         },
         turkey: {
           title: "Turkey",
-          subtitle: "1234 Street Name istanbul, 12345 276 33 10 535 90+",
+          subtitle: "Dereağzı Mh, Moda Cd. No:5,Beylikdüzü / İstanbul",
         },
       },
     },
@@ -653,6 +654,7 @@ export const languages = {
         subtitle:
           "İşletmelerin büyümesine ve ölçeklenmesine yardımcı oluyoruz.",
         button: "Hizmetleri Keşfet",
+        explore_more: "Daha Fazla Keşfet",
         types: [
           {
             title: "Marka Kimliği",
@@ -1143,11 +1145,11 @@ export const languages = {
       locations: {
         libya: {
           title: "Libya",
-          subtitle: "1234 Sokak Adı trablus, al3asma, 12345 276 33 10 535 90+",
+          subtitle: "Trablus, Libya, Hay Alandlus, Alandlus Gate Kat 0 Ofis 3",
         },
         turkey: {
           title: "Türkiye",
-          subtitle: "1234 Sokak Adı istanbul, 12345 276 33 10 535 90+",
+          subtitle: "Dereağzı Mh, Moda Cd. No:5, Beylikdüzü / İstanbul",
         },
       },
     },
@@ -1239,6 +1241,7 @@ export const languages = {
         title: "الخدمات",
         subtitle: "نساعد الشركات على البناء والنمو والتوسع.",
         button: "استكشف الخدمات",
+        explore_more: "استكشف المزيد",
         types: [
           {
             title: "الهوية التجارية",
@@ -1724,11 +1727,11 @@ export const languages = {
       locations: {
         libya: {
           title: "ليبيا",
-          subtitle: "1234 اسم الشارع طرابلس، العاصمة، 12345 276 33 10 535 90+",
+          subtitle: "طرابلس، ليبيا، حي الأندلس، بوابة الأندلس الطابق 0 مكتب 3",
         },
         turkey: {
           title: "تركيا",
-          subtitle: "1234 اسم الشارع اسطنبول، 12345 276 33 10 535 90+",
+          subtitle: "Dereağzı Mh, Moda Cd. No:5, Beylikdüzü / İstanbul",
         },
       },
     },

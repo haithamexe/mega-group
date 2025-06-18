@@ -4,10 +4,12 @@ import ContactContainer from "../components/ContactContainer";
 import { motion, useScroll } from "motion/react";
 import "../styles/contactPage.css";
 import { useLanguageContext } from "../context/LanguageProvider";
+import { useNavigate } from "react-router-dom";
 
 function Contact() {
   const { scrollYProgress } = useScroll();
   const { language } = useLanguageContext();
+  const navigate = useNavigate();
 
   return (
     <motion.div
@@ -51,39 +53,49 @@ function Contact() {
               {/* <div className="contact-logo-wrapper">
                 <img src="/images/whatsapp-text-logo.png" alt="Whatsapp logo" />
               </div> */}
-              <button
-                className="contact-whatsapp-button"
-                style={{ backgroundColor: "#25d366" }}
+              <a
+                href="https://wa.me/905351033276" // Replace with your Facebook page link
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#fff", textDecoration: "none", width: "100%" }}
               >
-                {language?.Contact?.whatsapp_chat}
-              </button>
+                <button
+                  className="contact-whatsapp-button"
+                  style={{ backgroundColor: "#25d366" }}
+                >
+                  {language?.Contact?.whatsapp_chat}
+                </button>
+              </a>
             </div>
             <div className="contact-content-option">
               <h3>{language?.Contact?.contact_us_on} </h3>
               {/* <div className="contact-logo-wrapper">
                 <img src="/images/facebook-text-logo.png" alt="facebook logo" />
               </div> */}
-              <button
-                className="contact-messenger-button"
-                style={{ backgroundColor: "#3b5998" }}
+              <a
+                href="https://www.facebook.com/megagroup.ly" // Replace with your Facebook page link
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#fff", textDecoration: "none", width: "100%" }}
               >
-                {language?.Contact?.facebook_chat}
-              </button>
+                <button
+                  className="contact-messenger-button"
+                  style={{ backgroundColor: "#3b5998" }}
+                >
+                  {language?.Contact?.facebook_chat}
+                </button>
+              </a>
             </div>
-            <div className="contact-content-option">
+            {/* <div className="contact-content-option">
               <h3>{language?.Contact?.phone_number}</h3>
               <p
-                style={
-                  {
-                    // fontSize: "1.2rem",
-                    // fontWeight: "bold",
-                    // color: "#333",
-                  }
-                }
+                style={{
+                  direction: "ltr",
+                }}
               >
                 +1 234 567 890
               </p>
-            </div>
+            </div> */}
           </div>
           <ContactContainer scrollYProgress={scrollYProgress} />
         </div>
