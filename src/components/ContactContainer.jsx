@@ -22,6 +22,13 @@ function ContactContainer({ scrollYProgress }) {
     ) {
       // Here you would typically send the form data to your server or API
       console.log("Form submitted:", formData);
+      window.open(
+        "mailto:info@megagroup.ly?subject=" +
+          encodeURIComponent(formData.subject) +
+          "&body=" +
+          encodeURIComponent(formData.message),
+        "_blank"
+      );
       // Reset the form after submission
       setFormData({
         name: "",
