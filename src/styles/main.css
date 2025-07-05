@@ -304,7 +304,8 @@
   position: absolute;
   right: 0;
   top: 0;
-  height: 92vh !important;
+  height: 100svh !important;
+  height: 100dvh !important;
   /* padding-top: 1rem; */
   /* overflow: hidden; */
 }
